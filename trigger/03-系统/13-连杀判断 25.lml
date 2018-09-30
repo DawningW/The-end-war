@@ -1,0 +1,109 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+    OperatorCompareUnit
+        函数: GetKillingUnitBJ
+        预设: OperatorNotEqualENE
+        预设: UnitNull
+    OperatorCompareBoolean
+        函数: IsPlayerAlly
+            函数: GetOwningPlayer
+                函数: GetKillingUnitBJ
+            函数: GetTriggerPlayer
+        预设: OperatorEqualENE
+        常量: false
+    OrMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+    OrMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+动作
+    禁用: SetVariable
+        禁用: 
+        常量: 0
+    CommentString
+        常量: 多杀判断
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareInteger
+                禁用: 
+                预设: OperatorGreater
+                常量: 0
+        动作
+            禁用: SetVariable
+                禁用: 
+                常量: 8
+        动作
+            禁用: SetVariable
+                禁用: 
+                常量: 8
+    CommentString
+        常量: 杀人阶段
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareInteger
+                禁用: 
+                预设: OperatorGreater
+                常量: 0
+            禁用: OperatorCompareInteger
+                禁用: 
+                预设: OperatorLess
+                常量: 7
+        动作
+            禁用: SetVariable
+                禁用: 
+                函数: OperatorInt
+                    禁用: 
+                    预设: OperatorAdd
+                    常量: 1

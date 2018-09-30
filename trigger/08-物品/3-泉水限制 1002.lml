@@ -1,0 +1,72 @@
+事件
+    TriggerRegisterPlayerUnitEventSimple
+        预设: PlayerALL
+        预设: PlayerUnitEventHeroPickUpItem
+条件
+    OrMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00G
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00L
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00K
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00H
+动作
+    IfThenElseMultiple
+        条件
+            OrMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: UnitHasItemOfTypeBJ
+                            函数: GetTriggerUnit
+                            常量: I00G
+                        预设: OperatorEqualENE
+                        常量: true
+                    OperatorCompareBoolean
+                        函数: UnitHasItemOfTypeBJ
+                            函数: GetTriggerUnit
+                            常量: I00L
+                        预设: OperatorEqualENE
+                        常量: true
+                    OperatorCompareBoolean
+                        函数: UnitHasItemOfTypeBJ
+                            函数: GetTriggerUnit
+                            常量: I00K
+                        预设: OperatorEqualENE
+                        常量: true
+                    OperatorCompareBoolean
+                        函数: UnitHasItemOfTypeBJ
+                            函数: GetTriggerUnit
+                            常量: I00H
+                        预设: OperatorEqualENE
+                        常量: true
+        动作
+            RemoveItem
+                函数: GetManipulatedItem
+            AdjustPlayerStateBJ
+                常量: 375
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: PlayerStateGold
+            DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                常量: 0
+                常量: 0
+                常量: 亲，每个单位只能购买一个水晶瓶哦~金币已归还
+        动作
+            DoNothing

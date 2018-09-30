@@ -1,0 +1,148 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+    OperatorComparePlayer
+        函数: GetOwningPlayer
+            函数: GetTriggerUnit
+        预设: OperatorNotEqualENE
+        预设: PlayerNA
+    OperatorComparePlayer
+        函数: GetOwningPlayer
+            函数: GetTriggerUnit
+        预设: OperatorNotEqualENE
+        预设: PlayerNV
+    OperatorComparePlayer
+        函数: GetOwningPlayer
+            函数: GetTriggerUnit
+        预设: OperatorNotEqualENE
+        预设: PlayerNE
+    OperatorComparePlayer
+        函数: GetOwningPlayer
+            函数: GetTriggerUnit
+        预设: OperatorNotEqualENE
+        预设: PlayerNP
+动作
+    StartTimerBJ
+        函数: CreateTimer
+        预设: PeriodicOptionOneTime
+        函数: OperatorReal
+            函数: OperatorReal
+                函数: I2R
+                    函数: GetUnitLevel
+                        函数: GetTriggerUnit
+                预设: OperatorMultiply
+                常量: 1.20
+            预设: OperatorAdd
+            常量: 5.00
+    CreateTimerDialogBJ
+        函数: GetLastCreatedTimerBJ
+        函数: OperatorString
+            函数: GetUnitName
+                函数: GetTriggerUnit
+            常量: 复活中。。。
+    YDWESetAnyTypeLocalVariable
+        预设: typename05_timer
+        常量: t
+        函数: GetLastCreatedTimerBJ
+    YDWESetAnyTypeLocalVariable
+        预设: typename25_timerdialog
+        常量: w
+        函数: GetLastCreatedTimerDialogBJ
+    TriggerSleepAction
+        函数: OperatorReal
+            函数: OperatorReal
+                函数: I2R
+                    函数: GetUnitLevel
+                        函数: GetTriggerUnit
+                预设: OperatorMultiply
+                常量: 1.20
+            预设: OperatorAdd
+            常量: 5.00
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitAlly
+                    函数: GetTriggerUnit
+                    预设: Player05
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            ReviveHeroLoc
+                函数: GetTriggerUnit
+                函数: GetRectCenter
+                    变量: gg_rct______________2
+                预设: ShowHideShow
+            PanCameraToTimedLocForPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                函数: GetRectCenter
+                    变量: gg_rct______________2
+                常量: 1.00
+            SelectUnitForPlayerSingle
+                函数: GetTriggerUnit
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+            DestroyTimer
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: t
+            DestroyTimerDialogBJ
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: w
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: OperatorString
+                        函数: GetPlayerName
+                            函数: GetOwningPlayer
+                                函数: GetTriggerUnit
+                        常量: 的
+                    函数: OperatorString
+                        函数: GetUnitName
+                            函数: GetTriggerUnit
+                        常量: |c00FF0000已经复活!!!|r
+        动作
+            ReviveHeroLoc
+                函数: GetTriggerUnit
+                函数: GetRectCenter
+                    变量: gg_rct______________7
+                预设: ShowHideShow
+            PanCameraToTimedLocForPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                函数: GetRectCenter
+                    变量: gg_rct______________7
+                常量: 1.00
+            SelectUnitForPlayerSingle
+                函数: GetTriggerUnit
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+            DestroyTimer
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: t
+            DestroyTimerDialogBJ
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: w
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: OperatorString
+                        函数: GetPlayerName
+                            函数: GetOwningPlayer
+                                函数: GetTriggerUnit
+                        常量: 的
+                    函数: OperatorString
+                        函数: GetUnitName
+                            函数: GetTriggerUnit
+                        常量: |c00FF0000已经复活!!!|r

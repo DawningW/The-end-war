@@ -1,0 +1,23 @@
+事件
+    TriggerRegisterTimerEventPeriodic
+        常量: 120.00
+条件
+动作
+    AddPlayerTechResearched
+        预设: Player11
+        常量: Rugf
+        常量: 1
+    禁用: SetVariable
+        禁用: 
+        函数: OperatorInt
+            禁用: 
+            预设: OperatorAdd
+            常量: 200
+    ForForceMultiple
+        函数: GetPlayersAllies
+            预设: Player05
+        动作
+            禁用: SetPlayerHandicapXPBJ
+                函数: GetEnumPlayer
+                函数: I2R
+                    禁用: 

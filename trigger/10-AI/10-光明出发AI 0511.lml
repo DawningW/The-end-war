@@ -1,0 +1,83 @@
+事件
+    TriggerRegisterTimerEventPeriodic
+        常量: 2.00
+条件
+动作
+    ForLoopAMultiple
+        常量: 1
+        常量: 5
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: YDWEGetBooleanByString
+                            常量: AI
+                            函数: I2S
+                                函数: GetForLoopIndexA
+                        预设: OperatorEqualENE
+                        常量: true
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitAliveBJ
+                            禁用: 
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    IfThenElseMultiple
+                        条件
+                            禁用: OperatorCompareReal
+                                函数: GetUnitLifePercent
+                                    禁用: 
+                                预设: OperatorGreaterEq
+                                常量: 0.95
+                            禁用: OperatorCompareBoolean
+                                函数: RectContainsUnit
+                                    变量: gg_rct______________2
+                                    禁用: 
+                                预设: OperatorEqualENE
+                                常量: true
+                        动作
+                            禁用: SetVariable
+                                禁用: 
+                                函数: GetRandomInt
+                                    常量: 1
+                                    常量: 2
+                            IfThenElseMultiple
+                                条件
+                                    禁用: OperatorCompareInteger
+                                        禁用: 
+                                        预设: OperatorEqual
+                                        常量: 1
+                                动作
+                                    禁用: SelectUnitForPlayerSingle
+                                        禁用: 
+                                        函数: ConvertedPlayer
+                                            函数: GetForLoopIndexA
+                                    禁用: IssuePointOrderLoc
+                                        禁用: 
+                                        预设: UnitOrderMove
+                                        函数: GetRectCenter
+                                            变量: gg_rct______________3
+                                    TriggerSleepAction
+                                        常量: 3.00
+                                    禁用: IssuePointOrderLoc
+                                        禁用: 
+                                        预设: UnitOrderAttack
+                                        函数: GetUnitLoc
+                                            禁用: 
+                                动作
+                                    禁用: SelectUnitForPlayerSingle
+                                        禁用: 
+                                        函数: ConvertedPlayer
+                                            函数: GetForLoopIndexA
+                                    禁用: IssuePointOrderLoc
+                                        禁用: 
+                                        预设: UnitOrderMove
+                                        函数: GetRectCenter
+                                            变量: gg_rct______________4
+                                    TriggerSleepAction
+                                        常量: 3.00
+                                    禁用: IssuePointOrderLoc
+                                        禁用: 
+                                        预设: UnitOrderAttack
+                                        函数: GetUnitLoc
+                                            禁用: 

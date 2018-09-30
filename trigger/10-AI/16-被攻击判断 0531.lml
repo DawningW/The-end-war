@@ -1,0 +1,120 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventAttacked
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+动作
+    ForLoopAMultiple
+        常量: 1
+        常量: 5
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: YDWEGetBooleanByString
+                            常量: AI
+                            函数: I2S
+                                函数: GetForLoopIndexA
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    IfThenElseMultiple
+                        条件
+                            禁用: OperatorCompareUnit
+                                函数: GetAttackedUnitBJ
+                                预设: OperatorEqualENE
+                                禁用: 
+                        动作
+                            禁用: YDWESaveBooleanByString
+                                常量: AI
+                                函数: OperatorString
+                                    常量: attack
+                                    函数: I2S
+                                        函数: GetConvertedPlayerId
+                                            函数: GetOwningPlayer
+                                                禁用: 
+                                常量: true
+                            禁用: IssuePointOrderLoc
+                                禁用: 
+                                预设: UnitOrderMove
+                                函数: PolarProjectionBJ
+                                    函数: GetUnitLoc
+                                        禁用: 
+                                    常量: 256.00
+                                    函数: YDWEAngleBetweenUnits
+                                        禁用: 
+                                        变量: gg_unit_nfnp_0016
+                        动作
+                            禁用: YDWESaveBooleanByString
+                                常量: AI
+                                函数: OperatorString
+                                    常量: attack
+                                    函数: I2S
+                                        函数: GetConvertedPlayerId
+                                            函数: GetOwningPlayer
+                                                禁用: 
+                                常量: false
+                动作
+                    DoNothing
+    ForLoopBMultiple
+        常量: 7
+        常量: 11
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: YDWEGetBooleanByString
+                            常量: AI
+                            函数: I2S
+                                函数: GetForLoopIndexB
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    IfThenElseMultiple
+                        条件
+                            禁用: OperatorCompareUnit
+                                函数: GetAttackedUnitBJ
+                                预设: OperatorEqualENE
+                                禁用: 
+                        动作
+                            禁用: YDWESaveBooleanByString
+                                常量: AI
+                                函数: OperatorString
+                                    常量: attack
+                                    函数: I2S
+                                        函数: GetConvertedPlayerId
+                                            函数: GetOwningPlayer
+                                                禁用: 
+                                常量: true
+                            禁用: IssuePointOrderLoc
+                                禁用: 
+                                预设: UnitOrderMove
+                                函数: PolarProjectionBJ
+                                    函数: GetUnitLoc
+                                        禁用: 
+                                    常量: 256.00
+                                    函数: YDWEAngleBetweenUnits
+                                        禁用: 
+                                        变量: gg_unit_nbfl_0032
+                        动作
+                            禁用: YDWESaveBooleanByString
+                                常量: AI
+                                函数: OperatorString
+                                    常量: attack
+                                    函数: I2S
+                                        函数: GetConvertedPlayerId
+                                            函数: GetOwningPlayer
+                                                禁用: 
+                                常量: false
+                动作
+                    DoNothing

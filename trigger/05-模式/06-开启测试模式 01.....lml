@@ -1,0 +1,24 @@
+事件
+    禁用: TriggerRegisterDialogEventBJ
+        禁用: 
+条件
+    禁用: OperatorCompareButton
+        函数: GetClickedButtonBJ
+        预设: OperatorEqualENE
+        禁用: 
+动作
+    PauseGameOff
+    禁用: SetVariable
+        禁用: 
+        常量: 5
+    TriggerExecute
+        变量: gg_trg____________________013
+    TriggerExecute
+        变量: gg_trg____________________014
+    TriggerExecute
+        变量: gg_trg______________0505
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: |Cff00ff00已进入测试模式！！！|r
+    DisableTrigger
+        函数: GetTriggeringTrigger

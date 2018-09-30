@@ -1,0 +1,82 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventAttacked
+条件
+    OperatorCompareBoolean
+        函数: IsPlayerAlly
+            函数: GetOwningPlayer
+                函数: GetAttacker
+            函数: GetOwningPlayer
+                函数: GetAttackedUnitBJ
+        预设: OperatorEqualENE
+        常量: true
+    OperatorComparePlayer
+        函数: GetOwningPlayer
+            函数: GetAttacker
+        预设: OperatorNotEqualENE
+        函数: GetOwningPlayer
+            函数: GetAttackedUnitBJ
+    OperatorComparePlayerControl
+        函数: GetPlayerController
+            函数: GetOwningPlayer
+                函数: GetAttacker
+        预设: OperatorEqualENE
+        预设: MapControlUser
+    OrMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetAttackedUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetAttackedUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetAttackedUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetAttackedUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+动作
+    IssueImmediateOrder
+        函数: GetAttacker
+        预设: UnitOrderStop
+    IfThenElseMultiple
+        条件
+            OperatorCompareInteger
+                函数: GetPlayerState
+                    函数: GetOwningPlayer
+                        函数: GetAttacker
+                    预设: PlayerStateGold
+                预设: OperatorGreaterEq
+                常量: 250
+        动作
+            AdjustPlayerStateBJ
+                常量: -250
+                函数: GetOwningPlayer
+                    函数: GetAttacker
+                预设: PlayerStateGold
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: GetPlayerName
+                        函数: GetOwningPlayer
+                            函数: GetAttacker
+                    常量: |c00FF0000意图攻击自己的盟友，已经扣除250元作为惩罚，请大家引以为戒。|r
+        动作
+            KillUnit
+                函数: GetAttacker
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: GetPlayerName
+                        函数: GetOwningPlayer
+                            函数: GetAttacker
+                    常量: |c00FF0000意图攻击自己的盟友，由于金钱不足，遭到抹杀惩罚，请大家引以为戒。|r

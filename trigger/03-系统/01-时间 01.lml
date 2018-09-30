@@ -1,0 +1,30 @@
+事件
+    TriggerRegisterTimerEventPeriodic
+        常量: 1.00
+条件
+动作
+    YDWESetAnyTypeLocalVariable
+        预设: typename01_integer
+        常量: s
+        函数: ModuloInteger
+            函数: YDWEGetGameCurrentTime
+            常量: 60
+    YDWESetAnyTypeLocalVariable
+        预设: typename01_integer
+        常量: m
+        函数: OperatorIntegerDivide
+            函数: YDWEGetGameCurrentTime
+            常量: 60
+    ForForceMultiple
+        函数: GetPlayersAll
+        动作
+            SetPlayerState
+                函数: GetEnumPlayer
+                预设: PlayerStateFoodCap
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: s
+            SetPlayerState
+                函数: GetEnumPlayer
+                预设: PlayerStateFoodUsed
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: m

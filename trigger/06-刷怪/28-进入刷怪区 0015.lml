@@ -1,0 +1,269 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventHeroPickUpItem
+条件
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00N
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d25
+                        函数: GetRectCenter
+                            变量: gg_rct_____________1_101
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                        常量: 1.00
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 已进入金币刷怪场1,祝您好运!
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d26
+                        函数: GetRectCenter
+                            变量: gg_rct_____________1_161
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+                        常量: 1.00
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 已进入金币刷怪场1,祝您好运!
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+    IfThenElseMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00M
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d25
+                        函数: GetRectCenter
+                            变量: gg_rct_____________2_102
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                        常量: 1.00
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 已进入金币刷怪场2,祝您好运!
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d26
+                        函数: GetRectCenter
+                            变量: gg_rct_____________2_162
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+                        常量: 1.00
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 已进入金币刷怪场2,祝您好运!
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+    IfThenElseMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00O
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d25
+                        函数: GetRectCenter
+                            变量: gg_rct_____________3_103
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                        常量: 1.00
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 已进入木材刷怪场1,祝您好运!
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d26
+                        函数: GetRectCenter
+                            变量: gg_rct_____________3_163
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+                        常量: 1.00
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 已进入木材刷怪场1,祝您好运!
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+    IfThenElseMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00P
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d25
+                        函数: GetRectCenter
+                            变量: gg_rct_____________4_104
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                        常量: 1.00
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 已进入经验刷怪场1,祝您好运!
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d25
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d26
+                        函数: GetRectCenter
+                            变量: gg_rct_____________4_164
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26
+                        常量: 1.00
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 已进入经验刷怪场1,祝您好运!
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d26

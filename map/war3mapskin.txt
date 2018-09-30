@@ -1,0 +1,15 @@
+[CustomSkin]
+SupplyIcon=ReplaceableTextures\CommandButtons\BTNReplay-Loop.blp
+[FrameDef]
+CHEATDISABLED=不作弊才是乖宝宝！！！
+CHEATENABLED=切，只会作弊的SB，我瞧不起你呦！！！
+COLON_FOOD=时间：
+COLON_FOOD_TOTAL=秒：
+COLON_FOOD_USED=分：
+COLON_UPKEEP=末日战争_By_WC
+RESOURCE_UBERTIP_UPKEEP_INFO=|N%d-%d游戏时间：%s|R
+RESOURCE_UBERTIP_UPKEEP_INFO_WOOD=|N%d-%d 游戏时间：%s|R
+REVIVE_AT_ALTAR=等待复活或在守卫处复活
+UPKEEP_HIGH=末日战争_By_WC
+UPKEEP_LOW=末日战争_By_WC
+UPKEEP_NONE=末日战争_By_WC

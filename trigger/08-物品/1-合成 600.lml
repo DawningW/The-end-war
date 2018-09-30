@@ -1,0 +1,103 @@
+事件
+    TriggerRegisterTimerEventPeriodic
+        常量: 1.00
+条件
+动作
+    YDWENewItemsFormula
+        常量: I002
+        常量: 1
+        常量: I005
+        常量: 1
+        常量: I006
+        常量: 1
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: I004
+    YDWENewItemsFormula
+        常量: I004
+        常量: 1
+        常量: I005
+        常量: 1
+        常量: I006
+        常量: 1
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: I003
+    YDWENewItemsFormula
+        常量: I001
+        常量: 1
+        常量: I005
+        常量: 1
+        常量: I006
+        常量: 1
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: I008
+    YDWENewItemsFormula
+        常量: I008
+        常量: 1
+        常量: I005
+        常量: 1
+        常量: I006
+        常量: 1
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: I007
+    YDWENewItemsFormula
+        常量: I00A
+        常量: 1
+        常量: I005
+        常量: 1
+        常量: I006
+        常量: 1
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: I00B
+    YDWENewItemsFormula
+        常量: I00B
+        常量: 1
+        常量: I005
+        常量: 1
+        常量: I006
+        常量: 1
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: ches
+        常量: 0
+        常量: I009
+    YDWENewItemsFormula
+        常量: I009
+        常量: 1
+        常量: I007
+        常量: 1
+        常量: I003
+        常量: 1
+        常量: I005
+        常量: 1
+        常量: I006
+        常量: 1
+        常量: ches
+        常量: 0
+        常量: I00C

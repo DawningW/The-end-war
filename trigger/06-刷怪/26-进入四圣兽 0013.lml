@@ -1,0 +1,4 @@
+事件
+    TriggerRegisterUnitInRangeSimple
+        常量: 96.00
+        变量: gg_unit_ncop_0108

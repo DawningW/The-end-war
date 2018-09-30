@@ -1,0 +1,286 @@
+事件
+    TriggerRegisterEnterRectSimple
+        变量: gg_rct______________1
+条件
+    OperatorCompareUnitCode
+        函数: GetUnitTypeId
+            函数: GetTriggerUnit
+        预设: OperatorNotEqualENE
+        常量: nsha
+动作
+    IfThenElseMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorEqualENE
+                预设: Player00
+        动作
+            YDWESetAnyTypeLocalVariable
+                预设: typename14_location
+                常量: dg
+                函数: GetRectCenter
+                    变量: gg_rct______________2
+            PanCameraToTimedLocForPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: dg
+                常量: 1.00
+            SetUnitPositionLoc
+                函数: GetTriggerUnit
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: dg
+            RemoveUnit
+                变量: gg_unit_nsha_0017
+            RemoveLocation
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: dg
+            禁用: SetVariable
+                禁用: 
+                函数: GetTriggerUnit
+            禁用: MultiboardSetItemValueBJ
+                禁用: 
+                常量: 2
+                函数: OperatorInt
+                    函数: GetConvertedPlayerId
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                    预设: OperatorAdd
+                    常量: 2
+                函数: GetUnitName
+                    禁用: 
+            禁用: MultiboardSetItemValueBJ
+                禁用: 
+                常量: 3
+                函数: OperatorInt
+                    函数: GetConvertedPlayerId
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                    预设: OperatorAdd
+                    常量: 2
+                函数: I2S
+                    函数: GetHeroLevel
+                        禁用: 
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        预设: OperatorEqualENE
+                        预设: Player01
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: dg
+                        函数: GetRectCenter
+                            变量: gg_rct______________2
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: dg
+                        常量: 1.00
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: dg
+                    RemoveUnit
+                        变量: gg_unit_nsha_0022
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: dg
+                    禁用: SetVariable
+                        禁用: 
+                        函数: GetTriggerUnit
+                    禁用: MultiboardSetItemValueBJ
+                        禁用: 
+                        常量: 2
+                        函数: OperatorInt
+                            函数: GetConvertedPlayerId
+                                函数: GetOwningPlayer
+                                    函数: GetTriggerUnit
+                            预设: OperatorAdd
+                            常量: 2
+                        函数: GetUnitName
+                            禁用: 
+                    禁用: MultiboardSetItemValueBJ
+                        禁用: 
+                        常量: 3
+                        函数: OperatorInt
+                            函数: GetConvertedPlayerId
+                                函数: GetOwningPlayer
+                                    函数: GetTriggerUnit
+                            预设: OperatorAdd
+                            常量: 2
+                        函数: I2S
+                            函数: GetHeroLevel
+                                禁用: 
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorComparePlayer
+                                函数: GetOwningPlayer
+                                    函数: GetTriggerUnit
+                                预设: OperatorEqualENE
+                                预设: Player02
+                        动作
+                            YDWESetAnyTypeLocalVariable
+                                预设: typename14_location
+                                常量: dg
+                                函数: GetRectCenter
+                                    变量: gg_rct______________2
+                            PanCameraToTimedLocForPlayer
+                                函数: GetOwningPlayer
+                                    函数: GetTriggerUnit
+                                函数: YDWEGetAnyTypeLocalVariable
+                                    常量: dg
+                                常量: 1.00
+                            SetUnitPositionLoc
+                                函数: GetTriggerUnit
+                                函数: YDWEGetAnyTypeLocalVariable
+                                    常量: dg
+                            RemoveUnit
+                                变量: gg_unit_nsha_0023
+                            RemoveLocation
+                                函数: YDWEGetAnyTypeLocalVariable
+                                    常量: dg
+                            禁用: SetVariable
+                                禁用: 
+                                函数: GetTriggerUnit
+                            禁用: MultiboardSetItemValueBJ
+                                禁用: 
+                                常量: 2
+                                函数: OperatorInt
+                                    函数: GetConvertedPlayerId
+                                        函数: GetOwningPlayer
+                                            函数: GetTriggerUnit
+                                    预设: OperatorAdd
+                                    常量: 2
+                                函数: GetUnitName
+                                    禁用: 
+                            禁用: MultiboardSetItemValueBJ
+                                禁用: 
+                                常量: 3
+                                函数: OperatorInt
+                                    函数: GetConvertedPlayerId
+                                        函数: GetOwningPlayer
+                                            函数: GetTriggerUnit
+                                    预设: OperatorAdd
+                                    常量: 2
+                                函数: I2S
+                                    函数: GetHeroLevel
+                                        禁用: 
+                        动作
+                            IfThenElseMultiple
+                                条件
+                                    OperatorComparePlayer
+                                        函数: GetOwningPlayer
+                                            函数: GetTriggerUnit
+                                        预设: OperatorEqualENE
+                                        预设: Player03
+                                动作
+                                    YDWESetAnyTypeLocalVariable
+                                        预设: typename14_location
+                                        常量: dg
+                                        函数: GetRectCenter
+                                            变量: gg_rct______________2
+                                    PanCameraToTimedLocForPlayer
+                                        函数: GetOwningPlayer
+                                            函数: GetTriggerUnit
+                                        函数: YDWEGetAnyTypeLocalVariable
+                                            常量: dg
+                                        常量: 1.00
+                                    SetUnitPositionLoc
+                                        函数: GetTriggerUnit
+                                        函数: YDWEGetAnyTypeLocalVariable
+                                            常量: dg
+                                    RemoveUnit
+                                        变量: gg_unit_nsha_0024
+                                    RemoveLocation
+                                        函数: YDWEGetAnyTypeLocalVariable
+                                            常量: dg
+                                    禁用: SetVariable
+                                        禁用: 
+                                        函数: GetTriggerUnit
+                                    禁用: MultiboardSetItemValueBJ
+                                        禁用: 
+                                        常量: 2
+                                        函数: OperatorInt
+                                            函数: GetConvertedPlayerId
+                                                函数: GetOwningPlayer
+                                                    函数: GetTriggerUnit
+                                            预设: OperatorAdd
+                                            常量: 2
+                                        函数: GetUnitName
+                                            禁用: 
+                                    禁用: MultiboardSetItemValueBJ
+                                        禁用: 
+                                        常量: 3
+                                        函数: OperatorInt
+                                            函数: GetConvertedPlayerId
+                                                函数: GetOwningPlayer
+                                                    函数: GetTriggerUnit
+                                            预设: OperatorAdd
+                                            常量: 2
+                                        函数: I2S
+                                            函数: GetHeroLevel
+                                                禁用: 
+                                动作
+                                    IfThenElseMultiple
+                                        条件
+                                            OperatorComparePlayer
+                                                函数: GetOwningPlayer
+                                                    函数: GetTriggerUnit
+                                                预设: OperatorEqualENE
+                                                预设: Player04
+                                        动作
+                                            YDWESetAnyTypeLocalVariable
+                                                预设: typename14_location
+                                                常量: dg
+                                                函数: GetRectCenter
+                                                    变量: gg_rct______________2
+                                            PanCameraToTimedLocForPlayer
+                                                函数: GetOwningPlayer
+                                                    函数: GetTriggerUnit
+                                                函数: YDWEGetAnyTypeLocalVariable
+                                                    常量: dg
+                                                常量: 1.00
+                                            SetUnitPositionLoc
+                                                函数: GetTriggerUnit
+                                                函数: YDWEGetAnyTypeLocalVariable
+                                                    常量: dg
+                                            RemoveUnit
+                                                变量: gg_unit_nsha_0021
+                                            RemoveLocation
+                                                函数: YDWEGetAnyTypeLocalVariable
+                                                    常量: dg
+                                            禁用: SetVariable
+                                                禁用: 
+                                                函数: GetTriggerUnit
+                                            禁用: MultiboardSetItemValueBJ
+                                                禁用: 
+                                                常量: 2
+                                                函数: OperatorInt
+                                                    函数: GetConvertedPlayerId
+                                                        函数: GetOwningPlayer
+                                                            函数: GetTriggerUnit
+                                                    预设: OperatorAdd
+                                                    常量: 2
+                                                函数: GetUnitName
+                                                    禁用: 
+                                            禁用: MultiboardSetItemValueBJ
+                                                禁用: 
+                                                常量: 3
+                                                函数: OperatorInt
+                                                    函数: GetConvertedPlayerId
+                                                        函数: GetOwningPlayer
+                                                            函数: GetTriggerUnit
+                                                    预设: OperatorAdd
+                                                    常量: 2
+                                                函数: I2S
+                                                    函数: GetHeroLevel
+                                                        禁用: 
+                                        动作
+                                            DoNothing

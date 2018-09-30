@@ -1,0 +1,122 @@
+事件
+    TriggerRegisterUnitInRangeSimple
+        常量: 128.00
+        变量: gg_unit_ncp3_0227
+条件
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitAlly
+                    函数: GetTriggerUnit
+                    预设: Player11
+                预设: OperatorEqualENE
+                常量: true
+            禁用: OperatorCompareBoolean
+                函数: IsUnitType
+                    禁用: 
+                    预设: UnitTypeDead
+                预设: OperatorEqualENE
+                常量: true
+            禁用: OperatorCompareBoolean
+                函数: IsUnitType
+                    禁用: 
+                    预设: UnitTypeDead
+                预设: OperatorEqualENE
+                常量: true
+            禁用: OperatorCompareBoolean
+                函数: IsUnitType
+                    禁用: 
+                    预设: UnitTypeDead
+                预设: OperatorEqualENE
+                常量: true
+            禁用: OperatorCompareBoolean
+                函数: IsUnitType
+                    禁用: 
+                    预设: UnitTypeDead
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            YDWESetAnyTypeLocalVariable
+                预设: typename14_location
+                常量: d13
+                函数: GetRectCenter
+                    变量: gg_rct______________7
+            SetUnitPositionLoc
+                函数: GetTriggerUnit
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: d13
+            PanCameraToTimedLocForPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: d13
+                常量: 1.00
+            RemoveLocation
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: d13
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitType
+                            禁用: 
+                            预设: UnitTypeDead
+                        预设: OperatorEqualENE
+                        常量: true
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitType
+                            禁用: 
+                            预设: UnitTypeDead
+                        预设: OperatorEqualENE
+                        常量: true
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitType
+                            禁用: 
+                            预设: UnitTypeDead
+                        预设: OperatorEqualENE
+                        常量: true
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitType
+                            禁用: 
+                            预设: UnitTypeDead
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d14
+                        函数: GetRectCenter
+                            变量: gg_rct______________2
+                    SetUnitPositionLoc
+                        函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d14
+                    PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d14
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d14
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 我就纳闷了，你是怎么进来的呢？
+                动作
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        常量: 0
+                        常量: 0
+                        常量: 你过关了吗，还想逃跑

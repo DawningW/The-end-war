@@ -1,0 +1,98 @@
+事件
+    TriggerRegisterUnitInRangeSimple
+        常量: 600.00
+        变量: gg_unit_nfnp_0016
+条件
+    OperatorCompareBoolean
+        函数: IsPlayerAlly
+            函数: GetOwningPlayer
+                函数: GetTriggerUnit
+            预设: Player05
+        预设: OperatorEqualENE
+        常量: true
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: UnitHasItemOfTypeBJ
+                    函数: GetTriggerUnit
+                    常量: I00G
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            YDWESetAnyTypeLocalVariable
+                预设: typename01_integer
+                常量: slot
+                函数: GetInventoryIndexOfItemTypeBJ
+                    函数: GetTriggerUnit
+                    常量: I00G
+            RemoveItem
+                函数: GetItemOfTypeFromUnitBJ
+                    函数: GetTriggerUnit
+                    常量: I00G
+            UnitAddItemToSlotById
+                函数: GetTriggerUnit
+                常量: I00H
+                函数: OperatorInt
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: slot
+                    预设: OperatorSubtract
+                    常量: 1
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: UnitHasItemOfTypeBJ
+                            函数: GetTriggerUnit
+                            常量: I00L
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename01_integer
+                        常量: slot
+                        函数: GetInventoryIndexOfItemTypeBJ
+                            函数: GetTriggerUnit
+                            常量: I00L
+                    RemoveItem
+                        函数: GetItemOfTypeFromUnitBJ
+                            函数: GetTriggerUnit
+                            常量: I00L
+                    UnitAddItemToSlotById
+                        函数: GetTriggerUnit
+                        常量: I00H
+                        函数: OperatorInt
+                            函数: YDWEGetAnyTypeLocalVariable
+                                常量: slot
+                            预设: OperatorSubtract
+                            常量: 1
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareBoolean
+                                函数: UnitHasItemOfTypeBJ
+                                    函数: GetTriggerUnit
+                                    常量: I00K
+                                预设: OperatorEqualENE
+                                常量: true
+                        动作
+                            YDWESetAnyTypeLocalVariable
+                                预设: typename01_integer
+                                常量: slot
+                                函数: GetInventoryIndexOfItemTypeBJ
+                                    函数: GetTriggerUnit
+                                    常量: I00K
+                            RemoveItem
+                                函数: GetItemOfTypeFromUnitBJ
+                                    函数: GetTriggerUnit
+                                    常量: I00K
+                            UnitAddItemToSlotById
+                                函数: GetTriggerUnit
+                                常量: I00H
+                                函数: OperatorInt
+                                    函数: YDWEGetAnyTypeLocalVariable
+                                        常量: slot
+                                    预设: OperatorSubtract
+                                    常量: 1
+                        动作
+                            DoNothing

@@ -1,0 +1,47 @@
+事件
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: iseedeadpeople
+        预设: ChatMatchTypeExact
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: whosyourdaddy
+        预设: ChatMatchTypeExact
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: thereisnospoon
+        预设: ChatMatchTypeExact
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: thedudeabides
+        预设: ChatMatchTypeExact
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: greedisgood
+        预设: ChatMatchTypeSubstring
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: keysersoze
+        预设: ChatMatchTypeSubstring
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: leafittome
+        预设: ChatMatchTypeSubstring
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: allyourbasearebelongtous
+        预设: ChatMatchTypeExact
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: somebodysetusupthebomb
+        预设: ChatMatchTypeExact
+条件
+动作
+    DisplayTextToPlayer
+        函数: GetTriggerPlayer
+        常量: 0
+        常量: 0
+        常量: |c00FF0000禁止在本地图中作弊，游戏失败!|r
+    RemovePlayer
+        函数: GetTriggerPlayer
+        预设: GameResultLose

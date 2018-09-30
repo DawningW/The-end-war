@@ -1,0 +1,43 @@
+事件
+    禁用: TriggerRegisterDialogEventBJ
+        禁用: 
+条件
+    禁用: OperatorCompareButton
+        函数: GetClickedButtonBJ
+        预设: OperatorEqualENE
+        禁用: 
+动作
+    PauseGameOff
+    禁用: SetVariable
+        禁用: 
+        常量: 2
+    禁用: ShowUnitHide
+        禁用: 
+    禁用: ShowUnitHide
+        禁用: 
+    AddPlayerTechResearched
+        预设: Player05
+        常量: Resm
+        常量: 1
+    AddPlayerTechResearched
+        预设: Player11
+        常量: Rume
+        常量: 1
+    TriggerExecute
+        变量: gg_trg____________________06
+    EnableTrigger
+        变量: gg_trg____________________022
+    EnableTrigger
+        变量: gg_trg____________________017
+    EnableTrigger
+        变量: gg_trg____________________018
+    TriggerExecute
+        变量: gg_trg______________0505
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: |Cff00ff00已进入对抗模式！！！|r
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: 敌军还有30秒到达战场，碾碎它们!!!
+    DisableTrigger
+        函数: GetTriggeringTrigger

@@ -1,0 +1,250 @@
+事件
+条件
+动作
+    禁用: SetVariable
+        禁用: 
+        函数: GetRandomInt
+            常量: 1
+            常量: 4
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareInteger
+                禁用: 
+                预设: OperatorEqual
+                常量: 1
+        动作
+            TriggerSleepAction
+                常量: 2
+            禁用: AdjustPlayerStateBJ
+                常量: 6000
+                函数: GetOwningPlayer
+                    禁用: 
+                预设: PlayerStateGold
+            禁用: DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    禁用: 
+                常量: 0
+                常量: 0
+                常量: 你得到了6000元钱
+            禁用: PauseUnitBJ
+                预设: PauseUnpauseOptionUnpause
+                禁用: 
+            EnableTrigger
+                变量: gg_trg______________0006
+            EnableTrigger
+                变量: gg_trg______________0007
+            IfThenElseMultiple
+                条件
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            禁用: 
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d1
+                        函数: GetRectCenter
+                            变量: gg_rct______________2
+                    禁用: SetUnitPositionLoc
+                        禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                    禁用: PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d2
+                        函数: GetRectCenter
+                            变量: gg_rct______________7
+                    禁用: SetUnitPositionLoc
+                        禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+                    禁用: PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareInteger
+                禁用: 
+                预设: OperatorEqual
+                常量: 2
+        动作
+            TriggerSleepAction
+                常量: 2
+            禁用: SetHeroLevelNT
+                禁用: 
+                常量: 20
+                预设: ShowHideShow
+            禁用: DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    禁用: 
+                常量: 0
+                常量: 0
+                常量: 你真二，算了，奖励你20级经验值
+            禁用: PauseUnitBJ
+                预设: PauseUnpauseOptionUnpause
+                禁用: 
+            EnableTrigger
+                变量: gg_trg______________0006
+            EnableTrigger
+                变量: gg_trg______________0007
+            IfThenElseMultiple
+                条件
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            禁用: 
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d1
+                        函数: GetRectCenter
+                            变量: gg_rct______________2
+                    禁用: SetUnitPositionLoc
+                        禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                    禁用: PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d2
+                        函数: GetRectCenter
+                            变量: gg_rct______________7
+                    禁用: SetUnitPositionLoc
+                        禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+                    禁用: PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareInteger
+                禁用: 
+                预设: OperatorEqual
+                常量: 3
+        动作
+            TriggerSleepAction
+                常量: 2
+            禁用: AdjustPlayerStateBJ
+                常量: 2000
+                函数: GetOwningPlayer
+                    禁用: 
+                预设: PlayerStateLumber
+            禁用: DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    禁用: 
+                常量: 0
+                常量: 0
+                常量: 你得到了2000木材
+            禁用: PauseUnitBJ
+                预设: PauseUnpauseOptionUnpause
+                禁用: 
+            EnableTrigger
+                变量: gg_trg______________0006
+            EnableTrigger
+                变量: gg_trg______________0007
+            IfThenElseMultiple
+                条件
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            禁用: 
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d1
+                        函数: GetRectCenter
+                            变量: gg_rct______________2
+                    禁用: SetUnitPositionLoc
+                        禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                    禁用: PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d2
+                        函数: GetRectCenter
+                            变量: gg_rct______________7
+                    禁用: SetUnitPositionLoc
+                        禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+                    禁用: PanCameraToTimedLocForPlayer
+                        函数: GetOwningPlayer
+                            禁用: 
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareInteger
+                禁用: 
+                预设: OperatorEqual
+                常量: 4
+        动作
+            TriggerSleepAction
+                常量: 2
+            禁用: PauseUnitBJ
+                预设: PauseUnpauseOptionUnpause
+                禁用: 
+            禁用: KillUnit
+                禁用: 
+            禁用: DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    禁用: 
+                常量: 0
+                常量: 0
+                常量: 唉，你好倒霉，去死吧
+            EnableTrigger
+                变量: gg_trg______________0006
+            EnableTrigger
+                变量: gg_trg______________0007

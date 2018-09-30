@@ -1,0 +1,98 @@
+事件
+    TriggerRegisterEnterRectSimple
+        变量: gg_rct______________7
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+动作
+    ForLoopBMultiple
+        常量: 7
+        常量: 11
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: YDWEGetBooleanByString
+                            常量: AI
+                            函数: I2S
+                                函数: GetForLoopIndexB
+                        预设: OperatorEqualENE
+                        常量: true
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitInRange
+                            禁用: 
+                            变量: gg_unit_ngme_0061
+                            常量: 400.00
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    IfThenElseMultiple
+                        条件
+                            禁用: OperatorCompareBoolean
+                                函数: UnitHasItemOfTypeBJ
+                                    禁用: 
+                                    常量: I000
+                                预设: OperatorEqualENE
+                                常量: false
+                        动作
+                            禁用: UnitAddItemByIdSwapped
+                                常量: I000
+                                禁用: 
+                动作
+                    DoNothing
+            IfThenElseMultiple
+                条件
+                    OrMultiple
+                        条件
+                            禁用: OperatorCompareBoolean
+                                函数: UnitHasItemOfTypeBJ
+                                    禁用: 
+                                    常量: I00G
+                                预设: OperatorEqualENE
+                                常量: false
+                            禁用: OperatorCompareBoolean
+                                函数: UnitHasItemOfTypeBJ
+                                    禁用: 
+                                    常量: I00L
+                                预设: OperatorEqualENE
+                                常量: false
+                            禁用: OperatorCompareBoolean
+                                函数: UnitHasItemOfTypeBJ
+                                    禁用: 
+                                    常量: I00K
+                                预设: OperatorEqualENE
+                                常量: false
+                            禁用: OperatorCompareBoolean
+                                函数: UnitHasItemOfTypeBJ
+                                    禁用: 
+                                    常量: I00H
+                                预设: OperatorEqualENE
+                                常量: false
+                    OperatorCompareInteger
+                        函数: GetPlayerState
+                            函数: ConvertedPlayer
+                                函数: GetForLoopIndexB
+                            预设: PlayerStateGold
+                        预设: OperatorGreaterEq
+                        常量: 375
+                动作
+                    禁用: IssueTargetOrder
+                        变量: gg_unit_ngme_0061
+                        预设: UnitOrderNeutralInterAct
+                        禁用: 
+                    IssueBuyItemOrder
+                        函数: ConvertedPlayer
+                            函数: GetForLoopIndexB
+                        变量: gg_unit_ngme_0061
+                        常量: I00G
+                动作
+                    DoNothing

@@ -1,0 +1,196 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetDyingUnit
+        预设: OperatorEqualENE
+        常量: false
+    GetBooleanOr
+        条件: OperatorComparePlayer
+            函数: GetOwningPlayer
+                函数: GetDyingUnit
+            预设: OperatorEqualENE
+            预设: Player05
+        条件: OperatorComparePlayer
+            函数: GetOwningPlayer
+                函数: GetDyingUnit
+            预设: OperatorEqualENE
+            预设: Player11
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                预设: Player05
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                预设: Player11
+    OrMultiple
+        条件
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                常量: hfoo
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                常量: hrif
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                常量: ogru
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                常量: ohun
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                常量: ugho
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                常量: unec
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                常量: esen
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetDyingUnit
+                预设: OperatorEqualENE
+                常量: earc
+动作
+    IfThenElseMultiple
+        条件
+            OrMultiple
+                条件
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player00
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player01
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player02
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player03
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player04
+        动作
+            YDWESaveIntegerByString
+                常量: soldier
+                函数: I2S
+                    函数: GetConvertedPlayerId
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                函数: OperatorInt
+                    函数: YDWEGetIntegerByString
+                        常量: soldier
+                        函数: I2S
+                            函数: GetConvertedPlayerId
+                                函数: GetOwningPlayer
+                                    函数: GetKillingUnitBJ
+                    预设: OperatorAdd
+                    常量: 1
+            禁用: MultiboardSetItemValueBJ
+                禁用: 
+                常量: 4
+                函数: OperatorInt
+                    函数: GetConvertedPlayerId
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                    预设: OperatorAdd
+                    常量: 2
+                函数: I2S
+                    函数: YDWEGetIntegerByString
+                        常量: soldier
+                        函数: I2S
+                            函数: GetConvertedPlayerId
+                                函数: GetOwningPlayer
+                                    函数: GetKillingUnitBJ
+    IfThenElseMultiple
+        条件
+            OrMultiple
+                条件
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player06
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player07
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player08
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player09
+                    OperatorComparePlayer
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        预设: OperatorEqualENE
+                        预设: Player10
+        动作
+            YDWESaveIntegerByString
+                常量: soldier
+                函数: I2S
+                    函数: GetConvertedPlayerId
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                函数: OperatorInt
+                    函数: YDWEGetIntegerByString
+                        常量: soldier
+                        函数: I2S
+                            函数: GetConvertedPlayerId
+                                函数: GetOwningPlayer
+                                    函数: GetKillingUnitBJ
+                    预设: OperatorAdd
+                    常量: 1
+            禁用: MultiboardSetItemValueBJ
+                禁用: 
+                常量: 4
+                函数: OperatorInt
+                    函数: GetConvertedPlayerId
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                    预设: OperatorAdd
+                    常量: 1
+                函数: I2S
+                    函数: YDWEGetIntegerByString
+                        常量: soldier
+                        函数: I2S
+                            函数: GetConvertedPlayerId
+                                函数: GetOwningPlayer
+                                    函数: GetKillingUnitBJ

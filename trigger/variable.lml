@@ -1,0 +1,7 @@
+heros: unit
+    数组: 12
+    默认: UnitNull
+cameras: boolean
+    数组: 12
+    默认: false
+multiboard: multiboard

@@ -1,0 +1,161 @@
+事件
+    TriggerRegisterPlayerUnitEventSimple
+        预设: PlayerNA
+        预设: PlayerUnitEventDeath
+条件
+动作
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareBoolean
+                函数: IsUnitInGroup
+                    函数: GetDyingUnit
+                    禁用: 
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            禁用: GroupRemoveUnitSimple
+                函数: GetDyingUnit
+                禁用: 
+            IfThenElseMultiple
+                条件
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitGroupEmptyBJ
+                            禁用: 
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    TriggerSleepAction
+                        常量: 6.00
+                    禁用: GroupAddGroup
+                        函数: ' CreateNUnitsAtLoc'
+                            常量: 9
+                            常量: ngno
+                            预设: PlayerNA
+                            函数: GetRectCenter
+                                变量: gg_rct_____________1_161
+                            预设: RealUnitFacing
+                        禁用: 
+                动作
+                    DoNothing
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareBoolean
+                函数: IsUnitInGroup
+                    函数: GetDyingUnit
+                    禁用: 
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            禁用: GroupRemoveUnitSimple
+                函数: GetDyingUnit
+                禁用: 
+            IfThenElseMultiple
+                条件
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitGroupEmptyBJ
+                            禁用: 
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    TriggerSleepAction
+                        常量: 6.00
+                    禁用: GroupAddGroup
+                        函数: ' CreateNUnitsAtLoc'
+                            常量: 9
+                            常量: ngno
+                            预设: PlayerNA
+                            函数: GetRectCenter
+                                变量: gg_rct_____________2_162
+                            预设: RealUnitFacing
+                        禁用: 
+                动作
+                    DoNothing
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareBoolean
+                函数: IsUnitInGroup
+                    函数: GetDyingUnit
+                    禁用: 
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            禁用: GroupRemoveUnitSimple
+                函数: GetDyingUnit
+                禁用: 
+            IfThenElseMultiple
+                条件
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitGroupEmptyBJ
+                            禁用: 
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    TriggerSleepAction
+                        常量: 6.00
+                    禁用: GroupAddGroup
+                        函数: ' CreateNUnitsAtLoc'
+                            常量: 9
+                            常量: nftr
+                            预设: PlayerNA
+                            函数: GetRectCenter
+                                变量: gg_rct_____________3_163
+                            预设: RealUnitFacing
+                        禁用: 
+                动作
+                    DoNothing
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareBoolean
+                函数: IsUnitInGroup
+                    函数: GetDyingUnit
+                    禁用: 
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            禁用: GroupRemoveUnitSimple
+                函数: GetDyingUnit
+                禁用: 
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitType
+                            函数: GetKillingUnitBJ
+                            预设: UnitTypeHero
+                        预设: OperatorEqualENE
+                        常量: true
+                    OperatorCompareInteger
+                        函数: GetHeroLevel
+                            函数: GetKillingUnitBJ
+                        预设: OperatorLess
+                        常量: 80
+                动作
+                    AddHeroXPSwapped
+                        常量: 500
+                        函数: GetKillingUnitBJ
+                        预设: ShowHideHide
+                动作
+                    CreateItemLoc
+                        常量: texp
+                        函数: GetUnitLoc
+                            函数: GetTriggerUnit
+            IfThenElseMultiple
+                条件
+                    禁用: OperatorCompareBoolean
+                        函数: IsUnitGroupEmptyBJ
+                            禁用: 
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    TriggerSleepAction
+                        常量: 6.00
+                    禁用: GroupAddGroup
+                        函数: ' CreateNUnitsAtLoc'
+                            常量: 9
+                            常量: nkob
+                            预设: PlayerNA
+                            函数: GetRectCenter
+                                变量: gg_rct_____________4_164
+                            预设: RealUnitFacing
+                        禁用: 
+                动作
+                    DoNothing

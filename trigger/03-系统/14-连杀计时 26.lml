@@ -1,0 +1,24 @@
+事件
+    TriggerRegisterTimerEventPeriodic
+        常量: 1.00
+条件
+动作
+    ForLoopAMultiple
+        常量: 1
+        常量: 13
+        动作
+            IfThenElseMultiple
+                条件
+                    禁用: OperatorCompareInteger
+                        禁用: 
+                        预设: OperatorGreater
+                        常量: 0
+                动作
+                    禁用: SetVariable
+                        禁用: 
+                        函数: OperatorInt
+                            禁用: 
+                            预设: OperatorSubtract
+                            常量: 1
+                动作
+                    DoNothing

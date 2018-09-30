@@ -1,0 +1,113 @@
+事件
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: -ai
+        预设: ChatMatchTypeSubstring
+条件
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareString
+                函数: SubStringBJ
+                    函数: GetEventPlayerChatString
+                    常量: 5
+                    常量: 6
+                预设: OperatorEqualENE
+                常量: on
+        动作
+            YDWESaveBooleanByString
+                常量: AI
+                函数: I2S
+                    函数: GetConvertedPlayerId
+                        函数: GetTriggerPlayer
+                常量: true
+            DisplayTextToPlayer
+                函数: GetTriggerPlayer
+                常量: 0
+                常量: 0
+                常量: 托管已启动!
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareString
+                        函数: SubStringBJ
+                            函数: GetEventPlayerChatString
+                            常量: 5
+                            常量: 7
+                        预设: OperatorEqualENE
+                        常量: off
+                动作
+                    YDWESaveBooleanByString
+                        常量: AI
+                        函数: I2S
+                            函数: GetConvertedPlayerId
+                                函数: GetTriggerPlayer
+                        常量: false
+                    DisplayTextToPlayer
+                        函数: GetTriggerPlayer
+                        常量: 0
+                        常量: 0
+                        常量: 托管已关闭!
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareString
+                                函数: SubStringBJ
+                                    函数: GetEventPlayerChatString
+                                    常量: 5
+                                    常量: 7
+                                预设: OperatorEqualENE
+                                常量: all
+                        动作
+                            IfThenElseMultiple
+                                条件
+                                    OperatorCompareBoolean
+                                        函数: YDWEGetBooleanByString
+                                            常量: AI
+                                            函数: I2S
+                                                函数: GetConvertedPlayerId
+                                                    预设: Player04
+                                        预设: OperatorEqualENE
+                                        常量: true
+                                动作
+                                    YDWESaveBooleanByString
+                                        常量: AI
+                                        函数: I2S
+                                            函数: GetConvertedPlayerId
+                                                预设: Player04
+                                        常量: false
+                                    YDWESaveBooleanByString
+                                        常量: AI
+                                        函数: I2S
+                                            函数: GetConvertedPlayerId
+                                                预设: Player10
+                                        常量: false
+                                    DisplayTextToPlayer
+                                        函数: GetTriggerPlayer
+                                        常量: 0
+                                        常量: 0
+                                        常量: '玩家 5 和 11 的AI已关闭!'
+                                动作
+                                    YDWESaveBooleanByString
+                                        常量: AI
+                                        函数: I2S
+                                            函数: GetConvertedPlayerId
+                                                预设: Player04
+                                        常量: true
+                                    YDWESaveBooleanByString
+                                        常量: AI
+                                        函数: I2S
+                                            函数: GetConvertedPlayerId
+                                                预设: Player10
+                                        常量: true
+                                    DisplayTextToPlayer
+                                        函数: GetTriggerPlayer
+                                        常量: 0
+                                        常量: 0
+                                        常量: '玩家 5 和 11 的AI已开启!'
+                        动作
+                            DisplayTextToPlayer
+                                函数: GetTriggerPlayer
+                                常量: 0
+                                常量: 0
+                                常量: '格式错误，正确用法为-ai on/off/all'

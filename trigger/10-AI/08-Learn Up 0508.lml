@@ -1,0 +1,21 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventHero_Level
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorComparePlayerControl
+        函数: GetPlayerController
+            函数: GetOwningPlayer
+                函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        预设: MapControlComputer
+动作
+    YDWEHeroLearnSkillAI
+        函数: GetTriggerUnit
+        函数: GetUnitLevel
+            函数: GetTriggerUnit

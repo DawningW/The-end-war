@@ -1,0 +1,84 @@
+事件
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: -back
+        预设: ChatMatchTypeExact
+条件
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsPlayerAlly
+                    函数: GetTriggerPlayer
+                    预设: Player05
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            PolledWait
+                常量: 3.00
+            ForGroupMultiple
+                函数: GetUnitsOfPlayerMatching
+                    函数: GetTriggerPlayer
+                    条件: OperatorCompareBoolean
+                        函数: IsUnitType
+                            函数: GetFilterUnit
+                            预设: UnitTypeHero
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d1
+                        函数: GetRectCenter
+                            变量: gg_rct______________2
+                    SetUnitPositionLoc
+                        函数: GetEnumUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                    PanCameraToTimedLocForPlayer
+                        函数: GetTriggerPlayer
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d1
+            DestroyGroup
+                函数: GetLastCreatedGroup
+        动作
+            PolledWait
+                常量: 3.00
+            ForGroupMultiple
+                函数: GetUnitsOfPlayerMatching
+                    函数: GetTriggerPlayer
+                    条件: OperatorCompareBoolean
+                        函数: IsUnitType
+                            函数: GetFilterUnit
+                            预设: UnitTypeHero
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: d2
+                        函数: GetRectCenter
+                            变量: gg_rct______________7
+                    SetUnitPositionLoc
+                        函数: GetEnumUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+                    PanCameraToTimedLocForPlayer
+                        函数: GetTriggerPlayer
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+                        常量: 1.00
+                    RemoveLocation
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: d2
+            DestroyGroup
+                函数: GetLastCreatedGroup

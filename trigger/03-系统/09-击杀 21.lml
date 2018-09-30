@@ -1,0 +1,190 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+    OperatorCompareUnit
+        函数: GetKillingUnitBJ
+        预设: OperatorNotEqualENE
+        预设: UnitNull
+    OrMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitType
+                    函数: GetKillingUnitBJ
+                    预设: UnitTypeHero
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: OperatorString
+                        函数: OperatorString
+                            函数: YDWEGetPlayerColorString
+                                函数: GetOwningPlayer
+                                    函数: GetKillingUnitBJ
+                                函数: GetPlayerName
+                                    函数: GetOwningPlayer
+                                        函数: GetKillingUnitBJ
+                            常量: 的
+                        函数: OperatorString
+                            函数: GetUnitName
+                                函数: GetKillingUnitBJ
+                            常量: 击杀了
+                    函数: OperatorString
+                        函数: OperatorString
+                            函数: YDWEGetPlayerColorString
+                                函数: GetOwningPlayer
+                                    函数: GetDyingUnit
+                                函数: GetPlayerName
+                                    函数: GetOwningPlayer
+                                        函数: GetDyingUnit
+                            常量: 的
+                        函数: OperatorString
+                            函数: GetUnitName
+                                函数: GetDyingUnit
+                            常量: ！！！
+            YDWESetAnyTypeLocalVariable
+                预设: typename01_integer
+                常量: money
+                函数: OperatorInt
+                    常量: 300
+                    预设: OperatorAdd
+                    函数: GetRandomInt
+                        常量: 0
+                        常量: 50
+            AdjustPlayerStateBJ
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: money
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: PlayerStateGold
+            CreateTextTagUnitBJ
+                函数: OperatorString
+                    函数: I2S
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: money
+                    常量: G
+                函数: GetKillingUnitBJ
+                常量: 0
+                常量: 24.00
+                常量: 100
+                常量: 100
+                常量: 0.00
+                常量: 0
+            SetTextTagVelocityBJ
+                函数: GetLastCreatedTextTag
+                常量: 180.00
+                常量: 90
+            YDWETimerDestroyTextTag
+                常量: 2.00
+                函数: GetLastCreatedTextTag
+        动作
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: OperatorString
+                        函数: OperatorString
+                            函数: YDWEGetPlayerColorString
+                                函数: GetOwningPlayer
+                                    函数: GetKillingUnitBJ
+                                函数: GetPlayerName
+                                    函数: GetOwningPlayer
+                                        函数: GetKillingUnitBJ
+                            常量: 
+                        常量: 击杀了
+                    函数: OperatorString
+                        函数: OperatorString
+                            函数: YDWEGetPlayerColorString
+                                函数: GetOwningPlayer
+                                    函数: GetDyingUnit
+                                函数: GetPlayerName
+                                    函数: GetOwningPlayer
+                                        函数: GetDyingUnit
+                            常量: 的
+                        函数: OperatorString
+                            函数: GetUnitName
+                                函数: GetDyingUnit
+                            常量: ！！！
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareUnit
+                函数: GetTriggerUnit
+                预设: OperatorEqualENE
+                禁用: 
+        动作
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: YDWEGetPlayerColorString
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        函数: GetPlayerName
+                            函数: GetOwningPlayer
+                                函数: GetKillingUnitBJ
+                    常量: 杀死了|cff90ee90守护者晨星|r，将额外得到|c00FFFF002000元|r奖励！！！
+            AdjustPlayerStateBJ
+                常量: 2000
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: PlayerStateGold
+        动作
+            DoNothing
+    IfThenElseMultiple
+        条件
+            禁用: OperatorCompareUnit
+                函数: GetTriggerUnit
+                预设: OperatorEqualENE
+                禁用: 
+        动作
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: YDWEGetPlayerColorString
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        函数: GetPlayerName
+                            函数: GetOwningPlayer
+                                函数: GetKillingUnitBJ
+                    常量: 杀死了|cffadd8e6守护者杰森|r，将额外得到|c00FFFF002000元|r奖励！！！
+            AdjustPlayerStateBJ
+                常量: 2000
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: PlayerStateGold
+        动作
+            DoNothing
