@@ -1,20 +1,33 @@
 事件
 条件
 动作
-    SetPlayerState
-        预设: Player00
-        预设: PlayerStateGold
-        常量: 100000
-    SetPlayerState
-        预设: Player00
-        预设: PlayerStateLumber
-        常量: 60000
-    SetPlayerMaxHeroesAllowed
-        常量: -1
-        预设: Player00
-    SetPlayerHandicapXPBJ
-        预设: Player00
-        常量: 10000.00
+    YDWESetAnyTypeLocalVariable
+        预设: typename16_force
+        常量: players
+        函数: GetForceOfPlayer
+            预设: Player00
+    ForceAddPlayerSimple
+        预设: Player06
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: players
+    ForForceMultiple
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: players
+        动作
+            SetPlayerState
+                函数: GetEnumPlayer
+                预设: PlayerStateGold
+                常量: 100000
+            SetPlayerState
+                函数: GetEnumPlayer
+                预设: PlayerStateLumber
+                常量: 60000
+            SetPlayerMaxHeroesAllowed
+                常量: -1
+                函数: GetEnumPlayer
+            SetPlayerHandicapXPBJ
+                函数: GetEnumPlayer
+                常量: 10000.00
     DisableTrigger
         变量: gg_trg_AntiCheat
     Cheat
