@@ -13,8 +13,7 @@ local keyboard = message.keyboard
 -- 测试代码，显示本地发布的命令
 -- 一定不要在正式环境中使用
 --
-message.order_enable_debug()
-
+-- message.order_enable_debug()
 
 -- 目标允许的FLAG
 local FLAG = {
