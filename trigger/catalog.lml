@@ -1,8 +1,10 @@
-1-注释: 注释
+1-Comments: Comments
     注释
-    1-Bug: Bug
+    1-TODO: TODO
         注释
-    2-更新说明: 更新说明
+    2-Bugs: Bugs
+        注释
+    3-Updates: Updates
         注释
 2-System: System
     '01-Init map': 'Init map'
