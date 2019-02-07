@@ -1,0 +1,10 @@
+事件
+    TriggerRegisterPlayerKeyEventBJ
+        预设: PlayerALL
+        预设: KeyEventTypeDepress
+        预设: KeyEventKeyLeft
+条件
+动作
+    MultiboardMinimizeBJ
+        预设: Maximize
+        变量: Scoreboard

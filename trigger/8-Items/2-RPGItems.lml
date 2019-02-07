@@ -1,0 +1,107 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventHeroPickUpItem
+条件
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetTriggerUnit
+                预设: OperatorEqualENE
+                常量: Hjai
+        动作
+            IfThenElseMultiple
+                条件
+                    OrMultiple
+                        条件
+                            OperatorCompareItemCode
+                                函数: GetItemTypeId
+                                    函数: GetManipulatedItem
+                                预设: OperatorEqualENE
+                                常量: I00D
+                            OperatorCompareItemCode
+                                函数: GetItemTypeId
+                                    函数: GetManipulatedItem
+                                预设: OperatorEqualENE
+                                常量: I00E
+                            OperatorCompareItemCode
+                                函数: GetItemTypeId
+                                    函数: GetManipulatedItem
+                                预设: OperatorEqualENE
+                                常量: I00I
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareItemCode
+                                函数: GetItemTypeId
+                                    函数: GetManipulatedItem
+                                预设: OperatorEqualENE
+                                常量: I00I
+                        动作
+                            DoNothing
+                        动作
+                            DisplayTimedTextToForce
+                                函数: GetPlayersAll
+                                常量: 3.00
+                                常量: 这件物品非常特殊,我会使用它的~~!
+                动作
+                    UnitDropItemPointLoc
+                        函数: GetTriggerUnit
+                        函数: GetManipulatedItem
+                        函数: GetUnitLoc
+                            函数: GetTriggerUnit
+                    DisplayTextToForce
+                        函数: GetPlayersAll
+                        常量: 守护者只能装备属于自己的装备和药剂哦
+    IfThenElseMultiple
+        条件
+            OperatorCompareUnitCode
+                函数: GetUnitTypeId
+                    函数: GetTriggerUnit
+                预设: OperatorEqualENE
+                常量: Hmgd
+        动作
+            IfThenElseMultiple
+                条件
+                    OrMultiple
+                        条件
+                            OperatorCompareItemCode
+                                函数: GetItemTypeId
+                                    函数: GetManipulatedItem
+                                预设: OperatorEqualENE
+                                常量: I00F
+                            OperatorCompareItemCode
+                                函数: GetItemTypeId
+                                    函数: GetManipulatedItem
+                                预设: OperatorEqualENE
+                                常量: I00J
+                            OperatorCompareItemCode
+                                函数: GetItemTypeId
+                                    函数: GetManipulatedItem
+                                预设: OperatorEqualENE
+                                常量: I00I
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareItemCode
+                                函数: GetItemTypeId
+                                    函数: GetManipulatedItem
+                                预设: OperatorEqualENE
+                                常量: I00I
+                        动作
+                            DoNothing
+                        动作
+                            DisplayTimedTextToForce
+                                函数: GetPlayersAll
+                                常量: 3.00
+                                常量: 这件物品非常特殊,我会使用它的~~!
+                动作
+                    UnitDropItemPointLoc
+                        函数: GetTriggerUnit
+                        函数: GetManipulatedItem
+                        函数: GetUnitLoc
+                            函数: GetTriggerUnit
+                    DisplayTextToForce
+                        函数: GetPlayersAll
+                        常量: 守护者只能装备属于自己的装备和药剂哦

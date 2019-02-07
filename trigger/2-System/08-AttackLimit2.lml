@@ -1,0 +1,20 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventAttacked
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetAttacker
+            预设: UnitTypeStructure
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitOwnedByPlayer
+            函数: GetAttackedUnitBJ
+            预设: PlayerNA
+        预设: OperatorEqualENE
+        常量: true
+动作
+    IssueImmediateOrder
+        函数: GetAttacker
+        预设: UnitOrderStop

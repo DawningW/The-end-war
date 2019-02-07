@@ -1,0 +1,102 @@
+事件
+    TriggerRegisterPlayerUnitEventSimple
+        预设: PlayerNA
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareUnitCode
+        函数: GetUnitTypeId
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: nfgo
+动作
+    DisplayTextToForce
+        函数: GetPlayersAll
+        函数: OperatorString
+            常量: 遗忘者被
+            函数: OperatorString
+                函数: OperatorString
+                    函数: GetPlayerName
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                    常量: 的
+                函数: OperatorString
+                    函数: GetUnitName
+                        函数: GetKillingUnitBJ
+                    常量: 击杀！
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsPlayerAlly
+                    函数: GetOwningPlayer
+                        函数: GetKillingUnitBJ
+                    预设: Player05
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            DisplayTextToForce
+                函数: GetPlayersAll
+                常量: 光明势力全体玩家获得3000元金币和1000木材奖励！！！
+            ForForceMultiple
+                函数: GetPlayersMatching
+                    条件: OperatorCompareBoolean
+                        函数: IsPlayerAlly
+                            函数: GetFilterPlayer
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    AdjustPlayerStateBJ
+                        常量: 3000
+                        函数: GetEnumPlayer
+                        预设: PlayerStateGold
+                    AdjustPlayerStateBJ
+                        常量: 1000
+                        函数: GetEnumPlayer
+                        预设: PlayerStateLumber
+        动作
+            DisplayTextToForce
+                函数: GetPlayersAll
+                常量: 黑暗势力全体玩家获得3000元金币和1000木材奖励！！！
+            ForForceMultiple
+                函数: GetPlayersMatching
+                    条件: OperatorCompareBoolean
+                        函数: IsPlayerAlly
+                            函数: GetFilterPlayer
+                            预设: Player11
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    AdjustPlayerStateBJ
+                        常量: 3000
+                        函数: GetEnumPlayer
+                        预设: PlayerStateGold
+                    AdjustPlayerStateBJ
+                        常量: 1000
+                        函数: GetEnumPlayer
+                        预设: PlayerStateLumber
+    CreateTextTagLocBJ
+        常量: '大龙已死，有事烧纸
+复活时间为5分钟'
+        函数: GetRectCenter
+            变量: gg_rct_________________150
+        常量: 0
+        常量: 10
+        常量: 100
+        常量: 100
+        常量: 100
+        常量: 0
+    YDWESetAnyTypeLocalVariable
+        预设: typename32_texttag
+        常量: z
+        预设: bj_lastCreatedTextTag
+    TriggerSleepAction
+        常量: 300.00
+    ' CreateUnitAtLoc'
+        预设: PlayerNA
+        常量: nfgo
+        函数: GetRectCenter
+            变量: gg_rct_________________150
+        常量: 0
+    DestroyTextTagBJ
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: z

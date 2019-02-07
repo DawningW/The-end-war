@@ -1,0 +1,610 @@
+事件
+    MapInitializationEvent
+条件
+动作
+    CommentString
+        常量: 玩家组
+    SetVariable
+        变量: Players
+        函数: GetPlayersMatching
+            条件: GetBooleanOr
+                条件: OperatorComparePlayerControl
+                    函数: GetPlayerController
+                        函数: GetFilterPlayer
+                    预设: OperatorEqualENE
+                    预设: MapControlUser
+                条件: OperatorComparePlayerControl
+                    函数: GetPlayerController
+                        函数: GetFilterPlayer
+                    预设: OperatorEqualENE
+                    预设: MapControlComputer
+    ForceRemovePlayerSimple
+        预设: Player05
+        变量: Players
+    ForceRemovePlayerSimple
+        预设: Player11
+        变量: Players
+    CommentString
+        常量: 地图
+    CreateFogModifierRectBJ
+        预设: EnabledDisabledEnabled
+        预设: Player05
+        预设: FogStateVisible
+        变量: gg_rct______________1
+    CreateFogModifierRectBJ
+        预设: EnabledDisabledEnabled
+        预设: Player11
+        预设: FogStateVisible
+        变量: gg_rct______________6
+    YDWERegionMultiple
+        常量: 初始化英雄池
+        动作
+            SetVariable
+                数组: HeroPool
+                    常量: 0
+                函数: CreateUnitPool
+            CommentString
+                常量: 晨曦酒馆（人族）
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Hpal
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Hamg
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Hmkg
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Hblm
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Nalc
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Ntin
+                常量: 1
+            CommentString
+                常量: 曙光酒馆（暗夜精灵族）
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Ekee
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Emoo
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Edem
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Ewar
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Hvwd
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Nngs
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 0
+                常量: Npbm
+                常量: 1
+            CommentString
+                常量: 炼狱酒馆（兽族）
+            SetVariable
+                数组: HeroPool
+                    常量: 1
+                函数: CreateUnitPool
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Obla
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Ofar
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Otch
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Oshd
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Nbst
+                常量: 1
+            CommentString
+                常量: 黑暗酒馆（不死族）
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Udea
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Ulic
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Udre
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Ucrl
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Nbrn
+                常量: 1
+            UnitPoolAddUnitType
+                数组: HeroPool
+                    常量: 1
+                常量: Nplh
+                常量: 1
+    CommentString
+        常量: 单位
+    IfThenElse
+        条件: OperatorComparePlayerControl
+            函数: GetPlayerController
+                预设: Player04
+            预设: OperatorEqualENE
+            预设: MapControlComputer
+        动作: ShareEverythingWithTeam
+            预设: Player04
+        动作: DoNothing
+    IfThenElse
+        条件: OperatorComparePlayerControl
+            函数: GetPlayerController
+                预设: Player10
+            预设: OperatorEqualENE
+            预设: MapControlComputer
+        动作: ShareEverythingWithTeam
+            预设: Player10
+        动作: DoNothing
+    ForForceMultiple
+        函数: GetPlayersAll
+        动作
+            SetPlayerMaxHeroesAllowed
+                常量: 1
+                函数: GetEnumPlayer
+            SetPlayerFlag
+                函数: GetEnumPlayer
+                预设: PlayerFlagGivesBounty
+                预设: OnOffIntOn
+            SetPlayerHandicapXPBJ
+                函数: GetEnumPlayer
+                常量: 300.00
+    SetReservedLocalHeroButtons
+        常量: 1
+    YDWERegionMultiple
+        常量: 漂浮文字
+        动作
+            CreateTextTagLocBJ
+                常量: 夺宝大作战
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0063
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 命运之屋
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0064
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 娜伽副本（光明专属）
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0012
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 四圣兽
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0108
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 光明传送点
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0015
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 夺宝大作战
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0036
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 命运之屋
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0037
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 野人副本（黑暗专属）
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0109
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 四圣兽
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0157
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 黑暗传送点
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0014
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 返回
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0256
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 青龙
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0255
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 玄武
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0254
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 白虎
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0257
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 青龙
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0258
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 朱雀
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0252
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 白虎
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0253
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 返回
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0261
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+    YDWERegionMultiple
+        常量: 初始化刷怪区
+        动作
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nggr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________152
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 0
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: ngrk
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________152
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 0
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nsll
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________153
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 1
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nslh
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________153
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 1
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nogl
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________154
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 2
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nogr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________154
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 2
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nggr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________102
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 4
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: ngrk
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________102
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 4
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nsll
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________103
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 5
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nslh
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________103
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 5
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nogl
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________104
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 6
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nogr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________104
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 6
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: ngno
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________1_161
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 8
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: ngno
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________2_162
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 9
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: nftr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________3_163
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 10
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: nkob
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________4_164
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 11
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: ngno
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________1_111
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 12
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: ngno
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________2_112
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 13
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: nftr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________3_113
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 14
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: nkob
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________4_114
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 15
+            YDWETimerStartMultiple
+                函数: CreateTimer
+                常量: 600.00
+                预设: PeriodicOptionOneTime
+                动作
+                动作
+                    ' CreateUnitAtLoc'
+                        预设: PlayerNA
+                        常量: nfgo
+                        函数: GetRectCenter
+                            变量: gg_rct_________________150
+                        常量: 0

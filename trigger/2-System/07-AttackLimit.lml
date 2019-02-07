@@ -1,0 +1,44 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventAttacked
+条件
+    OperatorCompareBoolean
+        函数: IsPlayerAlly
+            函数: GetOwningPlayer
+                函数: GetAttacker
+            函数: GetOwningPlayer
+                函数: GetAttackedUnitBJ
+        预设: OperatorEqualENE
+        常量: true
+    OperatorComparePlayer
+        函数: GetOwningPlayer
+            函数: GetAttacker
+        预设: OperatorNotEqualENE
+        函数: GetOwningPlayer
+            函数: GetAttackedUnitBJ
+    OrMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetAttackedUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetAttackedUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetAttackedUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetAttackedUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+动作
+    IssueImmediateOrder
+        函数: GetAttacker
+        预设: UnitOrderStop

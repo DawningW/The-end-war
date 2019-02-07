@@ -1,0 +1,418 @@
+事件
+    MapInitializationEvent
+条件
+动作
+    CommentString
+        常量: 注：因为英雄只有4个技能，故这里第5个技能可随便写
+    YDWERegionMultiple
+        常量: 人族
+        动作
+            CommentString
+                常量: 圣骑士
+            YDWEAIRecordAbility
+                常量: Hpal
+                常量: AHad
+                常量: AHhb
+                常量: AHds
+                常量: AIaa
+                常量: AHre
+            YDWEAIRecordLearn_sequence
+                常量: Hpal
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^31^36^
+            CommentString
+                常量: 大魔法师
+            YDWEAIRecordAbility
+                常量: Hamg
+                常量: AHbz
+                常量: AHab
+                常量: AHwe
+                常量: AHmt
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Hamg
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 山丘之王
+            YDWEAIRecordAbility
+                常量: Hmkg
+                常量: ANsb
+                常量: AHtc
+                常量: AHtb
+                常量: AHav
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Hmkg
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 血魔法师
+            YDWEAIRecordAbility
+                常量: Hblm
+                常量: AHfs
+                常量: AHbn
+                常量: AHdr
+                常量: AHpx
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Hblm
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 炼金术师
+            YDWEAIRecordAbility
+                常量: Nalc
+                常量: ANhs
+                常量: ANab
+                常量: ANcr
+                常量: ANtm
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Nalc
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 修补匠
+            YDWEAIRecordAbility
+                常量: Ntin
+                常量: ANsy
+                常量: ANcs
+                常量: ANeg
+                常量: ANrg
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Ntin
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+    YDWERegionMultiple
+        常量: 暗夜精灵族
+        动作
+            CommentString
+                常量: 丛林守护者
+            YDWEAIRecordAbility
+                常量: Ekee
+                常量: AEer
+                常量: AEfn
+                常量: AEah
+                常量: AEtq
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Ekee
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 月之女祭司
+            YDWEAIRecordAbility
+                常量: Emoo
+                常量: AHfa
+                常量: AEst
+                常量: AEar
+                常量: AEsf
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Emoo
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 恶魔猎手
+            YDWEAIRecordAbility
+                常量: Edem
+                常量: ANbl
+                常量: AEmb
+                常量: AEim
+                常量: AEev
+                常量: AEme
+            YDWEAIRecordLearn_sequence
+                常量: Edem
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 守望者
+            YDWEAIRecordAbility
+                常量: Ewar
+                常量: AEfk
+                常量: AEsh
+                常量: AEbl
+                常量: AEsv
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Ewar
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 娜迦女海巫
+            YDWEAIRecordAbility
+                常量: Nngs
+                常量: ANfl
+                常量: ANfa
+                常量: ANms
+                常量: ANto
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Nngs
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 熊猫酒仙
+            YDWEAIRecordAbility
+                常量: Npbm
+                常量: ANbf
+                常量: ANdh
+                常量: ANdb
+                常量: ANef
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Npbm
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 光明游侠
+            YDWEAIRecordAbility
+                常量: Hvwd
+                常量: AHca
+                常量: AEst
+                常量: AEar
+                常量: AEsf
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Hvwd
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+    YDWERegionMultiple
+        常量: 兽族
+        动作
+            CommentString
+                常量: 剑圣
+            YDWEAIRecordAbility
+                常量: Obla
+                常量: AOwk
+                常量: AOcr
+                常量: AOmi
+                常量: AOww
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Obla
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 先知
+            YDWEAIRecordAbility
+                常量: Ofar
+                常量: AOfs
+                常量: AOsf
+                常量: AOcl
+                常量: AOeq
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Ofar
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 牛头人酋长
+            YDWEAIRecordAbility
+                常量: Otch
+                常量: AOsh
+                常量: AOae
+                常量: AOre
+                常量: AOws
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Otch
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 暗影猎手
+            YDWEAIRecordAbility
+                常量: Oshd
+                常量: AOhw
+                常量: AOhx
+                常量: AOsw
+                常量: AOvd
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Oshd
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 驯兽师
+            YDWEAIRecordAbility
+                常量: Nbst
+                常量: ANsg
+                常量: ANsq
+                常量: ANsw
+                常量: ANst
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Nbst
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+    YDWERegionMultiple
+        常量: 不死族
+        动作
+            CommentString
+                常量: 死亡骑士
+            YDWEAIRecordAbility
+                常量: Udea
+                常量: AUdc
+                常量: AUdp
+                常量: AUau
+                常量: AUan
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Udea
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 巫妖
+            YDWEAIRecordAbility
+                常量: Ulic
+                常量: AUfn
+                常量: AUfu
+                常量: AUdr
+                常量: AUdd
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Ulic
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 恐惧魔王
+            YDWEAIRecordAbility
+                常量: Udre
+                常量: AUav
+                常量: AUsl
+                常量: AUcs
+                常量: AUin
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Udre
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 地穴领主
+            YDWEAIRecordAbility
+                常量: Ucrl
+                常量: AUim
+                常量: AUts
+                常量: AUcb
+                常量: AUls
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Ucrl
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 深渊魔王
+            YDWEAIRecordAbility
+                常量: Nplh
+                常量: ANrf
+                常量: ANht
+                常量: ANca
+                常量: ANdo
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Nplh
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 火焰巨魔
+            YDWEAIRecordAbility
+                常量: Nfir
+                常量: ANic
+                常量: ANso
+                常量: ANlm
+                常量: ANvc
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Nfir
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^
+            CommentString
+                常量: 黑暗游侠
+            YDWEAIRecordAbility
+                常量: Nbrn
+                常量: ANsi
+                常量: ANba
+                常量: ANdr
+                常量: ANch
+                常量: AIaa
+            YDWEAIRecordLearn_sequence
+                常量: Nbrn
+                常量: ^1^5^10^15^20^25^30^35^40^44^
+                常量: ^2^7^12^17^22^27^31^34^38^41^
+                常量: ^3^8^13^18^23^28^32^36^39^42^
+                常量: ^4^9^14^19^24^29^33^37^43^45^
+                常量: ^6^11^16^21^26^

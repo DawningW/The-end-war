@@ -1,0 +1,78 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+    AndMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+动作
+    SetVariable
+        数组: KillTimer
+            函数: GetPlayerId
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+        常量: 0
+    SetVariable
+        数组: KillCount
+            函数: GetPlayerId
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+        常量: 0
+    IfThenElseMultiple
+        条件
+            OperatorCompareInteger
+                数组: KillStage
+                    函数: GetPlayerId
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                预设: OperatorGreaterEq
+                常量: 3
+        动作
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: YDWEGetPlayerColorString
+                        函数: GetOwningPlayer
+                            函数: GetTriggerUnit
+                        函数: GetPlayerName
+                            函数: GetOwningPlayer
+                                函数: GetTriggerUnit
+                    常量: 被终结了！
+        动作
+            DoNothing
+    SetVariable
+        数组: KillStage
+            函数: GetPlayerId
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+        常量: 0

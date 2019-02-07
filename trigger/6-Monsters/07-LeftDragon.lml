@@ -1,0 +1,17 @@
+事件
+    TriggerRegisterPlayerUnitEventSimple
+        预设: PlayerNA
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitInGroup
+            函数: GetDyingUnit
+            数组: Monsters
+                常量: 3
+        预设: OperatorEqualENE
+        常量: true
+动作
+    GroupRemoveUnitSimple
+        函数: GetDyingUnit
+        数组: Monsters
+            常量: 3

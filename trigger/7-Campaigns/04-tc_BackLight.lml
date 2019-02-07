@@ -1,0 +1,43 @@
+事件
+    TriggerRegisterUnitInRangeSimple
+        常量: 128.00
+        变量: gg_unit_ncp2_0015
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+    OperatorCompareBoolean
+        函数: IsUnitAlly
+            函数: GetTriggerUnit
+            预设: Player05
+        预设: OperatorEqualENE
+        常量: true
+动作
+    YDWESetAnyTypeLocalVariable
+        预设: typename14_location
+        常量: p
+        函数: GetRectCenter
+            变量: gg_rct______________2
+    SetUnitPositionLoc
+        函数: GetTriggerUnit
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p
+    PanCameraToTimedLocForPlayer
+        函数: GetOwningPlayer
+            函数: GetTriggerUnit
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p
+        常量: 1.00
+    RemoveLocation
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p
+    CommentString
+        常量: '游戏 - 对 ((触发单位) 的所有者) 在屏幕位移(0.00,0.00)处显示文本: 这是光明传送点，想去找死？'

@@ -1,0 +1,35 @@
+事件
+条件
+动作
+    StartTimerBJ
+        函数: CreateTimer
+        预设: PeriodicOptionOneTime
+        常量: 40.00
+    YDWESetAnyTypeLocalVariable
+        预设: typename05_timer
+        常量: t1
+        函数: GetLastCreatedTimerBJ
+    CreateTimerDialogBJ
+        函数: GetLastCreatedTimerBJ
+        常量: 中场休息......
+    YDWESetAnyTypeLocalVariable
+        预设: typename25_timerdialog
+        常量: w1
+        函数: GetLastCreatedTimerDialogBJ
+    TimerDialogDisplay
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: w1
+        预设: ShowHideShow
+    TriggerSleepAction
+        常量: 40.00
+    DestroyTimer
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: t1
+    DestroyTimerDialogBJ
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: w1
+    TriggerExecute
+        变量: gg_trg_sm_Timer
+    YDWETimerRunPeriodicTriggerOver
+        函数: GetTriggeringTrigger
+        常量: 0

@@ -1,0 +1,41 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventHero_Skill
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+动作
+    ModifyHeroStat
+        预设: HeroStatStr
+        函数: GetTriggerUnit
+        预设: ModifyMethodSub
+        常量: 1
+    ModifyHeroStat
+        预设: HeroStatAgi
+        函数: GetTriggerUnit
+        预设: ModifyMethodSub
+        常量: 1
+    ModifyHeroStat
+        预设: HeroStatInt
+        函数: GetTriggerUnit
+        预设: ModifyMethodSub
+        常量: 1
+    IfThenElseMultiple
+        条件
+            OperatorCompareInteger
+                函数: YDWEGetGameCurrentTime
+                预设: OperatorLess
+                常量: 180
+        动作
+            DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                常量: 0
+                常量: 0
+                常量: |c00FFFF00每学习一次技能，将自动减去力、敏、智各1点,以后不再提示|r
+        动作
+            DoNothing

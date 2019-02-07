@@ -1,0 +1,139 @@
+事件
+条件
+动作
+    CommentString
+        常量: 计时器
+    StartTimerBJ
+        函数: CreateTimer
+        预设: PeriodicOptionOneTime
+        常量: 20.00
+    YDWESetAnyTypeLocalVariable
+        预设: typename05_timer
+        常量: t
+        函数: GetLastCreatedTimerBJ
+    CreateTimerDialogBJ
+        函数: GetLastCreatedTimerBJ
+        常量: 距离英雄选择结束还有
+    YDWESetAnyTypeLocalVariable
+        预设: typename25_timerdialog
+        常量: w
+        函数: GetLastCreatedTimerDialogBJ
+    TriggerSleepAction
+        常量: 20.00
+    DestroyTimer
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: t
+    DestroyTimerDialogBJ
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: w
+    YDWERegionMultiple
+        常量: AI选英雄
+        动作
+            CommentString
+                常量: 是否托管
+            ForForceMultiple
+                变量: Players
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OrMultiple
+                                条件
+                                    OperatorComparePlayerControl
+                                        函数: GetPlayerController
+                                            函数: GetEnumPlayer
+                                        预设: OperatorEqualENE
+                                        预设: MapControlComputer
+                                    OperatorCompareUnit
+                                        数组: Heros
+                                            函数: GetPlayerId
+                                                函数: GetEnumPlayer
+                                        预设: OperatorEqualENE
+                                        预设: UnitNull
+                        动作
+                            ForceAddPlayerSimple
+                                函数: GetEnumPlayer
+                                变量: Robots
+                        动作
+                            DoNothing
+            CommentString
+                常量: 自动选英雄
+            ForForceMultiple
+                变量: Robots
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareUnit
+                                数组: Heros
+                                    函数: GetPlayerId
+                                        函数: GetEnumPlayer
+                                预设: OperatorEqualENE
+                                预设: UnitNull
+                        动作
+                            IfThenElseMultiple
+                                条件
+                                    OperatorCompareBoolean
+                                        函数: IsPlayerAlly
+                                            函数: GetEnumPlayer
+                                            预设: Player05
+                                        预设: OperatorEqualENE
+                                        常量: true
+                                动作
+                                    YDWEPlaceRandomUnit
+                                        数组: HeroPool
+                                            常量: 0
+                                        函数: GetEnumPlayer
+                                        函数: GetRectCenterX
+                                            变量: gg_rct______________1
+                                        函数: GetRectCenterY
+                                            变量: gg_rct______________1
+                                        常量: 0
+                                    UnitPoolRemoveUnitType
+                                        数组: HeroPool
+                                            常量: 0
+                                        函数: GetUnitTypeId
+                                            函数: YDWEGetLastPoolAbstractedUnit
+                                动作
+                                    YDWEPlaceRandomUnit
+                                        数组: HeroPool
+                                            常量: 1
+                                        函数: GetEnumPlayer
+                                        函数: GetRectCenterX
+                                            变量: gg_rct______________6
+                                        函数: GetRectCenterY
+                                            变量: gg_rct______________6
+                                        常量: 0
+                                    UnitPoolRemoveUnitType
+                                        数组: HeroPool
+                                            常量: 1
+                                        函数: GetUnitTypeId
+                                            函数: YDWEGetLastPoolAbstractedUnit
+                        动作
+                            DoNothing
+    TriggerSleepAction
+        常量: 1.00
+    CommentString
+        常量: 清空选人区域
+    ForGroup
+        函数: GetUnitsInRectAll
+            变量: gg_rct______________1
+        动作: RemoveUnit
+            函数: GetEnumUnit
+    ForGroup
+        函数: GetUnitsInRectAll
+            变量: gg_rct______________6
+        动作: RemoveUnit
+            函数: GetEnumUnit
+    DisableTrigger
+        变量: gg_trg_HeroEnter
+    CommentString
+        常量: 结束
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: |Cff00ff00英雄选择已经结束，开始战斗！|r
+    MultiboardDisplayBJ
+        预设: ShowHideShow
+        变量: Scoreboard
+    CommentString
+        常量: 初始化AI
+    TriggerExecute
+        变量: gg_trg_ai_Init

@@ -1,0 +1,25 @@
+事件
+    TriggerRegisterDialogEventBJ
+        变量: Dialog
+条件
+    OperatorCompareButton
+        函数: GetClickedButtonBJ
+        预设: OperatorEqualENE
+        数组: Buttons
+            常量: 2
+动作
+    PauseGameOff
+    SetVariable
+        变量: GameMode
+        常量: 3
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: |Cff00ff00已选择限时模式！|r
+    EnableTrigger
+        变量: gg_trg_tm_Timer
+    EnableTrigger
+        变量: gg_trg_tm_Soldier
+    TriggerExecute
+        变量: gg_trg_ChooseHero
+    DisableTrigger
+        函数: GetTriggeringTrigger

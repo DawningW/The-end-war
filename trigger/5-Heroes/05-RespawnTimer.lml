@@ -1,0 +1,137 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorNotEqualENE
+        常量: true
+    AndMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+动作
+    YDWESetAnyTypeLocalVariable
+        预设: typename02_real
+        常量: time
+        函数: OperatorRealAdd
+            函数: OperatorRealMultiply
+                函数: OperatorRealSubtract
+                    函数: I2R
+                        函数: GetHeroLevel
+                            函数: GetTriggerUnit
+                    常量: 1.00
+                常量: 1.20
+            常量: 8.00
+    YDWESetAnyTypeLocalVariable
+        预设: typename05_timer
+        常量: t
+        函数: CreateTimer
+    CreateTimerDialogBJ
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: t
+        函数: OperatorString
+            函数: GetUnitName
+                函数: GetTriggerUnit
+            常量: 复活中。。。
+    YDWESaveAnyTypeDataByUserData
+        预设: typename07_unit
+        函数: GetTriggerUnit
+        常量: 复活计时器
+        预设: typename05_timer
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: t
+    YDWESaveAnyTypeDataByUserData
+        预设: typename07_unit
+        函数: GetTriggerUnit
+        常量: 复活计时器窗口
+        预设: typename25_timerdialog
+        函数: GetLastCreatedTimerDialogBJ
+    YDWETimerStartMultiple
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: t
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: time
+        预设: PeriodicOptionOneTime
+        动作
+            YDWESetAnyTypeLocalVariable
+                预设: typename07_unit
+                常量: hero
+                函数: GetTriggerUnit
+            YDWESetAnyTypeLocalVariable
+                预设: typename25_timerdialog
+                常量: w
+                函数: GetLastCreatedTimerDialogBJ
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: YDWEGetAnyTypeLocalVariable
+                                常量: hero
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct______________2
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct______________7
+            ReviveHeroLoc
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: hero
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: p
+                预设: ShowHideShow
+            PanCameraToTimedLocForPlayer
+                函数: GetOwningPlayer
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: hero
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: p
+                常量: 1.00
+            RemoveLocation
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: p
+            SelectUnitForPlayerSingle
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: hero
+                函数: GetOwningPlayer
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: hero
+            DestroyTimerDialogBJ
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: w
+            YDWETimerStartFlush

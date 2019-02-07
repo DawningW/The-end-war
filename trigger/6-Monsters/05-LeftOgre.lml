@@ -1,0 +1,50 @@
+事件
+    TriggerRegisterPlayerUnitEventSimple
+        预设: PlayerNA
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitInGroup
+            函数: GetDyingUnit
+            数组: Monsters
+                常量: 2
+        预设: OperatorEqualENE
+        常量: true
+动作
+    GroupRemoveUnitSimple
+        函数: GetDyingUnit
+        数组: Monsters
+            常量: 2
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitGroupEmptyBJ
+                    数组: Monsters
+                        常量: 2
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            TriggerSleepAction
+                常量: 90.00
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nogl
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________154
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 2
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nogr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________154
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 2
+        动作
+            DoNothing

@@ -1,4 +1,5 @@
 [CustomSkin]
+IdlePeon=ReplaceableTextures\CommandButtons\BTNCOP.blp
 SupplyIcon=ReplaceableTextures\CommandButtons\BTNReplay-Loop.blp
 [FrameDef]
 CHEATDISABLED=不作弊才是乖宝宝！！！
@@ -6,10 +7,21 @@ CHEATENABLED=切，只会作弊的SB，我瞧不起你呦！！！
 COLON_FOOD=时间：
 COLON_FOOD_TOTAL=秒：
 COLON_FOOD_USED=分：
+COLON_GOLD_INCOME_RATE=无用信息：
 COLON_UPKEEP=末日战争_By_WC
+IDLE_PEON=尚未选择英雄 (|Cfffed312F8|R)
+IDLE_PEON_DESC=您还没有选择英雄。请到酒馆选择您的英雄以便开始游戏。
+KEY_QUESTS=消息 (|Cfffed312F9|R)
+QUESTDESCRIPTION=信息描述
+QUESTS=消息
+QUESTSTATUSLABEL=信息状态：
+RESOURCE_UBERTIP_GOLD=黄金是击败敌人得到的。
+RESOURCE_UBERTIP_LUMBER=木材也是击败敌人得到的。
+RESOURCE_UBERTIP_UPKEEP=感谢您游玩由QingChenW制作的魔兽争霸三地图：末日战争
 RESOURCE_UBERTIP_UPKEEP_INFO=|N%d-%d游戏时间：%s|R
 RESOURCE_UBERTIP_UPKEEP_INFO_WOOD=|N%d-%d 游戏时间：%s|R
 REVIVE_AT_ALTAR=等待复活或在守卫处复活
 UPKEEP_HIGH=末日战争_By_WC
 UPKEEP_LOW=末日战争_By_WC
 UPKEEP_NONE=末日战争_By_WC
+UPPER_BUTTON_QUEST_TIP=消息对话框 (|Cfffed312F9|R)

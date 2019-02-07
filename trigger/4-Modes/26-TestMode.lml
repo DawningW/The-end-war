@@ -1,0 +1,31 @@
+事件
+    TriggerRegisterDialogEventBJ
+        变量: Dialog
+条件
+    OperatorCompareButton
+        函数: GetClickedButtonBJ
+        预设: OperatorEqualENE
+        数组: Buttons
+            常量: 4
+动作
+    PauseGameOff
+    SetVariable
+        变量: GameMode
+        常量: 5
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: |Cff00ff00已选择测试模式！|r
+    TriggerExecute
+        变量: gg_trg_test_init
+    TriggerExecute
+        变量: gg_trg_mm_Soldier
+    EnableTrigger
+        变量: gg_trg_mm_Upgrade
+    EnableTrigger
+        变量: gg_trg_mm_LightWin
+    EnableTrigger
+        变量: gg_trg_mm_DarkWin
+    TriggerExecute
+        变量: gg_trg_ChooseHero
+    DisableTrigger
+        函数: GetTriggeringTrigger

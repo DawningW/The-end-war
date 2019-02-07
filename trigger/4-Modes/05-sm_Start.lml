@@ -1,0 +1,45 @@
+事件
+条件
+动作
+    SetUnitInvulnerable
+        变量: gg_unit_ndmg_0018
+        预设: InvulnerabilityInvulnerable
+    SetUnitInvulnerable
+        变量: gg_unit_usep_0038
+        预设: InvulnerabilityInvulnerable
+    SetUnitInvulnerable
+        变量: gg_unit_usep_0039
+        预设: InvulnerabilityInvulnerable
+    RemoveUnit
+        变量: gg_unit_ndgt_0069
+    RemoveUnit
+        变量: gg_unit_ndgt_0062
+    StartTimerBJ
+        函数: CreateTimer
+        预设: PeriodicOptionOneTime
+        常量: 100.00
+    YDWESetAnyTypeLocalVariable
+        预设: typename05_timer
+        常量: t0
+        函数: GetLastCreatedTimerBJ
+    CreateTimerDialogBJ
+        函数: GetLastCreatedTimerBJ
+        常量: 倒计时......
+    YDWESetAnyTypeLocalVariable
+        预设: typename25_timerdialog
+        常量: w0
+        函数: GetLastCreatedTimerDialogBJ
+    TimerDialogDisplay
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: w0
+        预设: ShowHideShow
+    TriggerSleepAction
+        常量: 100.00
+    DestroyTimer
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: t0
+    DestroyTimerDialogBJ
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: w0
+    TriggerExecute
+        变量: gg_trg_sm_Timer

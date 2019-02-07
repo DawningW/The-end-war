@@ -1,0 +1,181 @@
+事件
+    TriggerRegisterPlayerUnitEventSimple
+        预设: PlayerNA
+        预设: PlayerUnitEventDeath
+条件
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitInGroup
+                    函数: GetDyingUnit
+                    数组: Monsters
+                        常量: 12
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            GroupRemoveUnitSimple
+                函数: GetDyingUnit
+                数组: Monsters
+                    常量: 12
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitGroupEmptyBJ
+                            数组: Monsters
+                                常量: 12
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    TriggerSleepAction
+                        常量: 8.00
+                    GroupAddGroup
+                        函数: ' CreateNUnitsAtLoc'
+                            常量: 9
+                            常量: ngno
+                            预设: PlayerNA
+                            函数: GetRectCenter
+                                变量: gg_rct_____________1_111
+                            预设: RealUnitFacing
+                        数组: Monsters
+                            常量: 12
+                    ReturnAction
+                动作
+                    DoNothing
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitInGroup
+                    函数: GetDyingUnit
+                    数组: Monsters
+                        常量: 13
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            GroupRemoveUnitSimple
+                函数: GetDyingUnit
+                数组: Monsters
+                    常量: 13
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitGroupEmptyBJ
+                            数组: Monsters
+                                常量: 13
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    TriggerSleepAction
+                        常量: 8.00
+                    GroupAddGroup
+                        函数: ' CreateNUnitsAtLoc'
+                            常量: 9
+                            常量: ngno
+                            预设: PlayerNA
+                            函数: GetRectCenter
+                                变量: gg_rct_____________2_112
+                            预设: RealUnitFacing
+                        数组: Monsters
+                            常量: 13
+                    ReturnAction
+                动作
+                    DoNothing
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitInGroup
+                    函数: GetDyingUnit
+                    数组: Monsters
+                        常量: 14
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            GroupRemoveUnitSimple
+                函数: GetDyingUnit
+                数组: Monsters
+                    常量: 14
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitGroupEmptyBJ
+                            数组: Monsters
+                                常量: 14
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    TriggerSleepAction
+                        常量: 8.00
+                    GroupAddGroup
+                        函数: ' CreateNUnitsAtLoc'
+                            常量: 9
+                            常量: nftr
+                            预设: PlayerNA
+                            函数: GetRectCenter
+                                变量: gg_rct_____________3_113
+                            预设: RealUnitFacing
+                        数组: Monsters
+                            常量: 14
+                    ReturnAction
+                动作
+                    DoNothing
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitInGroup
+                    函数: GetDyingUnit
+                    数组: Monsters
+                        常量: 15
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            GroupRemoveUnitSimple
+                函数: GetDyingUnit
+                数组: Monsters
+                    常量: 15
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitType
+                            函数: GetKillingUnitBJ
+                            预设: UnitTypeHero
+                        预设: OperatorEqualENE
+                        常量: true
+                    OperatorCompareInteger
+                        函数: GetHeroLevel
+                            函数: GetKillingUnitBJ
+                        预设: OperatorLess
+                        常量: 80
+                动作
+                    AddHeroXPSwapped
+                        常量: 500
+                        函数: GetKillingUnitBJ
+                        预设: ShowHideHide
+                动作
+                    CreateItemLoc
+                        常量: texp
+                        函数: GetUnitLoc
+                            函数: GetTriggerUnit
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitGroupEmptyBJ
+                            数组: Monsters
+                                常量: 15
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    TriggerSleepAction
+                        常量: 8.00
+                    GroupAddGroup
+                        函数: ' CreateNUnitsAtLoc'
+                            常量: 9
+                            常量: nkob
+                            预设: PlayerNA
+                            函数: GetRectCenter
+                                变量: gg_rct_____________4_114
+                            预设: RealUnitFacing
+                        数组: Monsters
+                            常量: 15
+                    ReturnAction
+                动作
+                    DoNothing

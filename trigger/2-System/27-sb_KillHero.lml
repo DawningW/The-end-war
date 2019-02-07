@@ -1,0 +1,65 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+    OrMultiple
+        条件
+            OperatorComparePlayerControl
+                函数: GetPlayerController
+                    函数: GetOwningPlayer
+                        函数: GetKillingUnitBJ
+                预设: OperatorEqualENE
+                预设: MapControlUser
+            OperatorComparePlayerControl
+                函数: GetPlayerController
+                    函数: GetOwningPlayer
+                        函数: GetKillingUnitBJ
+                预设: OperatorEqualENE
+                预设: MapControlComputer
+    OperatorCompareUnit
+        函数: GetKillingUnitBJ
+        预设: OperatorEqualENE
+        数组: Heros
+            函数: GetPlayerId
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+动作
+    YDWESetAnyTypeLocalVariable
+        预设: typename01_integer
+        常量: count
+        函数: OperatorIntegerAdd
+            函数: YDWEGetIntegerByInteger
+                常量: 3
+                函数: YDWEGetPlayerID
+                    函数: GetOwningPlayer
+                        函数: GetKillingUnitBJ
+            常量: 1
+    YDWESaveIntegerByInteger
+        常量: 3
+        函数: YDWEGetPlayerID
+            函数: GetOwningPlayer
+                函数: GetKillingUnitBJ
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: count
+    MultiboardSetItemValueBJ
+        变量: Scoreboard
+        常量: 5
+        函数: YDWEGetIntegerByInteger
+            常量: 1
+            函数: YDWEGetPlayerID
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+        函数: I2S
+            函数: YDWEGetAnyTypeLocalVariable
+                常量: count

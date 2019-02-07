@@ -1,0 +1,21 @@
+事件
+条件
+动作
+    ForGroupMultiple
+        函数: GetUnitsOfPlayerMatching
+            函数: YDWEGetAnyTypeLocalVariable
+                常量: player
+            条件: OperatorCompareBoolean
+                函数: IsUnitType
+                    函数: GetFilterUnit
+                    预设: UnitTypeHero
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            KillUnit
+                函数: GetEnumUnit
+    DisplayTextToPlayer
+        函数: GetTriggerPlayer
+        常量: 0
+        常量: 0
+        常量: 自杀成功

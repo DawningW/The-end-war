@@ -1,7 +1,28 @@
-heros: unit
+Heros: unit
     数组: 12
     默认: UnitNull
-cameras: boolean
+Cameras: boolean
     数组: 12
     默认: false
-multiboard: multiboard
+Scoreboard: multiboard
+KillCount: integer
+    数组: 12
+    默认: 0
+KillTimer: integer
+    数组: 12
+    默认: 0
+KillStage: integer
+    数组: 12
+    默认: 0
+GameMode: integer
+    默认: 0
+Dialog: dialog
+Buttons: button
+    数组: 5
+SoldierTimer: timer
+HeroPool: unitpool
+    数组: 2
+Robots: force
+Players: force
+Monsters: group
+    数组: 16

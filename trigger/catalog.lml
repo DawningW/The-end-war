@@ -1,157 +1,175 @@
-注释: 01-注释
+1-注释: 注释
     注释
-    Bug: 1-Bug
+    1-Bug: Bug
         注释
-    更新说明: 2-更新说明
+    2-更新说明: 更新说明
         注释
-    剧情备份: 3-剧情备份
+2-System: System
+    '01-Init map': 'Init map'
         注释
-游戏: 02-游戏
-    初始化: 1-初始化
+    02-Init: Init
         运行
-    Lua脚本: 2-Lua脚本
-系统: 03-系统
-    '时间 01': '01-时间 01'
-    '任务 02': '02-任务 02'
-    '计分板 10': '03-计分板 10'
-    '等级 11': '04-等级 11'
-    '杀人数 12': '05-杀人数 12'
-    '死亡数 13': '06-死亡数 13'
-    '补兵数 14': '07-补兵数 14'
-    '公告 20': '08-公告 20'
-    '击杀 21': '09-击杀 21'
-        禁用
-    '一血 22': '10-一血 22'
-    '推塔 23': '11-推塔 23'
-        禁用
-    '一塔 24': '12-一塔 24'
-    '连杀判断 25': '13-连杀判断 25'
-    '连杀计时 26': '14-连杀计时 26'
-    '显伤 31': '15-显伤 31'
+    '03-Basic functions': 'Basic functions'
+        注释
+    04-Tasks: Tasks
+    05-Timer: Timer
+    06-ShowDamage: ShowDamage
+    07-AttackLimit: AttackLimit
+    08-AttackLimit2: AttackLimit2
+    09-AttackLimit3: AttackLimit3
+    10-CameraLock: CameraLock
+    11-SpaceToHero: SpaceToHero
+    12-Boardcast: Boardcast
+        注释
+    13-Broadcast: Broadcast
+    14-bc_KillHero: bc_KillHero
+    15-bc_FirstBlood: bc_FirstBlood
+    16-bc_KillTower: bc_KillTower
+    17-bc_FirstTower: bc_FirstTower
+    18-bc_MultiKill: bc_MultiKill
+    19-bc_MultiKillTimer: bc_MultiKillTimer
+    20-bc_ShutDown: bc_ShutDown
+    22-Scoreboard: Scoreboard
+        注释
+    22-Scoreboard: Scoreboard
+    23-ShowScoreboard: ShowScoreboard
+    24-HideScoreboard: HideScoreboard
+    25-sb_LevelUp: sb_LevelUp
+    26-sb_SoldierDeath: sb_SoldierDeath
+    27-sb_KillHero: sb_KillHero
+    28-sb_HeroDeath: sb_HeroDeath
+    29-Commands: Commands
+        注释
+    30-CommandHandler: CommandHandler
+    31-cmd_Back: cmd_Back
+    32-cmd_Level: cmd_Level
+    33-cmd_Kill: cmd_Kill
+    34-cmd_AI: cmd_AI
+    35-AntiCheat: AntiCheat
+    36-Test: Test
+        注释
+    37-LuaInit: LuaInit
+    38-console.lua: console.lua
+    39-smart.lua: smart.lua
+3-Film: Film
+    1-Films: Films
+        注释
+    2-OpenFilm: OpenFilm
+    3-RunFilm: RunFilm
+    4-CloseFilm: CloseFilm
+4-Modes: Modes
+    '01-Choose mode': 'Choose mode'
+        注释
+    02-ChooseMode: ChooseMode
+    '03-Story mode': 'Story mode'
+        注释
+    04-StoryMode: StoryMode
+    05-sm_Start: sm_Start
+    06-sm_Timer: sm_Timer
+    07-sm_Wait: sm_Wait
+    08-sm_Soldier: sm_Soldier
+    09-sm_Upgrade: sm_Upgrade
         关闭
-    '限制攻击 32': '16-限制攻击 32'
-        禁用
-    '命令 60': '17-命令 60'
-    '作弊命令 70': '18-作弊命令 70'
-    '镜头锁定 81': '19-镜头锁定 81'
-    '显泄 89': '20-显泄 89'
-        禁用
-电影: 04-电影
-    '开启电影 7': '1-开启电影 7'
-    '运行电影 8': '2-运行电影 8'
-    '关闭电影 9': '3-关闭电影 9'
-模式: 05-模式
-    '选择模式 100': '01-选择模式 100'
-    '开启剧情模式 01': '02-开启剧情模式 01'
-    '开启对抗模式 01.': '03-开启对抗模式 01.'
-    '开启限时模式 01..': '04-开启限时模式 01..'
-    '开启守城模式 01...': '05-开启守城模式 01...'
-    '开启测试模式 01....': '06-开启测试模式 01....'
-    '剧情模式开始 02': '07-剧情模式开始 02'
-    '剧情模式等待 03': '08-剧情模式等待 03'
-    '剧情模式计时 04': '09-剧情模式计时 04'
-    '剧情模式出兵 05': '10-剧情模式出兵 05'
-    '对抗模式出兵 06': '11-对抗模式出兵 06'
-    '限时模式出兵 07': '12-限时模式出兵 07'
+    10-sm_LightWin: sm_LightWin
         关闭
-    '限时模式出兵 08': '13-限时模式出兵 08'
+    11-sm_DarkWin: sm_DarkWin
         关闭
-    '守城模式出兵 010': '14-守城模式出兵 010'
+    '12-Moba mode': 'Moba mode'
+        注释
+    13-MobaMode: MobaMode
+    14-mm_Soldier: mm_Soldier
+    15-mm_Upgrade: mm_Upgrade
         关闭
-    '守城模式出兵 011': '15-守城模式出兵 011'
+    16-mm_LightWin: mm_LightWin
         关闭
-    '测试模式设置 013': '16-测试模式设置 013'
-    '测试模式出兵 014': '17-测试模式出兵 014'
-    '剧情光明胜利 015': '18-剧情光明胜利 015'
+    17-mm_DarkWin: mm_DarkWin
         关闭
-    '剧情黑暗胜利 016': '19-剧情黑暗胜利 016'
+    '18-Time mode': 'Time mode'
+        注释
+    19-TimeMode: TimeMode
+    20-tm_Timer: tm_Timer
         关闭
-    '对抗光明胜利 017': '20-对抗光明胜利 017'
+    21-tm_Soldier: tm_Soldier
         关闭
-    '对抗黑暗胜利 018': '21-对抗黑暗胜利 018'
+    '22-Defense mode': 'Defense mode'
+        注释
+    23-DefenseMode: DefenseMode
+    24-dm_Soldier: dm_Soldier
         关闭
-    '剧情科技升级 021': '22-剧情科技升级 021'
-        关闭
-    '对抗科技升级 022': '23-对抗科技升级 022'
-        关闭
-    '防作弊 029': '24-防作弊 029'
-刷怪: 06-刷怪
-    '回城 400': '01-回城 400'
-    '刷怪初始化 401': '02-刷怪初始化 401'
-    '刷大龙 30.': '03-刷大龙 30.'
-        禁用
-    '左蓝爸爸 31': '04-左蓝爸爸 31'
-    '右蓝爸爸 0032': '05-右蓝爸爸 0032'
-    '左红爸爸 0033': '06-左红爸爸 0033'
-    '右红爸爸 34': '07-右红爸爸 34'
-    '左食人魔 35': '08-左食人魔 35'
-    '右食人魔 36': '09-右食人魔 36'
-    '左刷怪 51': '10-左刷怪 51'
-    '右刷怪 52': '11-右刷怪 52'
-    '四圣兽副本 500': '12-四圣兽副本 500'
-    '娜伽 53': '13-娜伽 53'
-    '野人 54': '14-野人 54'
-    '作者试练 0002': '15-作者试练 0002'
-    '作者试练 0003': '16-作者试练 0003'
-    '试练返回 0004': '17-试练返回 0004'
-        禁用
-    '试练返回 0005': '18-试练返回 0005'
-        禁用
-    '命运之屋 0006': '19-命运之屋 0006'
-    '命运之屋 0007': '20-命运之屋 0007'
-    '命运之屋 0008': '21-命运之屋 0008'
-    '进入娜伽 0009': '22-进入娜伽 0009'
-    '娜伽返回 0010': '23-娜伽返回 0010'
-    '进入野人 0011': '24-进入野人 0011'
-    '野人返回 0012': '25-野人返回 0012'
-    '进入四圣兽 0013': '26-进入四圣兽 0013'
-    '四圣兽返回 0014': '27-四圣兽返回 0014'
-    '进入刷怪区 0015': '28-进入刷怪区 0015'
-    '刷怪区返回 0016': '29-刷怪区返回 0016'
-副本: 07-副本
-物品: 08-物品
-    '合成 600': '1-合成 600'
-    '限制物品 1001': '2-限制物品 1001'
-        禁用
-    '泉水限制 1002': '3-泉水限制 1002'
-        禁用
-    '回城卷轴 1003': '4-回城卷轴 1003'
-    '泉水 1004': '5-泉水 1004'
-    '泉水 1005': '6-泉水 1005'
-    '喝泉水 1006': '7-喝泉水 1006'
-技能: 09-技能
-    '属性 700': '1-属性 700'
-AI: 10-AI
-    '光明选人 300': '01-光明选人 300'
-    '光明选人 0502': '02-光明选人 0502'
-        关闭
-    '黑暗选人 0503': '03-黑暗选人 0503'
-        禁用
-    '黑暗选人 0504': '04-黑暗选人 0504'
-        关闭
-    '选人结束 0505': '05-选人结束 0505'
-    '空格转向英雄 0600': '06-空格转向英雄 0600'
-    'Set Skill 0507': '07-Set Skill 0507'
+    '25-Test mode': 'Test mode'
+        注释
+    26-TestMode: TestMode
+    27-test_init: test_init
+5-Heroes: Heroes
+    '01-Choose hero': 'Choose hero'
+        注释
+    02-ChooseHero: ChooseHero
+    03-HeroEnter: HeroEnter
+    '04-Hero behaviours': 'Hero behaviours'
+        注释
+    05-RespawnTimer: RespawnTimer
+    06-BuyLife: BuyLife
+    07-AI: AI
+        注释
+    08-ai_Init: ai_Init
+    09-ai_BindSkill: ai_BindSkill
         运行
-    'Learn Up 0508': '08-Learn Up 0508'
-    'AI开关 0510': '09-AI开关 0510'
-    '光明出发AI 0511': '10-光明出发AI 0511'
+    10-ai_LevelUp: ai_LevelUp
         关闭
-    '光明移动AI 0512': '11-光明移动AI 0512'
+    11-ai_Go: ai_Go
         关闭
-    '光明购买AI 0513': '12-光明购买AI 0513'
+    12-ai_Move: ai_Move
         关闭
-    '黑暗出发AI 0521': '13-黑暗出发AI 0521'
+    13-ai_Back: ai_Back
         关闭
-    '黑暗移动AI 0522': '14-黑暗移动AI 0522'
+    14-ai_Buy: ai_Buy
         关闭
-    '黑暗购买AI 0523': '15-黑暗购买AI 0523'
+    15-ai_UnderAttack: ai_UnderAttack
         关闭
-    '被攻击判断 0531': '16-被攻击判断 0531'
+    16-ai_StartSpell: ai_StartSpell
         关闭
-    '施法判断 0532': '17-施法判断 0532'
+    17-ai_StopSpell: ai_StopSpell
         关闭
-    '施法完成 0533': '18-施法完成 0533'
-        关闭
-    '复活 001': '19-复活 001'
-    '买活 002': '20-买活 002'
+6-Monsters: Monsters
+    01-LeftBlue: LeftBlue
+    02-RightBlue: RightBlue
+    03-LeftRed: LeftRed
+    04-RightRed: RightRed
+    05-LeftOgre: LeftOgre
+    06-RightOgre: RightOgre
+    07-LeftDragon: LeftDragon
+    08-RightDragon: RightDragon
+    09-BigDragon: BigDragon
+    10-LeftMonsters: LeftMonsters
+    11-RightMonsters: RightMonsters
+    12-EnterMonsterArea: EnterMonsterArea
+    13-ReturnMonsterArea: ReturnMonsterArea
+7-Campaigns: Campaigns
+    01-TreasureChest: TreasureChest
+        禁用
+    02-tc_GoLight: tc_GoLight
+    03-tc_GoDark: tc_GoDark
+    04-tc_BackLight: tc_BackLight
+    05-tc_BackDark: tc_BackDark
+    06-DestinyHouse: DestinyHouse
+    07-dh_GoLight: dh_GoLight
+    08-dh_GoDark: dh_GoDark
+    09-Naga: Naga
+    10-ng_Go: ng_Go
+    11-ng_Back: ng_Back
+    12-Savage: Savage
+    13-sg_Go: sg_Go
+    14-sg_Back: sg_Back
+    15-MythicalBeasts: MythicalBeasts
+    16-mb_Go: mb_Go
+    17-mb_Back: mb_Back
+8-Items: Items
+    1-Craft: Craft
+    2-RPGItems: RPGItems
+    3-OnlyOneBottle: OnlyOneBottle
+    4-TownPortalScroll: TownPortalScroll
+    5-BottleLight: BottleLight
+    6-BottleDark: BottleDark
+    7-DrinkBottle: DrinkBottle
+9-Skills: Skills
+    1-HeroAttributes: HeroAttributes

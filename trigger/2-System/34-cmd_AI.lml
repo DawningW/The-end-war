@@ -1,0 +1,87 @@
+事件
+条件
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareString
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: args
+                预设: OperatorEqualENE
+                常量: on
+        动作
+            ForceAddPlayerSimple
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: player
+                变量: Robots
+            DisplayTextToPlayer
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: player
+                常量: 0
+                常量: 0
+                常量: 托管已启动
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareString
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: args
+                        预设: OperatorEqualENE
+                        常量: off
+                动作
+                    ForceRemovePlayerSimple
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: player
+                        变量: Robots
+                    DisplayTextToPlayer
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: player
+                        常量: 0
+                        常量: 0
+                        常量: 托管已关闭
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareString
+                                函数: YDWEGetAnyTypeLocalVariable
+                                    常量: args
+                                预设: OperatorEqualENE
+                                常量: all
+                        动作
+                            IfThenElseMultiple
+                                条件
+                                    OperatorCompareBoolean
+                                        函数: IsPlayerInForce
+                                            预设: Player04
+                                            变量: Robots
+                                        预设: OperatorEqualENE
+                                        常量: false
+                                动作
+                                    ForceAddPlayerSimple
+                                        预设: Player04
+                                        变量: Robots
+                                    ForceAddPlayerSimple
+                                        预设: Player10
+                                        变量: Robots
+                                    DisplayTextToPlayer
+                                        函数: GetTriggerPlayer
+                                        常量: 0
+                                        常量: 0
+                                        常量: '玩家 5 和 11 的AI已开启!'
+                                动作
+                                    ForceRemovePlayerSimple
+                                        预设: Player04
+                                        变量: Robots
+                                    ForceRemovePlayerSimple
+                                        预设: Player10
+                                        变量: Robots
+                                    DisplayTextToPlayer
+                                        函数: GetTriggerPlayer
+                                        常量: 0
+                                        常量: 0
+                                        常量: '玩家 5 和 11 的AI已关闭!'
+                        动作
+                            DisplayTextToPlayer
+                                函数: GetTriggerPlayer
+                                常量: 0
+                                常量: 0
+                                常量: '格式错误，正确的用法-ai on/off/all'

@@ -1,0 +1,38 @@
+事件
+    TriggerRegisterPlayerKeyEventBJ
+        预设: PlayerALL
+        预设: KeyEventTypeDepress
+        预设: KeyEventKeyUp
+条件
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                数组: Cameras
+                    函数: GetPlayerId
+                        函数: GetTriggerPlayer
+                预设: OperatorEqualENE
+                常量: false
+        动作
+            SetCameraTargetControllerNoZForPlayer
+                函数: GetTriggerPlayer
+                数组: Heros
+                    函数: GetPlayerId
+                        函数: GetTriggerPlayer
+                常量: 0
+                常量: 0
+                预设: CameraOrientationNormal
+            SetVariable
+                数组: Cameras
+                    函数: GetPlayerId
+                        函数: GetTriggerPlayer
+                常量: true
+        动作
+            ResetToGameCameraForPlayer
+                函数: GetTriggerPlayer
+                常量: 0.00
+            SetVariable
+                数组: Cameras
+                    函数: GetPlayerId
+                        函数: GetTriggerPlayer
+                常量: false

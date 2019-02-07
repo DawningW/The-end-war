@@ -1,0 +1,14 @@
+事件
+    TriggerRegisterTimerEventPeriodic
+        常量: 180.00
+条件
+动作
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: '|c00FEBA0E
+-------------------------------
+欢迎游玩魔兽争霸三地图末日战争测试版1.8.0
+本地图由曙光工艺工作室QingChenW制作
+感谢您的支持
+-------------------------------
+|r'

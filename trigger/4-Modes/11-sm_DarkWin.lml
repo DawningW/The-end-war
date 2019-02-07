@@ -1,0 +1,30 @@
+事件
+    TriggerRegisterUnitEvent
+        变量: gg_unit_nico_0262
+        预设: UnitEventDeath
+条件
+动作
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: '黑暗势力胜利，他们成功控制了地球核心，准备毁灭地球。
+10秒后结束游戏。'
+    TriggerSleepAction
+        常量: 3.00
+    PauseGameOn
+    TriggerSleepAction
+        常量: 10.00
+    ForForceMultiple
+        函数: GetPlayersAllies
+            预设: Player05
+        动作
+            CustomDefeatBJ
+                函数: GetEnumPlayer
+                常量: 失败!
+    ForForceMultiple
+        函数: GetPlayersAllies
+            预设: Player11
+        动作
+            CustomVictoryBJ
+                函数: GetEnumPlayer
+                预设: UseSkipOptionUse
+                预设: UseSkipOptionUse

@@ -1,0 +1,26 @@
+事件
+    TriggerRegisterTimerEventPeriodic
+        常量: 0.05
+条件
+动作
+    ForForceMultiple
+        函数: GetPlayersByMapControl
+            预设: MapControlUser
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareUnit
+                        数组: Heros
+                            函数: GetPlayerId
+                                函数: GetEnumPlayer
+                        预设: OperatorNotEqualENE
+                        预设: UnitNull
+                动作
+                    SetCameraQuickPositionLocForPlayer
+                        函数: GetEnumPlayer
+                        函数: GetUnitLoc
+                            数组: Heros
+                                函数: GetPlayerId
+                                    函数: GetTriggerPlayer
+                动作
+                    DoNothing

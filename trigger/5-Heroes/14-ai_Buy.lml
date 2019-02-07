@@ -1,0 +1,80 @@
+事件
+    TriggerRegisterEnterRectSimple
+        变量: gg_rct______________2
+    TriggerRegisterEnterRectSimple
+        变量: gg_rct______________7
+条件
+    OperatorCompareBoolean
+        函数: IsPlayerInForce
+            函数: GetOwningPlayer
+                函数: GetTriggerUnit
+            变量: Robots
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsPlayerAlly
+                    函数: GetOwningPlayer
+                        函数: GetTriggerUnit
+                    预设: Player05
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitInRange
+                            函数: GetTriggerUnit
+                            变量: gg_unit_ngme_0059
+                            常量: 400.00
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareBoolean
+                                函数: UnitHasItemOfTypeBJ
+                                    函数: GetTriggerUnit
+                                    常量: I000
+                                预设: OperatorEqualENE
+                                常量: false
+                        动作
+                            UnitAddItemByIdSwapped
+                                常量: I000
+                                函数: GetTriggerUnit
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitInRange
+                            函数: GetTriggerUnit
+                            变量: gg_unit_ngme_0061
+                            常量: 400.00
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareBoolean
+                                函数: UnitHasItemOfTypeBJ
+                                    函数: GetTriggerUnit
+                                    常量: I000
+                                预设: OperatorEqualENE
+                                常量: false
+                        动作
+                            UnitAddItemByIdSwapped
+                                常量: I000
+                                函数: GetTriggerUnit

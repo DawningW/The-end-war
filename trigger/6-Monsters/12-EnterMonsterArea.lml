@@ -1,0 +1,187 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventHeroPickUpItem
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeHero
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareBoolean
+        函数: IsUnitIllusionBJ
+            函数: GetTriggerUnit
+        预设: OperatorEqualENE
+        常量: false
+    OrMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00N
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00M
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00O
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00P
+动作
+    IfThenElseMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00N
+        动作
+            DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                常量: 0
+                常量: 0
+                常量: 已进入金币刷怪场1,祝您好运!
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct_____________1_111
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct_____________1_161
+    IfThenElseMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00M
+        动作
+            DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                常量: 0
+                常量: 0
+                常量: 已进入金币刷怪场2,祝您好运!
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct_____________2_112
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct_____________2_162
+    IfThenElseMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00O
+        动作
+            DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                常量: 0
+                常量: 0
+                常量: 已进入木材刷怪场1,祝您好运!
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct_____________3_113
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct_____________3_163
+    IfThenElseMultiple
+        条件
+            OperatorCompareItemCode
+                函数: GetItemTypeId
+                    函数: GetManipulatedItem
+                预设: OperatorEqualENE
+                常量: I00P
+        动作
+            DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                常量: 0
+                常量: 0
+                常量: 已进入经验刷怪场1,祝您好运!
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsUnitAlly
+                            函数: GetTriggerUnit
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct_____________4_114
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename14_location
+                        常量: p
+                        函数: GetRectCenter
+                            变量: gg_rct_____________4_164
+    SetUnitPositionLoc
+        函数: GetTriggerUnit
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p
+    PanCameraToTimedLocForPlayer
+        函数: GetOwningPlayer
+            函数: GetTriggerUnit
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p
+        常量: 1.00
+    RemoveLocation
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p

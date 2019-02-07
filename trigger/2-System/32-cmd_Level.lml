@@ -1,0 +1,53 @@
+事件
+条件
+动作
+    YDWESetAnyTypeLocalVariable
+        预设: typename01_integer
+        常量: lv
+        函数: S2I
+            函数: YDWEGetAnyTypeLocalVariable
+                常量: args
+    IfThenElseMultiple
+        条件
+            OperatorCompareInteger
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: lv
+                预设: OperatorGreater
+                常量: 0
+            OperatorCompareInteger
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: lv
+                预设: OperatorLessEq
+                常量: 80
+        动作
+            ForGroupMultiple
+                函数: GetUnitsOfPlayerMatching
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: player
+                    条件: OperatorCompareBoolean
+                        函数: IsUnitType
+                            函数: GetFilterUnit
+                            预设: UnitTypeHero
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    SetHeroLevel
+                        函数: GetEnumUnit
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: lv
+                        预设: ShowHideShow
+            DisplayTextToPlayer
+                函数: GetTriggerPlayer
+                常量: 0
+                常量: 0
+                函数: OperatorString
+                    常量: 等级已设置为
+                    函数: I2S
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: lv
+        动作
+            DisplayTextToPlayer
+                函数: GetTriggerPlayer
+                常量: 0
+                常量: 0
+                常量: '参数无效，正确的用法-lv <等级>'

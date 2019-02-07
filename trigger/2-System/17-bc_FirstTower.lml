@@ -1,0 +1,99 @@
+事件
+    TriggerRegisterAnyUnitEventBJ
+        预设: PlayerUnitEventDeath
+条件
+    OperatorCompareBoolean
+        函数: IsUnitType
+            函数: GetTriggerUnit
+            预设: UnitTypeStructure
+        预设: OperatorEqualENE
+        常量: true
+    OperatorCompareUnit
+        函数: GetKillingUnitBJ
+        预设: OperatorNotEqualENE
+        预设: UnitNull
+    AndMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetTriggerUnit
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+    AndMultiple
+        条件
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNA
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNV
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNE
+            OperatorComparePlayer
+                函数: GetOwningPlayer
+                    函数: GetKillingUnitBJ
+                预设: OperatorNotEqualENE
+                预设: PlayerNP
+动作
+    DisplayTextToForce
+        函数: GetPlayersAll
+        函数: OperatorString
+            函数: OperatorString
+                函数: OperatorString
+                    函数: YDWEGetPlayerColorString
+                        函数: GetOwningPlayer
+                            函数: GetKillingUnitBJ
+                        函数: GetPlayerName
+                            函数: GetOwningPlayer
+                                函数: GetKillingUnitBJ
+                    常量: 的
+                函数: GetUnitName
+                    函数: GetKillingUnitBJ
+            常量: 摧毁了第一座塔！
+    AdjustPlayerStateBJ
+        常量: 600
+        函数: GetOwningPlayer
+            函数: GetKillingUnitBJ
+        预设: PlayerStateGold
+    CreateTextTagUnitBJ
+        函数: OperatorString
+            常量: 800
+            常量: G
+        函数: GetKillingUnitBJ
+        常量: 0
+        常量: 24.00
+        常量: 100
+        常量: 100
+        常量: 0.00
+        常量: 0
+    SetTextTagVelocityBJ
+        函数: GetLastCreatedTextTag
+        常量: 180.00
+        常量: 90
+    YDWETimerDestroyTextTag
+        常量: 3.00
+        函数: GetLastCreatedTextTag
+    DisableTrigger
+        函数: GetTriggeringTrigger

@@ -1,0 +1,47 @@
+事件
+    MapInitializationEvent
+条件
+动作
+    DisableTrigger
+        函数: GetTriggeringTrigger
+    CameraSetupApplyForceDuration
+        变量: gg_cam___________001
+        预设: CameraApply
+        常量: 0
+    CinematicModeBJ
+        预设: OnOffOn
+        函数: GetPlayersByMapControl
+            预设: MapControlUser
+    CinematicFadeBJ
+        预设: FadeTypeOptionFadeOut
+        常量: 1.00
+        预设: CineFilterTextureBlack
+        常量: 0
+        常量: 0
+        常量: 0
+        常量: 0.00
+    TransmissionFromUnitWithNameBJ
+        函数: GetPlayersAll
+        预设: UnitNull
+        常量: 作者
+        预设: SoundNull
+        常量: 在3秒内按ESC跳过剧情简介
+        预设: AddSetToAdd
+        常量: 3.00
+        预设: WaitDontWait
+    ResetToGameCamera
+        常量: 0
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsTriggerEnabled
+                    变量: gg_trg_RunFilm
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            DisableTrigger
+                变量: gg_trg_CloseFilm
+            TriggerExecute
+                变量: gg_trg_RunFilm
+        动作
+            DoNothing

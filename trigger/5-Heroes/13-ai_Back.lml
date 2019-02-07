@@ -1,0 +1,164 @@
+事件
+    TriggerRegisterTimerEventPeriodic
+        常量: 2.00
+条件
+动作
+    ForForceMultiple
+        变量: Robots
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareBoolean
+                        函数: IsPlayerAlly
+                            函数: GetEnumPlayer
+                            预设: Player05
+                        预设: OperatorEqualENE
+                        常量: true
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareUnit
+                                数组: Heros
+                                    函数: GetPlayerId
+                                        函数: GetEnumPlayer
+                                预设: OperatorNotEqualENE
+                                预设: UnitNull
+                            OperatorCompareBoolean
+                                函数: RectContainsUnit
+                                    变量: gg_rct______________2
+                                    数组: Heros
+                                        函数: GetPlayerId
+                                            函数: GetEnumPlayer
+                                预设: OperatorEqualENE
+                                常量: false
+                            OperatorCompareReal
+                                函数: GetUnitLifePercent
+                                    数组: Heros
+                                        函数: GetPlayerId
+                                            函数: GetEnumPlayer
+                                预设: OperatorLess
+                                常量: 20.00
+                        动作
+                            IssueImmediateOrder
+                                数组: Heros
+                                    函数: GetPlayerId
+                                        函数: GetEnumPlayer
+                                预设: UnitOrderStop
+                            YDWESaveBooleanByString
+                                常量: spell
+                                函数: I2S
+                                    函数: YDWEGetPlayerID
+                                        函数: GetEnumPlayer
+                                常量: false
+                            SelectUnitForPlayerSingle
+                                数组: Heros
+                                    函数: GetPlayerId
+                                        函数: GetEnumPlayer
+                                函数: GetEnumPlayer
+                            IfThenElseMultiple
+                                条件
+                                    OperatorCompareBoolean
+                                        函数: UnitHasItemOfTypeBJ
+                                            数组: Heros
+                                                函数: GetPlayerId
+                                                    函数: GetEnumPlayer
+                                            常量: I000
+                                        预设: OperatorEqualENE
+                                        常量: true
+                                动作
+                                    IssueImmediateOrderById
+                                        数组: Heros
+                                            函数: GetPlayerId
+                                                函数: GetEnumPlayer
+                                        预设: OrderCodeHoldPosition
+                                    UnitUseItem
+                                        数组: Heros
+                                            函数: GetPlayerId
+                                                函数: GetEnumPlayer
+                                        函数: GetItemOfTypeFromUnitBJ
+                                            数组: Heros
+                                                函数: GetPlayerId
+                                                    函数: GetEnumPlayer
+                                            常量: I000
+                                动作
+                                    IssuePointOrderLoc
+                                        数组: Heros
+                                            函数: GetPlayerId
+                                                函数: GetEnumPlayer
+                                        预设: UnitOrderMove
+                                        函数: GetRectCenter
+                                            变量: gg_rct______________2
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareUnit
+                                数组: Heros
+                                    函数: GetPlayerId
+                                        函数: GetEnumPlayer
+                                预设: OperatorNotEqualENE
+                                预设: UnitNull
+                            OperatorCompareBoolean
+                                函数: RectContainsUnit
+                                    变量: gg_rct______________7
+                                    数组: Heros
+                                        函数: GetPlayerId
+                                            函数: GetEnumPlayer
+                                预设: OperatorEqualENE
+                                常量: false
+                            OperatorCompareReal
+                                函数: GetUnitLifePercent
+                                    数组: Heros
+                                        函数: GetPlayerId
+                                            函数: GetEnumPlayer
+                                预设: OperatorLess
+                                常量: 20.00
+                        动作
+                            IssueImmediateOrder
+                                数组: Heros
+                                    函数: GetPlayerId
+                                        函数: GetEnumPlayer
+                                预设: UnitOrderStop
+                            YDWESaveBooleanByString
+                                常量: spell
+                                函数: I2S
+                                    函数: YDWEGetPlayerID
+                                        函数: GetEnumPlayer
+                                常量: false
+                            SelectUnitForPlayerSingle
+                                数组: Heros
+                                    函数: GetPlayerId
+                                        函数: GetEnumPlayer
+                                函数: GetEnumPlayer
+                            IfThenElseMultiple
+                                条件
+                                    OperatorCompareBoolean
+                                        函数: UnitHasItemOfTypeBJ
+                                            数组: Heros
+                                                函数: GetPlayerId
+                                                    函数: GetEnumPlayer
+                                            常量: I000
+                                        预设: OperatorEqualENE
+                                        常量: true
+                                动作
+                                    IssueImmediateOrderById
+                                        数组: Heros
+                                            函数: GetPlayerId
+                                                函数: GetEnumPlayer
+                                        预设: OrderCodeHoldPosition
+                                    UnitUseItem
+                                        数组: Heros
+                                            函数: GetPlayerId
+                                                函数: GetEnumPlayer
+                                        函数: GetItemOfTypeFromUnitBJ
+                                            数组: Heros
+                                                函数: GetPlayerId
+                                                    函数: GetEnumPlayer
+                                            常量: I000
+                                动作
+                                    IssuePointOrderLoc
+                                        数组: Heros
+                                            函数: GetPlayerId
+                                                函数: GetEnumPlayer
+                                        预设: UnitOrderMove
+                                        函数: GetRectCenter
+                                            变量: gg_rct______________7
