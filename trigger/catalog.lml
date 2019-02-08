@@ -21,7 +21,7 @@
     09-AttackLimit3: AttackLimit3
     10-CameraLock: CameraLock
     11-SpaceToHero: SpaceToHero
-    12-Boardcast: Boardcast
+    12-#Boardcast: #Boardcast
         注释
     13-Broadcast: Broadcast
     14-bc_KillHero: bc_KillHero
@@ -31,7 +31,7 @@
     18-bc_MultiKill: bc_MultiKill
     19-bc_MultiKillTimer: bc_MultiKillTimer
     20-bc_ShutDown: bc_ShutDown
-    22-Scoreboard: Scoreboard
+    21-#Scoreboard: #Scoreboard
         注释
     22-Scoreboard: Scoreboard
     23-ShowScoreboard: ShowScoreboard
@@ -40,19 +40,20 @@
     26-sb_SoldierDeath: sb_SoldierDeath
     27-sb_KillHero: sb_KillHero
     28-sb_HeroDeath: sb_HeroDeath
-    29-Commands: Commands
+    29-#Commands: #Commands
         注释
     30-CommandHandler: CommandHandler
-    31-cmd_Back: cmd_Back
-    32-cmd_Level: cmd_Level
-    33-cmd_Kill: cmd_Kill
-    34-cmd_AI: cmd_AI
-    35-AntiCheat: AntiCheat
-    36-Test: Test
+    31-cmd_Smart: cmd_Smart
+    32-cmd_AI: cmd_AI
+    33-cmd_Back: cmd_Back
+    34-cmd_Level: cmd_Level
+    35-cmd_Kill: cmd_Kill
+    36-AntiCheat: AntiCheat
+    37-#Test: #Test
         注释
-    37-LuaInit: LuaInit
-    38-console.lua: console.lua
-    39-smart.lua: smart.lua
+    38-LuaInit: LuaInit
+    39-console.lua: console.lua
+    40-smart.lua: smart.lua
 3-Film: Film
     1-Films: Films
         注释
@@ -97,7 +98,6 @@
         注释
     23-DefenseMode: DefenseMode
     24-dm_Soldier: dm_Soldier
-        关闭
     '25-Test mode': 'Test mode'
         注释
     26-TestMode: TestMode
@@ -133,19 +133,21 @@
     17-ai_StopSpell: ai_StopSpell
         关闭
 6-Monsters: Monsters
-    01-LeftBlue: LeftBlue
-    02-RightBlue: RightBlue
-    03-LeftRed: LeftRed
-    04-RightRed: RightRed
-    05-LeftOgre: LeftOgre
-    06-RightOgre: RightOgre
-    07-LeftDragon: LeftDragon
-    08-RightDragon: RightDragon
-    09-BigDragon: BigDragon
-    10-LeftMonsters: LeftMonsters
-    11-RightMonsters: RightMonsters
-    12-EnterMonsterArea: EnterMonsterArea
-    13-ReturnMonsterArea: ReturnMonsterArea
+    01-EnterLeft: EnterLeft
+    02-EnterRight: EnterRight
+    03-LeftBlue: LeftBlue
+    04-RightBlue: RightBlue
+    05-LeftRed: LeftRed
+    06-RightRed: RightRed
+    07-LeftOgre: LeftOgre
+    08-RightOgre: RightOgre
+    09-LeftDragon: LeftDragon
+    10-RightDragon: RightDragon
+    11-BigDragon: BigDragon
+    12-LeftMonsters: LeftMonsters
+    13-RightMonsters: RightMonsters
+    14-EnterMonsterArea: EnterMonsterArea
+    15-ReturnMonsterArea: ReturnMonsterArea
 7-Campaigns: Campaigns
     01-TreasureChest: TreasureChest
         禁用

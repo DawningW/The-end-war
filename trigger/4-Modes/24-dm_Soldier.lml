@@ -1,0 +1,23 @@
+事件
+条件
+动作
+    YDWEAttackWaveTimer
+        预设: Player11
+        常量: 1
+        常量: nzom
+        函数: GetUnitLoc
+            变量: gg_unit_usep_0038
+        预设: RealUnitFacing
+        函数: GetUnitLoc
+            变量: gg_unit_nico_0262
+        常量: '2 '
+    YDWEAttackWaveTimer
+        预设: Player11
+        常量: 1
+        常量: nzom
+        函数: GetUnitLoc
+            变量: gg_unit_usep_0039
+        预设: RealUnitFacing
+        函数: GetUnitLoc
+            变量: gg_unit_nico_0262
+        常量: '2 '

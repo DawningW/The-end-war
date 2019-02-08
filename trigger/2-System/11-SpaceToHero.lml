@@ -21,6 +21,6 @@
                         函数: GetUnitLoc
                             数组: Heros
                                 函数: GetPlayerId
-                                    函数: GetTriggerPlayer
+                                    函数: GetEnumPlayer
                 动作
                     DoNothing

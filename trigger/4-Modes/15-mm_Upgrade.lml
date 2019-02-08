@@ -9,11 +9,35 @@
         常量: 1
     DisplayTextToForce
         函数: GetPlayersAll
-        常量: 光明势力科技升级完毕!
+        函数: OperatorString
+            函数: OperatorString
+                函数: YDWEGetPlayerColorString
+                    预设: Player05
+                    函数: GetPlayerName
+                        预设: Player05
+                常量: 科技升级完毕!
+            函数: OperatorString
+                常量: '当前等级:'
+                函数: I2S
+                    函数: GetPlayerTechCountSimple
+                        常量: Resm
+                        预设: Player05
     AddPlayerTechResearched
         预设: Player11
         常量: Rume
         常量: 1
     DisplayTextToForce
         函数: GetPlayersAll
-        常量: 黑暗势力科技升级完毕!
+        函数: OperatorString
+            函数: OperatorString
+                函数: YDWEGetPlayerColorString
+                    预设: Player11
+                    函数: GetPlayerName
+                        预设: Player11
+                常量: 科技升级完毕!
+            函数: OperatorString
+                常量: '当前等级:'
+                函数: I2S
+                    函数: GetPlayerTechCountSimple
+                        常量: Rume
+                        预设: Player11

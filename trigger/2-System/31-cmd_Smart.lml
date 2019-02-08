@@ -1,0 +1,11 @@
+事件
+条件
+动作
+    Cheat
+        常量: 'exec-lua: smart'
+    DisplayTextToPlayer
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: player
+        常量: 0
+        常量: 0
+        常量: 智能施法已启动

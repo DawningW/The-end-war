@@ -1,0 +1,21 @@
+事件
+    TriggerRegisterEnterRectSimple
+        变量: gg_rct______________199
+条件
+    OperatorCompareBoolean
+        函数: IsUnitEnemy
+            函数: GetEnteringUnit
+            预设: Player11
+        预设: OperatorEqualENE
+        常量: true
+动作
+    YDWEJumpTimer
+        函数: GetEnteringUnit
+        函数: OperatorDegreeAdd
+            函数: GetUnitFacing
+                函数: GetEnteringUnit
+            常量: 180.00
+        常量: 360.00
+        常量: 0.50
+        常量: 0.03
+        常量: 200.00

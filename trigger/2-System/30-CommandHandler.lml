@@ -27,6 +27,27 @@
                     函数: YDWEGetAnyTypeLocalVariable
                         常量: command
                     常量: 1
+                    常量: 5
+                预设: OperatorEqualENE
+                常量: smart
+        动作
+            YDWEExecuteTriggerMultiple
+                变量: gg_trg_cmd_Smart
+                预设: tirggerexecute_notcondition
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename13_player
+                        常量: player
+                        函数: GetTriggerPlayer
+        动作
+            DoNothing
+    IfThenElseMultiple
+        条件
+            OperatorCompareString
+                函数: SubStringBJ
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: command
+                    常量: 1
                     常量: 2
                 预设: OperatorEqualENE
                 常量: ai

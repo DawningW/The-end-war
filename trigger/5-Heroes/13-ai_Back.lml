@@ -37,7 +37,7 @@
                                         函数: GetPlayerId
                                             函数: GetEnumPlayer
                                 预设: OperatorLess
-                                常量: 20.00
+                                常量: 10.00
                         动作
                             IssueImmediateOrder
                                 数组: Heros
@@ -111,7 +111,7 @@
                                         函数: GetPlayerId
                                             函数: GetEnumPlayer
                                 预设: OperatorLess
-                                常量: 20.00
+                                常量: 10.00
                         动作
                             IssueImmediateOrder
                                 数组: Heros

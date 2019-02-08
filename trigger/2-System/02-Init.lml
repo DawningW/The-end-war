@@ -177,6 +177,10 @@
                 常量: 1
     CommentString
         常量: 单位
+    AddSpecialEffectTargetUnitBJ
+        常量: foot
+        变量: gg_unit_etoe_0042
+        常量: war3mapImported\wisps.mdx
     IfThenElse
         条件: OperatorComparePlayerControl
             函数: GetPlayerController
