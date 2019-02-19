@@ -29,7 +29,6 @@ integer YDWEBase___AbilityCastingOverEventNumber= 0
 //endglobals from YDWEBase
 //globals from YDWEGetForceOfPlayerNull:
 constant boolean LIBRARY_YDWEGetForceOfPlayerNull=true
-force yd_NullTempForce
 //endglobals from YDWEGetForceOfPlayerNull
 //globals from YDWEGetGameTime:
 constant boolean LIBRARY_YDWEGetGameTime=true
@@ -50,16 +49,20 @@ constant boolean LIBRARY_YDWEGetPlayersByMapControlNull=true
 //endglobals from YDWEGetPlayersByMapControlNull
 //globals from YDWEGetPlayersMatchingNull:
 constant boolean LIBRARY_YDWEGetPlayersMatchingNull=true
+force yd_NullTempForce
 //endglobals from YDWEGetPlayersMatchingNull
+//globals from YDWEGetUnitsInRangeOfLocMatchingNull:
+constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocMatchingNull=true
+//endglobals from YDWEGetUnitsInRangeOfLocMatchingNull
 //globals from YDWEGetUnitsInRectMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRectMatchingNull=true
-group yd_NullTempGroup
 //endglobals from YDWEGetUnitsInRectMatchingNull
 //globals from YDWEGetUnitsOfPlayerAndTypeIdNull:
 constant boolean LIBRARY_YDWEGetUnitsOfPlayerAndTypeIdNull=true
 //endglobals from YDWEGetUnitsOfPlayerAndTypeIdNull
 //globals from YDWEGetUnitsOfPlayerMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsOfPlayerMatchingNull=true
+group yd_NullTempGroup
 //endglobals from YDWEGetUnitsOfPlayerMatchingNull
 //globals from YDWEMultiboardSetItemStyleBJNull:
 constant boolean LIBRARY_YDWEMultiboardSetItemStyleBJNull=true
@@ -70,6 +73,9 @@ constant boolean LIBRARY_YDWEMultiboardSetItemValueBJNull=true
 //globals from YDWEMultiboardSetItemWidthBJNull:
 constant boolean LIBRARY_YDWEMultiboardSetItemWidthBJNull=true
 //endglobals from YDWEMultiboardSetItemWidthBJNull
+//globals from YDWEPlaySoundNull:
+constant boolean LIBRARY_YDWEPlaySoundNull=true
+//endglobals from YDWEPlaySoundNull
 //globals from YDWETriggerEvent:
 constant boolean LIBRARY_YDWETriggerEvent=true
 trigger yd_DamageEventTrigger= null
@@ -342,6 +348,8 @@ unit gg_unit_ncop_0108= null
 unit gg_unit_ncop_0012= null
 unit gg_unit_ncp2_0257= null
 unit gg_unit_ncp3_0146= null
+sound gg_snd_HeroBackToTown= null
+sound gg_snd_Rescue= null
 
 trigger l__library_init
 
@@ -488,7 +496,7 @@ endfunction
 
 
 //library YDTriggerSaveLoadSystem:
-    function YDTriggerSaveLoadSystem__Init takes nothing returns nothing
+    function YDTriggerSaveLoadSystem___Init takes nothing returns nothing
             set YDHT=InitHashtable()
         set YDLOC=InitHashtable()
     endfunction
@@ -1318,6 +1326,17 @@ function YDWEGetPlayersMatchingNull takes boolexpr filter returns force
 endfunction
 
 //library YDWEGetPlayersMatchingNull ends
+//library YDWEGetUnitsInRangeOfLocMatchingNull:
+function YDWEGetUnitsInRangeOfLocMatchingNull takes real radius,location whichLocation,boolexpr filter returns group
+    local group g= CreateGroup()
+    call GroupEnumUnitsInRangeOfLoc(g, whichLocation, radius, filter)
+    call DestroyBoolExpr(filter)
+    set yd_NullTempGroup=g
+    set g=null
+    return yd_NullTempGroup
+endfunction
+
+//library YDWEGetUnitsInRangeOfLocMatchingNull ends
 //library YDWEGetUnitsInRectMatchingNull:
 function YDWEGetUnitsInRectMatchingNull takes rect r,boolexpr filter returns group
     local group g= CreateGroup()
@@ -1444,6 +1463,15 @@ function YDWEMultiboardSetItemWidthBJNull takes multiboard mb,integer col,intege
 endfunction
 
 //library YDWEMultiboardSetItemWidthBJNull ends
+//library YDWEPlaySoundNull:
+function YDWEPlaySoundNull takes string soundName returns nothing
+    local sound soundHandle= CreateSound(soundName, false, false, true, 12700, 12700, "")
+    call StartSound(soundHandle)
+    call KillSoundWhenDone(soundHandle)
+    set soundHandle=null
+endfunction
+
+//library YDWEPlaySoundNull ends
 //library YDWETriggerEvent:
 	
 //===========================================================================  
@@ -1556,7 +1584,7 @@ endfunction
 
 //library YDWEUnitHasItemOfTypeBJNull ends
 //library YDWEAttackWaveTimer:
- function YDWEAttackWaveTimer___AttackWaveProc takes nothing returns nothing
+ function YDWEAttackWaveTimer__AttackWaveProc takes nothing returns nothing
   local timer t= GetExpiredTimer()
   local real x1= YDWEGetRealByString("AttackWave" + I2S(YDWEH2I(t)) , "x1")
   local real y1= YDWEGetRealByString("AttackWave" + I2S(YDWEH2I(t)) , "y1")
@@ -1596,7 +1624,7 @@ endfunction
 		call YDWESaveRealByString("AttackWave" + I2S(YDWEH2I(t)) , "face" , face)
 		call YDWESaveTimerByString("AttackWaveLastTimer" , "Timer" , t)
 		call YDWESaveStringByString("AttackWave" + I2S(YDWEH2I(t)) , "Store" , "AttackWave" + I2S(unitid) + R2S(x1) + R2S(y1) + R2S(timeout))
-		call TimerStart(t, timeout, true, function YDWEAttackWaveTimer___AttackWaveProc)
+		call TimerStart(t, timeout, true, function YDWEAttackWaveTimer__AttackWaveProc)
 		call RemoveLocation(whichLocation)
 		set t=null
 	endfunction
@@ -1624,7 +1652,7 @@ endfunction
 //library YDWEGetUnitsInRectAllNull ends
 //library YDWEHeroLearnSkillAI:
  
-function YDWEHeroLearnSkillAI___AIStringFind takes string subject,string find,integer offset returns integer
+function YDWEHeroLearnSkillAI__AIStringFind takes string subject,string find,integer offset returns integer
     local integer len= StringLength(find)
     local integer pos= offset
     local string s
@@ -1670,7 +1698,7 @@ function YDWEHeroLearnSkillAI takes unit hero,integer level returns integer
         exitwhen i > 5
 		set skills=YDWEGetIntegerByString(I2S(uid) , "HeroAbilities_" + I2S(i))
 		set learn_sequence=YDWEGetStringByString(I2S(uid) , "learn_quence_" + I2S(i))
-        if YDWEHeroLearnSkillAI___AIStringFind(learn_sequence , "^" + I2S(level) + "^" , 1) != - 1 then
+        if YDWEHeroLearnSkillAI__AIStringFind(learn_sequence , "^" + I2S(level) + "^" , 1) != - 1 then
             if GetUnitAbilityLevel(hero, skills) == 0 then
                 call UnitAddAbility(hero, skills)
               else
@@ -2786,11 +2814,11 @@ endfunction
 //library YDWETimerSystem ends
 //===========================================================================
 // 
-// 末日战争测试版1.8.1[1.24]
+// 末日战争测试版1.8.2[1.24]
 // 
 //   Warcraft III map script
 //   Generated by the Warcraft III World Editor
-//   Date: Fri Feb 08 15:57:14 2019
+//   Date: Tue Feb 19 16:44:47 2019
 //   Map Author: QingChenW
 // 
 //===========================================================================
@@ -2842,6 +2870,21 @@ function InitGlobals takes nothing returns nothing
         set udg_Monsters[i]=CreateGroup()
         set i=i + 1
     endloop
+endfunction
+//***************************************************************************
+//*
+//*  Sounds
+//*
+//***************************************************************************
+function InitSounds takes nothing returns nothing
+    set gg_snd_HeroBackToTown=CreateSound("Sound\\Interface\\ArrangedTeamInvitation.wav", false, false, false, 10, 10, "DefaultEAXON")
+    call SetSoundParamsFromLabel(gg_snd_HeroBackToTown, "ArrangedTeamInvitation")
+    call SetSoundDuration(gg_snd_HeroBackToTown, 2914)
+    call SetSoundChannel(gg_snd_HeroBackToTown, 7)
+    call SetSoundVolume(gg_snd_HeroBackToTown, 100)
+    set gg_snd_Rescue=CreateSound("Sound\\Interface\\Rescue.wav", false, false, false, 10, 10, "")
+    call SetSoundParamsFromLabel(gg_snd_Rescue, "Rescue")
+    call SetSoundDuration(gg_snd_Rescue, 3796)
 endfunction
 //***************************************************************************
 //*
@@ -3082,7 +3125,6 @@ function CreateNeutralHostileBuildings takes nothing returns nothing
     local real life
     set gg_unit_ndgt_0062=CreateUnit(p, 'ndgt', 0.0, 1472.0, 270.000)
     set gg_unit_ndgt_0069=CreateUnit(p, 'ndgt', 0.0, - 1472.0, 270.000)
-    set u=CreateUnit(p, 'nmgv', 0.0, 2752.0, 270.000)
 endfunction
 //===========================================================================
 function CreateNeutralPassiveBuildings takes nothing returns nothing
@@ -3096,6 +3138,7 @@ function CreateNeutralPassiveBuildings takes nothing returns nothing
     call SetUnitColor(gg_unit_ncp2_0014, ConvertPlayerColor(11))
     set gg_unit_ncp2_0015=CreateUnit(p, 'ncp2', 800.0, 2464.0, 270.000)
     call SetUnitColor(gg_unit_ncp2_0015, ConvertPlayerColor(5))
+    set u=CreateUnit(p, 'nbsm', 0.0, - 3072.0, 315.000)
     set gg_unit_ncop_0036=CreateUnit(p, 'ncop', - 6016.0, 256.0, 270.000)
     set gg_unit_ncop_0037=CreateUnit(p, 'ncop', - 6016.0, - 320.0, 270.000)
     set u=CreateUnit(p, 'ndkw', 4672.0, - 2560.0, 270.000)
@@ -3105,6 +3148,7 @@ function CreateNeutralPassiveBuildings takes nothing returns nothing
     set gg_unit_ncp3_0066=CreateUnit(p, 'ncp3', 0.0, - 2752.0, 270.000)
     set gg_unit_ncop_0067=CreateUnit(p, 'ncop', - 1536.0, 3008.0, 270.000)
     call SetUnitColor(gg_unit_ncop_0067, ConvertPlayerColor(11))
+    set gg_unit_nmgv_0092=CreateUnit(p, 'nmgv', 0.0, 2752.0, 270.000)
     set u=CreateUnit(p, 'ngol', 7168.0, - 3328.0, 270.000)
     call SetResourceAmount(u, 12500)
     set gg_unit_ncop_0108=CreateUnit(p, 'ncop', 5632.0, 640.0, 270.000)
@@ -3146,7 +3190,6 @@ function CreateNeutralPassive takes nothing returns nothing
     local integer unitID
     local trigger t
     local real life
-    set u=CreateUnit(p, 'nbsm', 0.0, - 3072.0, 315.000)
     set gg_unit_n005_0065=CreateUnit(p, 'n005', 12.1, - 3206.2, 53.000)
     set gg_unit_Nkjx_0183=CreateUnit(p, 'Nkjx', - 1023.8, - 3283.9, 90.000)
     call SetHeroLevel(gg_unit_Nkjx_0183, 80, false)
@@ -3245,8 +3288,8 @@ function CreateRegions takes nothing returns nothing
     set gg_rct_________________151=Rect(- 3424.0, - 224.0, - 2944.0, 224.0)
     set we=AddWeatherEffect(gg_rct_________________151, 'FDwl')
     call EnableWeatherEffect(we, true)
-    set gg_rct______________121=Rect(224.0, 2528.0, 672.0, 2976.0)
-    set gg_rct______________171=Rect(- 672.0, 2528.0, - 224.0, 2976.0)
+    set gg_rct______________121=Rect(448.0, 2528.0, 672.0, 2976.0)
+    set gg_rct______________171=Rect(- 672.0, 2528.0, - 448.0, 2976.0)
     set gg_rct________122=Rect(6656.0, - 1248.0, 7168.0, - 1024.0)
     set gg_rct________172=Rect(- 7168.0, - 1248.0, - 6656.0, - 1024.0)
     set gg_rct______________149=Rect(3680.0, - 224.0, 3776.0, 224.0)
@@ -4212,6 +4255,7 @@ function Trig_cmd_BackFunc002A takes nothing returns nothing
     call SetUnitPositionLoc(GetEnumUnit(), LoadLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x32A9E4C8))
     call PanCameraToTimedLocForPlayer(LoadPlayerHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xA59BB4C6), LoadLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x32A9E4C8), 1.00)
     call RemoveLocation(LoadLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x32A9E4C8))
+    call PlaySoundOnUnitBJ(gg_snd_HeroBackToTown, 100, GetEnumUnit())
 endfunction
 function Trig_cmd_BackActions takes nothing returns nothing
     local group ydl_group
@@ -4872,16 +4916,26 @@ endfunction
 function Trig_MobaModeConditions takes nothing returns boolean
     return ( ( GetClickedButtonBJ() == udg_Buttons[1] ) )
 endfunction
+function Trig_MobaModeFunc006Func001A takes nothing returns nothing
+    call AdjustPlayerStateBJ(1, GetEnumPlayer(), PLAYER_STATE_RESOURCE_GOLD)
+endfunction
+function Trig_MobaModeFunc006T takes nothing returns nothing
+    call ForForce(udg_Players, function Trig_MobaModeFunc006Func001A)
+endfunction
 function Trig_MobaModeActions takes nothing returns nothing
+    local timer ydl_timer
     call PauseGameOff()
     set udg_GameMode=2
     call DisplayTextToForce(GetPlayersAll(), "|Cff00ff00已选择对抗模式！|r")
+    set ydl_timer=CreateTimer()
+    call TimerStart(ydl_timer, 1.00, true, function Trig_MobaModeFunc006T)
     call TriggerExecute(gg_trg_mm_Soldier)
     call EnableTrigger(gg_trg_mm_Upgrade)
     call EnableTrigger(gg_trg_mm_LightWin)
     call EnableTrigger(gg_trg_mm_DarkWin)
     call TriggerExecute(gg_trg_ChooseHero)
     call DisableTrigger(GetTriggeringTrigger())
+    set ydl_timer=null
 endfunction
 //===========================================================================
 function InitTrig_MobaMode takes nothing returns nothing
@@ -5361,7 +5415,7 @@ function Trig_ai_BindSkillActions takes nothing returns nothing
     call YDWEAIRecordAbility('Hamg' , 'AHbz' , 'AHab' , 'AHwe' , 'AIaa' , 'AHmt')
     call YDWEAIRecordLearn_sequence('Hamg' , "^1^5^9^13^17^22^27^32^37^41^" , "^2^6^10^14^19^23^28^33^38^43^" , "^3^7^11^15^20^25^29^34^39^44^" , "^4^8^12^16^21^26^31^35^40^45^" , "^18^24^30^36^")
     // 山丘之王
-    call YDWEAIRecordAbility('Hmkg' , 'ANsb' , 'AHtc' , 'AHtb' , 'AIaa' , 'AHav')
+    call YDWEAIRecordAbility('Hmkg' , 'ANsb' , 'AHtc' , 'AHbh' , 'AIaa' , 'AHav')
     call YDWEAIRecordLearn_sequence('Hmkg' , "^1^5^9^13^17^22^27^32^37^41^" , "^2^6^10^14^19^23^28^33^38^43^" , "^3^7^11^15^20^25^29^34^39^44^" , "^4^8^12^16^21^26^31^35^40^45^" , "^18^24^30^36^42^46^")
     // 血魔法师
     call YDWEAIRecordAbility('Hblm' , 'AHfs' , 'AHbn' , 'AHdr' , 'AIaa' , 'AHpx')
@@ -6253,6 +6307,86 @@ function InitTrig_ReturnMonsterArea takes nothing returns nothing
     call TriggerAddAction(gg_trg_ReturnMonsterArea, function Trig_ReturnMonsterAreaActions)
 endfunction
 //===========================================================================
+// Trigger: TreasureChest
+//
+// 逻辑混乱
+//===========================================================================
+function Trig_TreasureChestFunc002Func001003003 takes nothing returns boolean
+    return ( ( IsUnitAlly(GetFilterUnit(), Player(5)) == true ) )
+endfunction
+function Trig_TreasureChestFunc002Func002003003 takes nothing returns boolean
+    return ( ( IsUnitAlly(GetFilterUnit(), Player(11)) == true ) )
+endfunction
+function Trig_TreasureChestFunc002Func004Func002A takes nothing returns nothing
+    call AdjustPlayerStateBJ(5, GetEnumPlayer(), PLAYER_STATE_RESOURCE_GOLD)
+endfunction
+function Trig_TreasureChestFunc002T takes nothing returns nothing
+    call SaveGroupHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x6D95CA7A, YDWEGetUnitsInRangeOfLocMatchingNull(320.00 , LoadLocationHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x5E83114F) , Condition(function Trig_TreasureChestFunc002Func001003003)))
+    call SaveGroupHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xEE6CD660, YDWEGetUnitsInRangeOfLocMatchingNull(320.00 , LoadLocationHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x5E83114F) , Condition(function Trig_TreasureChestFunc002Func002003003)))
+    if ( ( IsUnitGroupEmptyBJ(LoadGroupHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x6D95CA7A)) == false ) and ( IsUnitGroupEmptyBJ(LoadGroupHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xEE6CD660)) == true ) ) then
+        if ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383) < 50 ) ) then
+            call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383, ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383) ) + ( 10 ) ))
+            call SetTextTagTextBJ(LoadTextTagHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x4B4BA3BB), I2S(( ( IAbsBJ(LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383)) ) * ( 2 ) )), 10)
+            call SetTextTagColorBJ(LoadTextTagHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x4B4BA3BB), 0.00, 0.00, 100, 0)
+        else
+            call SetUnitOwner(gg_unit_nmgv_0092, Player(5), true)
+        endif
+    else
+        if ( ( IsUnitGroupEmptyBJ(LoadGroupHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x6D95CA7A)) == true ) and ( IsUnitGroupEmptyBJ(LoadGroupHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xEE6CD660)) == false ) ) then
+            if ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383) > - 50 ) ) then
+                call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383, ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383) ) - ( 10 ) ))
+                call SetTextTagTextBJ(LoadTextTagHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x4B4BA3BB), I2S(( ( IAbsBJ(LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383)) ) * ( 2 ) )), 10)
+                call SetTextTagColorBJ(LoadTextTagHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x4B4BA3BB), 100.00, 0.00, 0.00, 0)
+            else
+                call SetUnitOwner(gg_unit_nmgv_0092, Player(11), true)
+            endif
+        else
+        endif
+    endif
+    if ( ( IAbsBJ(LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383)) == 50 ) ) then
+        call ForForce(YDWEGetPlayersAlliesNull(GetOwningPlayer(gg_unit_nmgv_0092)), function Trig_TreasureChestFunc002Func004Func002A)
+    else
+        if ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383) != 0 ) ) then
+            call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383, ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383) ) - ( ( ( ISignBJ(LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383)) ) * ( 10 ) ) ) ))
+            call SetTextTagTextBJ(LoadTextTagHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x4B4BA3BB), I2S(( ( IAbsBJ(LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383)) ) * ( 2 ) )), 10)
+            call SetTextTagColorBJ(LoadTextTagHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x4B4BA3BB), 0.00, 0.00, 100, 0)
+            if ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x3ADAB383) == 0 ) ) then
+                call SetTextTagTextBJ(LoadTextTagHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x4B4BA3BB), "未被占领", 10)
+                call SetTextTagColorBJ(LoadTextTagHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x4B4BA3BB), 100.00, 100.00, 100, 0)
+                call SetUnitOwner(gg_unit_nmgv_0092, Player(PLAYER_NEUTRAL_PASSIVE), true)
+            else
+            endif
+        else
+        endif
+    endif
+    call DestroyGroup(LoadGroupHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x6D95CA7A))
+    call DestroyGroup(LoadGroupHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xEE6CD660))
+endfunction
+function Trig_TreasureChestActions takes nothing returns nothing
+    local timer ydl_timer
+    local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+    call CreateTextTagUnitBJ("未被占领", gg_unit_nmgv_0092, 0, 10, 100, 100, 100, 0)
+    set ydl_timer=CreateTimer()
+    call SaveLocationHandle(YDLOC, GetHandleId(ydl_timer), 0x5E83114F, GetUnitLoc(gg_unit_nmgv_0092))
+    call SaveTextTagHandle(YDLOC, GetHandleId(ydl_timer), 0x4B4BA3BB, GetLastCreatedTextTag())
+    call SaveInteger(YDLOC, GetHandleId(ydl_timer), 0x3ADAB383, 0)
+    call SaveGroupHandle(YDLOC, GetHandleId(ydl_timer), 0xEE6CD660, LoadGroupHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEE6CD660))
+    call SaveGroupHandle(YDLOC, GetHandleId(ydl_timer), 0x6D95CA7A, LoadGroupHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6D95CA7A))
+    call TimerStart(ydl_timer, 1.00, true, function Trig_TreasureChestFunc002T)
+    call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+    set ydl_timer=null
+endfunction
+//===========================================================================
+function InitTrig_TreasureChest takes nothing returns nothing
+    set gg_trg_TreasureChest=CreateTrigger()
+    call DoNothing()
+    call TriggerRegisterTimerEventSingle(gg_trg_TreasureChest, 0.00)
+    call TriggerAddAction(gg_trg_TreasureChest, function Trig_TreasureChestActions)
+endfunction
+//===========================================================================
 // Trigger: tc_GoLight
 //===========================================================================
 function Trig_tc_GoLightConditions takes nothing returns boolean
@@ -7036,6 +7170,7 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_RightMonsters()
     call InitTrig_EnterMonsterArea()
     call InitTrig_ReturnMonsterArea()
+    call InitTrig_TreasureChest()
     call InitTrig_tc_GoLight()
     call InitTrig_tc_GoDark()
     call InitTrig_tc_BackLight()
@@ -7160,7 +7295,7 @@ function InitCustomPlayerSlots takes nothing returns nothing
     call SetPlayerController(Player(11), MAP_CONTROL_COMPUTER)
 endfunction
 function InitCustomTeams takes nothing returns nothing
-    // Force: TRIGSTR_122
+    // Force: TRIGSTR_115
     call SetPlayerTeam(Player(0), 0)
     call SetPlayerState(Player(0), PLAYER_STATE_ALLIED_VICTORY, 1)
     call SetPlayerTeam(Player(1), 0)
@@ -7235,7 +7370,7 @@ function InitCustomTeams takes nothing returns nothing
     call SetPlayerAllianceStateVisionBJ(Player(5), Player(2), true)
     call SetPlayerAllianceStateVisionBJ(Player(5), Player(3), true)
     call SetPlayerAllianceStateVisionBJ(Player(5), Player(4), true)
-    // Force: TRIGSTR_128
+    // Force: TRIGSTR_121
     call SetPlayerTeam(Player(6), 1)
     call SetPlayerState(Player(6), PLAYER_STATE_ALLIED_VICTORY, 1)
     call SetPlayerTeam(Player(7), 1)
@@ -7373,13 +7508,14 @@ function main takes nothing returns nothing
     call SetAmbientDaySound("LordaeronSummerDay")
     call SetAmbientNightSound("LordaeronSummerNight")
     call SetMapMusic("Music", true, 0)
+    call InitSounds()
     call CreateRegions()
     call CreateCameras()
     call CreateAllUnits()
     call InitBlizzard()
 
-call ExecuteFunc("jasshelper__initstructs453679703")
-call ExecuteFunc("YDTriggerSaveLoadSystem__Init")
+call ExecuteFunc("jasshelper__initstructs31072765")
+call ExecuteFunc("YDTriggerSaveLoadSystem___Init")
 call ExecuteFunc("InitializeYD")
 call ExecuteFunc("YDWEGetGameTimeInit")
 call ExecuteFunc("YDWEStringFormula___Init")
@@ -7395,7 +7531,7 @@ endfunction
 //*
 //***************************************************************************
 function config takes nothing returns nothing
-    call SetMapName("末日战争测试版1.8.1[1.24]")
+    call SetMapName("末日战争测试版1.8.2[1.24]")
     call SetMapDescription("恶魔大举入侵，保护能量核心，摧毁敌方基地。
   - By QingChenW
 官网：http://dawncraft.github.io/
@@ -7423,6 +7559,9 @@ function config takes nothing returns nothing
     call InitAllyPriorities()
 endfunction
 //===========================================================================
+//ϵͳ-TimerSystem
+//===========================================================================
+//===========================================================================
 //��Ծϵͳ 
 //===========================================================================
 //===========================================================================  
@@ -7435,9 +7574,6 @@ endfunction
 //===========================================================================
 //===========================================================================
 //ˢ��ϵͳ 
-//===========================================================================
-//===========================================================================
-//ϵͳ-TimerSystem
 //===========================================================================
 
 
@@ -7462,7 +7598,7 @@ local integer this=f__arg_this
    return true
 endfunction
 
-function jasshelper__initstructs453679703 takes nothing returns nothing
+function jasshelper__initstructs31072765 takes nothing returns nothing
     set st__YDWEStringFormula___Inventory_onDestroy[1]=CreateTrigger()
     set st__YDWEStringFormula___Inventory_onDestroy[2]=st__YDWEStringFormula___Inventory_onDestroy[1]
     call TriggerAddCondition(st__YDWEStringFormula___Inventory_onDestroy[1],Condition( function sa__YDWEStringFormula___Inventory_onDestroy))

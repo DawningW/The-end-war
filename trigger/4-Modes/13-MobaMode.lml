@@ -15,6 +15,19 @@
     DisplayTextToForce
         函数: GetPlayersAll
         常量: |Cff00ff00已选择对抗模式！|r
+    YDWETimerStartMultiple
+        函数: CreateTimer
+        常量: 1.00
+        预设: PeriodicOptionPeriodic
+        动作
+        动作
+            ForForceMultiple
+                变量: Players
+                动作
+                    AdjustPlayerStateBJ
+                        常量: 1
+                        函数: GetEnumPlayer
+                        预设: PlayerStateGold
     TriggerExecute
         变量: gg_trg_mm_Soldier
     EnableTrigger

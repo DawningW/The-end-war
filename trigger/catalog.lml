@@ -150,7 +150,6 @@
     15-ReturnMonsterArea: ReturnMonsterArea
 7-Campaigns: Campaigns
     01-TreasureChest: TreasureChest
-        禁用
     02-tc_GoLight: tc_GoLight
     03-tc_GoDark: tc_GoDark
     04-tc_BackLight: tc_BackLight

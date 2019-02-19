@@ -46,5 +46,9 @@
             RemoveLocation
                 函数: YDWEGetAnyTypeLocalVariable
                     常量: p
+            PlaySoundOnUnitBJ
+                变量: gg_snd_HeroBackToTown
+                常量: 100
+                函数: GetEnumUnit
     DestroyGroup
         函数: GetLastCreatedGroup
