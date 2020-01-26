@@ -1,0 +1,87 @@
+事件
+条件
+动作
+    YDWERegionMultiple
+        常量: 初始化单位
+        动作
+            SetUnitInvulnerable
+                变量: gg_unit_ndmg_0018
+                预设: InvulnerabilityInvulnerable
+            SetUnitInvulnerable
+                变量: gg_unit_usep_0038
+                预设: InvulnerabilityInvulnerable
+            SetUnitInvulnerable
+                变量: gg_unit_usep_0039
+                预设: InvulnerabilityInvulnerable
+            RemoveUnit
+                变量: gg_unit_ndgt_0069
+            RemoveUnit
+                变量: gg_unit_ndgt_0062
+    CommentString
+        常量: 开启模块
+    EnableTrigger
+        变量: gg_trg_SMLightWin
+    EnableTrigger
+        变量: gg_trg_SMDarkWin
+    CommentString
+        常量: 首次刷兵计时器
+    YDWESetAnyTypeLocalVariable
+        预设: typename05_timer
+        常量: timer
+        函数: CreateTimer
+    CreateTimerDialogBJ
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: timer
+        常量: 倒计时......
+    YDWESetAnyTypeLocalVariable
+        预设: typename25_timerdialog
+        常量: window
+        函数: GetLastCreatedTimerDialogBJ
+    YDWETimerStartMultiple
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: timer
+        常量: 100.00
+        预设: PeriodicOptionOneTime
+        动作
+        动作
+            TriggerExecute
+                变量: gg_trg_SMTimer
+            DestroyTimer
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: timer
+            DestroyTimerDialogBJ
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: window
+    TimerDialogDisplay
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: window
+        预设: ShowHideShow
+    CommentString
+        常量: 科技升级计时器
+    YDWETimerStartMultiple
+        函数: CreateTimer
+        常量: 120.00
+        预设: PeriodicOptionPeriodic
+        动作
+        动作
+            AddPlayerTechResearched
+                预设: Player11
+                常量: Rugf
+                常量: 1
+            ForForceMultiple
+                函数: GetPlayersAllies
+                    预设: Player05
+                动作
+                    SetPlayerHandicapXPBJ
+                        函数: GetEnumPlayer
+                        函数: OperatorRealAdd
+                            常量: 100.00
+                            函数: OperatorRealMultiply
+                                常量: 20.00
+                                函数: I2R
+                                    函数: GetTriggerExecCount
+                                        函数: GetTriggeringTrigger
+    CommentString
+        常量: 完成
+    TriggerExecute
+        变量: gg_trg_ModeFinished

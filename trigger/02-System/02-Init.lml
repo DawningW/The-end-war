@@ -1,0 +1,219 @@
+事件
+    MapInitializationEvent
+条件
+动作
+    CommentString
+        常量: 玩家
+    SetReservedLocalHeroButtons
+        常量: 1
+    ForForceMultiple
+        函数: GetPlayersAll
+        动作
+            SetPlayerMaxHeroesAllowed
+                常量: 1
+                函数: GetEnumPlayer
+            SetPlayerFlag
+                函数: GetEnumPlayer
+                预设: PlayerFlagGivesBounty
+                预设: OnOffIntOn
+    CommentString
+        常量: 地图
+    CreateFogModifierRectBJ
+        预设: EnabledDisabledEnabled
+        预设: Player05
+        预设: FogStateVisible
+        变量: gg_rct______________1
+    CreateFogModifierRectBJ
+        预设: EnabledDisabledEnabled
+        预设: Player11
+        预设: FogStateVisible
+        变量: gg_rct______________6
+    YDWERegionMultiple
+        常量: 漂浮文字
+        动作
+            CreateTextTagLocBJ
+                常量: 夺宝大作战
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0063
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 命运之屋
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0064
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 娜伽副本（光明专属）
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0012
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 四圣兽
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0108
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 光明传送点
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0015
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 夺宝大作战
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0036
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 命运之屋
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0037
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 野人副本（黑暗专属）
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0109
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 四圣兽
+                函数: GetUnitLoc
+                    变量: gg_unit_ncop_0157
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 黑暗传送点
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0014
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 返回
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0256
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 青龙
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0255
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 玄武
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0254
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 白虎
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0257
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 青龙
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0258
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 朱雀
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0252
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 白虎
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0253
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+            CreateTextTagLocBJ
+                常量: 返回
+                函数: GetUnitLoc
+                    变量: gg_unit_ncp2_0261
+                常量: 0
+                常量: 10.00
+                常量: 100
+                常量: 100
+                常量: 100
+                常量: 0
+    CommentString
+        常量: 单位
+    AddSpecialEffectTargetUnitBJ
+        常量: foot
+        变量: gg_unit_etoe_0042
+        常量: war3mapImported\wisps.mdx

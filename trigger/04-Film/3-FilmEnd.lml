@@ -1,0 +1,52 @@
+事件
+    TriggerRegisterPlayerEventEndCinematic
+        预设: PlayerALL
+条件
+动作
+    DisableTrigger
+        函数: GetTriggeringTrigger
+    DisableTrigger
+        变量: gg_trg_FilmRun
+    ResetToGameCamera
+        常量: 0
+    ForForce
+        函数: GetPlayersAllies
+            预设: Player05
+        动作: PanCameraToTimedLocForPlayer
+            函数: GetEnumPlayer
+            函数: GetRectCenter
+                变量: gg_rct______________1
+            常量: 0
+        动作
+            PanCameraToTimedLocForPlayer
+                函数: GetEnumPlayer
+                函数: GetRectCenter
+                    变量: gg_rct______________1
+                常量: 0.00
+    ForForce
+        函数: GetPlayersAllies
+            预设: Player11
+        动作: PanCameraToTimedLocForPlayer
+            函数: GetEnumPlayer
+            函数: GetRectCenter
+                变量: gg_rct______________6
+            常量: 0
+        动作
+            PanCameraToTimedLocForPlayer
+                函数: GetEnumPlayer
+                函数: GetRectCenter
+                    变量: gg_rct______________1
+                常量: 0.00
+    CinematicFadeBJ
+        预设: FadeTypeOptionFadeIn
+        常量: 1.00
+        预设: CineFilterTextureBlack
+        常量: 0
+        常量: 0
+        常量: 0
+        常量: 0.00
+    CinematicModeBJ
+        预设: OnOffOff
+        函数: GetPlayersAll
+    TriggerExecute
+        变量: gg_trg_ChooseMode

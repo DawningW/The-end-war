@@ -1,0 +1,17 @@
+事件
+条件
+动作
+    DisableTrigger
+        变量: gg_trg_StoryMode
+    DisableTrigger
+        变量: gg_trg_MobaMode
+    DisableTrigger
+        变量: gg_trg_TimeMode
+    DisableTrigger
+        变量: gg_trg_DefenseMode
+    DisableTrigger
+        变量: gg_trg_TestMode
+    TriggerExecute
+        变量: gg_trg_ChooseHero
+    DisableTrigger
+        函数: GetTriggeringTrigger

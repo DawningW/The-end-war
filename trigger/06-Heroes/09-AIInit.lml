@@ -1,0 +1,24 @@
+事件
+条件
+动作
+    TriggerSleepAction
+        常量: 8.00
+    EnableTrigger
+        变量: gg_trg_AILevelUp
+    EnableTrigger
+        变量: gg_trg_AIGo
+    EnableTrigger
+        变量: gg_trg_AIMove
+    EnableTrigger
+        变量: gg_trg_AIBack
+    EnableTrigger
+        变量: gg_trg_AIBuy
+    EnableTrigger
+        变量: gg_trg_AIUnderAttack
+    EnableTrigger
+        变量: gg_trg_AIStartSpell
+    EnableTrigger
+        变量: gg_trg_AIStopSpell
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: |Cff00ff00全世界最低级的AI已运行！|r

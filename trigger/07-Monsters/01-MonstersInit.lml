@@ -1,0 +1,218 @@
+事件
+条件
+动作
+    YDWERegionMultiple
+        常量: 初始化刷怪区
+        动作
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nggr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________152
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 0
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: ngrk
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________152
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 0
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nsll
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________153
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 1
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nslh
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________153
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 1
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nogl
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________154
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 2
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nogr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________154
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 2
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nggr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________102
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 4
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: ngrk
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________102
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 4
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nsll
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________103
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 5
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nslh
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct______________103
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 5
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 1
+                    常量: nogl
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________104
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 6
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 2
+                    常量: nogr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_________________104
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 6
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: ngno
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________1_161
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 8
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: ngno
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________2_162
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 9
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: nftr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________3_163
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 10
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: nkob
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________4_164
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 11
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: ngno
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________1_111
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 12
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: ngno
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________2_112
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 13
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: nftr
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________3_113
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 14
+            GroupAddGroup
+                函数: ' CreateNUnitsAtLoc'
+                    常量: 9
+                    常量: nkob
+                    预设: PlayerNA
+                    函数: GetRectCenter
+                        变量: gg_rct_____________4_114
+                    预设: RealUnitFacing
+                数组: Monsters
+                    常量: 15
+            YDWETimerStartMultiple
+                函数: CreateTimer
+                常量: 600.00
+                预设: PeriodicOptionOneTime
+                动作
+                动作
+                    ' CreateUnitAtLoc'
+                        预设: PlayerNA
+                        常量: nfgo
+                        函数: GetRectCenter
+                            变量: gg_rct_________________150
+                        常量: 0

@@ -1,0 +1,29 @@
+事件
+条件
+动作
+    DisplayTextToForce
+        函数: GetPlayersAll
+        常量: '光明势力胜利，他们成功保护了地球核心。
+10秒后结束游戏。'
+    MultiboardMinimizeBJ
+        预设: Maximize
+        变量: Scoreboard
+    PauseAllUnitsBJ
+        预设: PauseUnpauseOptionPause
+    TriggerSleepAction
+        常量: 10.00
+    ForForceMultiple
+        函数: GetPlayersAllies
+            预设: Player05
+        动作
+            CustomVictoryBJ
+                函数: GetEnumPlayer
+                预设: UseSkipOptionUse
+                预设: UseSkipOptionUse
+    ForForceMultiple
+        函数: GetPlayersAllies
+            预设: Player11
+        动作
+            CustomDefeatBJ
+                函数: GetEnumPlayer
+                常量: 失败!

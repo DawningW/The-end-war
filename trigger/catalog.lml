@@ -1,4 +1,4 @@
-1-Comments: Comments
+01-Comments: Comments
     注释
     1-TODO: TODO
         注释
@@ -6,7 +6,9 @@
         注释
     3-Updates: Updates
         注释
-2-System: System
+    4-Comments: Comments
+        注释
+02-System: System
     '01-Init map': 'Init map'
         注释
     02-Init: Init
@@ -24,149 +26,136 @@
     12-#Boardcast: #Boardcast
         注释
     13-Broadcast: Broadcast
-    14-bc_KillHero: bc_KillHero
-    15-bc_FirstBlood: bc_FirstBlood
-    16-bc_KillTower: bc_KillTower
-    17-bc_FirstTower: bc_FirstTower
-    18-bc_MultiKill: bc_MultiKill
-    19-bc_MultiKillTimer: bc_MultiKillTimer
-    20-bc_ShutDown: bc_ShutDown
+    14-BCKillHero: BCKillHero
+    15-BCFirstBlood: BCFirstBlood
+    16-BCKillTower: BCKillTower
+    17-BCFirstTower: BCFirstTower
+    18-BCMultiKill: BCMultiKill
+    19-BCMultiKillTimer: BCMultiKillTimer
+    20-BCShutDown: BCShutDown
     21-#Scoreboard: #Scoreboard
         注释
     22-Scoreboard: Scoreboard
-    23-ShowScoreboard: ShowScoreboard
-    24-HideScoreboard: HideScoreboard
-    25-sb_LevelUp: sb_LevelUp
-    26-sb_SoldierDeath: sb_SoldierDeath
-    27-sb_KillHero: sb_KillHero
-    28-sb_HeroDeath: sb_HeroDeath
-    29-#Commands: #Commands
-        注释
-    30-CommandHandler: CommandHandler
-    31-cmd_Smart: cmd_Smart
-    32-cmd_AI: cmd_AI
-    33-cmd_Back: cmd_Back
-    34-cmd_Level: cmd_Level
-    35-cmd_Kill: cmd_Kill
-    36-AntiCheat: AntiCheat
-    37-#Test: #Test
-        注释
-    38-LuaInit: LuaInit
-    39-console.lua: console.lua
-    40-smart.lua: smart.lua
-3-Film: Film
-    1-Films: Films
-        注释
-    2-OpenFilm: OpenFilm
-    3-RunFilm: RunFilm
-    4-CloseFilm: CloseFilm
-4-Modes: Modes
+    23-SBLevelUp: SBLevelUp
+    24-SBSoldierDeath: SBSoldierDeath
+    25-SBKillHero: SBKillHero
+    26-SBHeroDeath: SBHeroDeath
+03-Commands: Commands
+    1-CommandHandler: CommandHandler
+    2-CMDSmart: CMDSmart
+    3-CMDAI: CMDAI
+    4-CMDBack: CMDBack
+    5-CMDLevel: CMDLevel
+    6-CMDKill: CMDKill
+    7-AntiCheat: AntiCheat
+04-Film: Film
+    1-FilmStart: FilmStart
+    2-FilmRun: FilmRun
+    3-FilmEnd: FilmEnd
+05-Modes: Modes
     '01-Choose mode': 'Choose mode'
         注释
     02-ChooseMode: ChooseMode
-    '03-Story mode': 'Story mode'
+    03-ModeFinished: ModeFinished
+    '04-Story mode': 'Story mode'
         注释
-    04-StoryMode: StoryMode
-    05-sm_Start: sm_Start
-    06-sm_Timer: sm_Timer
-    07-sm_Wait: sm_Wait
-    08-sm_Soldier: sm_Soldier
-    09-sm_Upgrade: sm_Upgrade
+    05-StoryMode: StoryMode
+    06-SMTimer: SMTimer
+    07-SMWait: SMWait
+    08-SMSoldier: SMSoldier
+    09-SMLightWin: SMLightWin
         关闭
-    10-sm_LightWin: sm_LightWin
+    10-SMDarkWin: SMDarkWin
         关闭
-    11-sm_DarkWin: sm_DarkWin
-        关闭
-    '12-Moba mode': 'Moba mode'
+    '11-Moba mode': 'Moba mode'
         注释
-    13-MobaMode: MobaMode
-    14-mm_Soldier: mm_Soldier
-    15-mm_Upgrade: mm_Upgrade
+    12-MobaMode: MobaMode
+    13-MMSoldier: MMSoldier
+    14-MMLightWin: MMLightWin
         关闭
-    16-mm_LightWin: mm_LightWin
+    15-MMDarkWin: MMDarkWin
         关闭
-    17-mm_DarkWin: mm_DarkWin
-        关闭
-    '18-Time mode': 'Time mode'
+    '16-Time mode': 'Time mode'
         注释
-    19-TimeMode: TimeMode
-    20-tm_Timer: tm_Timer
+    17-TimeMode: TimeMode
+    18-TMTimer: TMTimer
         关闭
-    21-tm_Soldier: tm_Soldier
+    19-TMSoldier: TMSoldier
         关闭
-    '22-Defense mode': 'Defense mode'
+    '20-Defense mode': 'Defense mode'
         注释
-    23-DefenseMode: DefenseMode
-    24-dm_Soldier: dm_Soldier
-    '25-Test mode': 'Test mode'
+    21-DefenseMode: DefenseMode
+    22-DMSoldier: DMSoldier
+    '23-Test mode': 'Test mode'
         注释
-    26-TestMode: TestMode
-    27-test_init: test_init
-5-Heroes: Heroes
+    24-TestMode: TestMode
+06-Heroes: Heroes
     '01-Choose hero': 'Choose hero'
         注释
     02-ChooseHero: ChooseHero
-    03-HeroEnter: HeroEnter
+    03-HeroEntered: HeroEntered
     '04-Hero behaviours': 'Hero behaviours'
         注释
-    05-RespawnTimer: RespawnTimer
-    06-BuyLife: BuyLife
-    07-AI: AI
+    05-HeroAttributes: HeroAttributes
+    06-RespawnTimer: RespawnTimer
+    07-BuyLife: BuyLife
+    08-AI: AI
         注释
-    08-ai_Init: ai_Init
-    09-ai_BindSkill: ai_BindSkill
+    09-AIInit: AIInit
+    10-AIBindSkill: AIBindSkill
         运行
-    10-ai_LevelUp: ai_LevelUp
+    11-AILevelUp: AILevelUp
         关闭
-    11-ai_Go: ai_Go
+    12-AIGo: AIGo
         关闭
-    12-ai_Move: ai_Move
+    13-AIMove: AIMove
         关闭
-    13-ai_Back: ai_Back
+    14-AIBack: AIBack
         关闭
-    14-ai_Buy: ai_Buy
+    15-AIBuy: AIBuy
         关闭
-    15-ai_UnderAttack: ai_UnderAttack
+    16-AIUnderAttack: AIUnderAttack
         关闭
-    16-ai_StartSpell: ai_StartSpell
+    17-AIStartSpell: AIStartSpell
         关闭
-    17-ai_StopSpell: ai_StopSpell
+    18-AIStopSpell: AIStopSpell
         关闭
-6-Monsters: Monsters
-    01-EnterLeft: EnterLeft
-    02-EnterRight: EnterRight
-    03-LeftBlue: LeftBlue
-    04-RightBlue: RightBlue
-    05-LeftRed: LeftRed
-    06-RightRed: RightRed
-    07-LeftOgre: LeftOgre
-    08-RightOgre: RightOgre
-    09-LeftDragon: LeftDragon
-    10-RightDragon: RightDragon
-    11-BigDragon: BigDragon
-    12-LeftMonsters: LeftMonsters
-    13-RightMonsters: RightMonsters
-    14-EnterMonsterArea: EnterMonsterArea
-    15-ReturnMonsterArea: ReturnMonsterArea
-7-Campaigns: Campaigns
+07-Monsters: Monsters
+    01-MonstersInit: MonstersInit
+    02-EnterLeft: EnterLeft
+    03-EnterRight: EnterRight
+    04-LeftBlue: LeftBlue
+    05-RightBlue: RightBlue
+    06-LeftRed: LeftRed
+    07-RightRed: RightRed
+    08-LeftOgre: LeftOgre
+    09-RightOgre: RightOgre
+    10-LeftDragon: LeftDragon
+    11-RightDragon: RightDragon
+    12-BigDragon: BigDragon
+    13-LeftMonsters: LeftMonsters
+    14-RightMonsters: RightMonsters
+    15-EnterMonsterArea: EnterMonsterArea
+    16-ReturnMonsterArea: ReturnMonsterArea
+08-Campaigns: Campaigns
     01-TreasureChest: TreasureChest
-    02-tc_GoLight: tc_GoLight
-    03-tc_GoDark: tc_GoDark
-    04-tc_BackLight: tc_BackLight
-    05-tc_BackDark: tc_BackDark
+    02-TCGoLight: TCGoLight
+    03-TCGoDark: TCGoDark
+    04-TCBackLight: TCBackLight
+    05-TCBackDark: TCBackDark
     06-DestinyHouse: DestinyHouse
-    07-dh_GoLight: dh_GoLight
-    08-dh_GoDark: dh_GoDark
+    07-DHGoLight: DHGoLight
+    08-DHGoDark: DHGoDark
     09-Naga: Naga
-    10-ng_Go: ng_Go
-    11-ng_Back: ng_Back
+    10-NGGo: NGGo
+    11-NGBack: NGBack
     12-Savage: Savage
-    13-sg_Go: sg_Go
-    14-sg_Back: sg_Back
+    13-SGGo: SGGo
+    14-SGBack: SGBack
     15-MythicalBeasts: MythicalBeasts
-    16-mb_Go: mb_Go
-    17-mb_Back: mb_Back
-8-Items: Items
+    16-MBGo: MBGo
+    17-MBBack: MBBack
+09-Items: Items
     1-Craft: Craft
     2-RPGItems: RPGItems
     3-OnlyOneBottle: OnlyOneBottle
@@ -174,5 +163,8 @@
     5-BottleLight: BottleLight
     6-BottleDark: BottleDark
     7-DrinkBottle: DrinkBottle
-9-Skills: Skills
-    1-HeroAttributes: HeroAttributes
+10-Skills: Skills
+11-Test: Test
+    1-LuaInit: LuaInit
+    2-Console.lua: Console.lua
+    3-Smart.lua: Smart.lua

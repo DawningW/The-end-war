@@ -1,0 +1,13 @@
+事件
+条件
+动作
+    CommentString
+        常量: 初始化单位
+    CommentString
+        常量: 开启模块
+    TriggerExecute
+        变量: gg_trg_DMSoldier
+    CommentString
+        常量: 完成
+    TriggerExecute
+        变量: gg_trg_ModeFinished

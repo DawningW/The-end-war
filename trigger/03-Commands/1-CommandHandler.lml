@@ -1,0 +1,164 @@
+事件
+    TriggerRegisterPlayerChatEvent
+        预设: PlayerALL
+        常量: -
+        预设: ChatMatchTypeSubstring
+条件
+    OperatorCompareString
+        函数: SubStringBJ
+            函数: GetEventPlayerChatString
+            常量: 1
+            常量: 1
+        预设: OperatorEqualENE
+        常量: -
+动作
+    YDWESetAnyTypeLocalVariable
+        预设: typename04_string
+        常量: command
+        函数: SubStringBJ
+            函数: GetEventPlayerChatString
+            常量: 2
+            函数: StringLength
+                函数: GetEventPlayerChatString
+    IfThenElseMultiple
+        条件
+            OperatorCompareString
+                函数: SubStringBJ
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: command
+                    常量: 1
+                    常量: 5
+                预设: OperatorEqualENE
+                常量: smart
+        动作
+            YDWEExecuteTriggerMultiple
+                变量: gg_trg_CMDSmart
+                预设: tirggerexecute_notcondition
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename13_player
+                        常量: player
+                        函数: GetTriggerPlayer
+        动作
+            DoNothing
+    IfThenElseMultiple
+        条件
+            OperatorCompareString
+                函数: SubStringBJ
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: command
+                    常量: 1
+                    常量: 2
+                预设: OperatorEqualENE
+                常量: ai
+        动作
+            YDWEExecuteTriggerMultiple
+                变量: gg_trg_CMDAI
+                预设: tirggerexecute_notcondition
+                动作
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename13_player
+                        常量: player
+                        函数: GetTriggerPlayer
+                    YDWESetAnyTypeLocalVariable
+                        预设: typename04_string
+                        常量: args
+                        函数: SubStringBJ
+                            函数: YDWEGetAnyTypeLocalVariable
+                                常量: command
+                            常量: 4
+                            函数: StringLength
+                                函数: YDWEGetAnyTypeLocalVariable
+                                    常量: command
+        动作
+            DoNothing
+    IfThenElseMultiple
+        条件
+            OperatorCompareInteger
+                变量: GameMode
+                预设: OperatorEqual
+                常量: 5
+        动作
+            IfThenElseMultiple
+                条件
+                    OrMultiple
+                        条件
+                            OperatorCompareString
+                                函数: SubStringBJ
+                                    函数: YDWEGetAnyTypeLocalVariable
+                                        常量: command
+                                    常量: 1
+                                    常量: 5
+                                预设: OperatorEqualENE
+                                常量: level
+                            OperatorCompareString
+                                函数: SubStringBJ
+                                    函数: YDWEGetAnyTypeLocalVariable
+                                        常量: command
+                                    常量: 1
+                                    常量: 2
+                                预设: OperatorEqualENE
+                                常量: lv
+                动作
+                    YDWEExecuteTriggerMultiple
+                        变量: gg_trg_CMDLevel
+                        预设: tirggerexecute_notcondition
+                        动作
+                            YDWESetAnyTypeLocalVariable
+                                预设: typename13_player
+                                常量: player
+                                函数: GetTriggerPlayer
+                            YDWESetAnyTypeLocalVariable
+                                预设: typename04_string
+                                常量: args
+                                函数: SubStringBJ
+                                    函数: YDWEGetAnyTypeLocalVariable
+                                        常量: command
+                                    常量: 4
+                                    函数: StringLength
+                                        函数: YDWEGetAnyTypeLocalVariable
+                                            常量: command
+                动作
+                    DoNothing
+            IfThenElseMultiple
+                条件
+                    OperatorCompareString
+                        函数: SubStringBJ
+                            函数: YDWEGetAnyTypeLocalVariable
+                                常量: command
+                            常量: 1
+                            常量: 4
+                        预设: OperatorEqualENE
+                        常量: back
+                动作
+                    YDWEExecuteTriggerMultiple
+                        变量: gg_trg_CMDBack
+                        预设: tirggerexecute_notcondition
+                        动作
+                            YDWESetAnyTypeLocalVariable
+                                预设: typename13_player
+                                常量: player
+                                函数: GetTriggerPlayer
+                动作
+                    DoNothing
+            IfThenElseMultiple
+                条件
+                    OperatorCompareString
+                        函数: SubStringBJ
+                            函数: YDWEGetAnyTypeLocalVariable
+                                常量: command
+                            常量: 1
+                            常量: 4
+                        预设: OperatorEqualENE
+                        常量: kill
+                动作
+                    YDWEExecuteTriggerMultiple
+                        变量: gg_trg_CMDKill
+                        预设: tirggerexecute_notcondition
+                        动作
+                            YDWESetAnyTypeLocalVariable
+                                预设: typename13_player
+                                常量: player
+                                函数: GetTriggerPlayer
+                动作
+                    DoNothing

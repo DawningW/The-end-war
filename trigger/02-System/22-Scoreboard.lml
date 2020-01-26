@@ -1,0 +1,118 @@
+事件
+    TriggerRegisterTimerEventSingle
+        常量: 0.00
+条件
+动作
+    CommentString
+        常量: 初始化
+    CreateMultiboardBJ
+        常量: 6
+        函数: OperatorIntegerAdd
+            函数: CountPlayersInForceBJ
+                变量: Players
+            常量: 1
+        常量: 末日战争计分板
+    MultiboardSetItemStyleBJ
+        函数: GetLastCreatedMultiboard
+        常量: 0
+        常量: 0
+        预设: ShowHideShow
+        预设: ShowHideHide
+    MultiboardSetItemValueBJ
+        函数: GetLastCreatedMultiboard
+        常量: 1
+        常量: 1
+        常量: 玩家
+    MultiboardSetItemWidthBJ
+        函数: GetLastCreatedMultiboard
+        常量: 1
+        常量: 0
+        常量: 5.00
+    MultiboardSetItemValueBJ
+        函数: GetLastCreatedMultiboard
+        常量: 2
+        常量: 1
+        常量: 英雄
+    MultiboardSetItemWidthBJ
+        函数: GetLastCreatedMultiboard
+        常量: 2
+        常量: 0
+        常量: 5.00
+    MultiboardSetItemValueBJ
+        函数: GetLastCreatedMultiboard
+        常量: 3
+        常量: 1
+        常量: 等级
+    MultiboardSetItemValueBJ
+        函数: GetLastCreatedMultiboard
+        常量: 4
+        常量: 1
+        常量: 补兵
+    MultiboardSetItemValueBJ
+        函数: GetLastCreatedMultiboard
+        常量: 5
+        常量: 1
+        常量: 击杀
+    MultiboardSetItemValueBJ
+        函数: GetLastCreatedMultiboard
+        常量: 6
+        常量: 1
+        常量: 阵亡
+    SetVariable
+        变量: Scoreboard
+        函数: GetLastCreatedMultiboard
+    YDWESetAnyTypeLocalVariable
+        预设: typename01_integer
+        常量: i
+        常量: 1
+    ForForceMultiple
+        变量: Players
+        动作
+            YDWESetAnyTypeLocalVariable
+                预设: typename01_integer
+                常量: i
+                函数: OperatorIntegerAdd
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: i
+                    常量: 1
+            MultiboardSetItemValueBJ
+                变量: Scoreboard
+                常量: 1
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: i
+                函数: YDWEGetPlayerColorString
+                    函数: GetEnumPlayer
+                    函数: GetPlayerName
+                        函数: GetEnumPlayer
+            YDWESaveIntegerByInteger
+                常量: 1
+                函数: YDWEGetPlayerID
+                    函数: GetEnumPlayer
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: i
+    CommentString
+        常量: 监听按键
+    YDWERegisterTriggerMultiple
+        函数: CreateTrigger
+        事件
+            TriggerRegisterPlayerKeyEventBJ
+                预设: PlayerALL
+                预设: KeyEventTypeDepress
+                预设: KeyEventKeyLeft
+        动作
+        动作
+            MultiboardMinimizeBJ
+                预设: Maximize
+                变量: Scoreboard
+    YDWERegisterTriggerMultiple
+        函数: CreateTrigger
+        事件
+            TriggerRegisterPlayerKeyEventBJ
+                预设: PlayerALL
+                预设: KeyEventTypeRelease
+                预设: KeyEventKeyLeft
+        动作
+        动作
+            MultiboardMinimizeBJ
+                预设: Minimize
+                变量: Scoreboard

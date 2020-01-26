@@ -1,0 +1,153 @@
+事件
+条件
+动作
+    PauseUnitBJ
+        预设: PauseUnpauseOptionPause
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: hero
+    TriggerSleepAction
+        常量: 3.00
+    YDWESetAnyTypeLocalVariable
+        预设: typename01_integer
+        常量: random
+        函数: GetRandomInt
+            常量: 1
+            常量: 4
+    IfThenElseMultiple
+        条件
+            OperatorCompareInteger
+                函数: YDWEGetAnyTypeLocalVariable
+                    常量: random
+                预设: OperatorEqual
+                常量: 1
+        动作
+            AdjustPlayerStateBJ
+                常量: 6000
+                函数: GetOwningPlayer
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: hero
+                预设: PlayerStateGold
+            DisplayTextToPlayer
+                函数: GetOwningPlayer
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: hero
+                常量: 0
+                常量: 0
+                常量: 你得到了6000元钱
+        动作
+            IfThenElseMultiple
+                条件
+                    OperatorCompareInteger
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: random
+                        预设: OperatorEqual
+                        常量: 2
+                动作
+                    SetHeroLevelNT
+                        函数: YDWEGetAnyTypeLocalVariable
+                            常量: hero
+                        常量: 20
+                        预设: ShowHideShow
+                    DisplayTextToPlayer
+                        函数: GetOwningPlayer
+                            函数: YDWEGetAnyTypeLocalVariable
+                                常量: hero
+                        常量: 0
+                        常量: 0
+                        常量: 你真二，算了，奖励你20级经验值
+                动作
+                    IfThenElseMultiple
+                        条件
+                            OperatorCompareInteger
+                                函数: YDWEGetAnyTypeLocalVariable
+                                    常量: random
+                                预设: OperatorEqual
+                                常量: 3
+                        动作
+                            AdjustPlayerStateBJ
+                                常量: 2000
+                                函数: GetOwningPlayer
+                                    函数: YDWEGetAnyTypeLocalVariable
+                                        常量: hero
+                                预设: PlayerStateLumber
+                            DisplayTextToPlayer
+                                函数: GetOwningPlayer
+                                    函数: YDWEGetAnyTypeLocalVariable
+                                        常量: hero
+                                常量: 0
+                                常量: 0
+                                常量: 你得到了2000木材
+                        动作
+                            IfThenElseMultiple
+                                条件
+                                    OperatorCompareInteger
+                                        函数: YDWEGetAnyTypeLocalVariable
+                                            常量: random
+                                        预设: OperatorEqual
+                                        常量: 4
+                                动作
+                                    PauseUnitBJ
+                                        预设: PauseUnpauseOptionUnpause
+                                        函数: YDWEGetAnyTypeLocalVariable
+                                            常量: hero
+                                    KillUnit
+                                        函数: YDWEGetAnyTypeLocalVariable
+                                            常量: hero
+                                    DisplayTextToPlayer
+                                        函数: GetOwningPlayer
+                                            函数: YDWEGetAnyTypeLocalVariable
+                                                常量: hero
+                                        常量: 0
+                                        常量: 0
+                                        常量: 唉，你好倒霉，去死吧
+                                    EnableTrigger
+                                        变量: gg_trg_DHGoLight
+                                    EnableTrigger
+                                        变量: gg_trg_DHGoDark
+                                    ReturnAction
+                                动作
+                                    DoNothing
+    PauseUnitBJ
+        预设: PauseUnpauseOptionUnpause
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: hero
+    IfThenElseMultiple
+        条件
+            OperatorCompareBoolean
+                函数: IsUnitAlly
+                    函数: YDWEGetAnyTypeLocalVariable
+                        常量: hero
+                    预设: Player05
+                预设: OperatorEqualENE
+                常量: true
+        动作
+            YDWESetAnyTypeLocalVariable
+                预设: typename14_location
+                常量: p
+                函数: GetRectCenter
+                    变量: gg_rct______________2
+        动作
+            YDWESetAnyTypeLocalVariable
+                预设: typename14_location
+                常量: p
+                函数: GetRectCenter
+                    变量: gg_rct______________7
+    SetUnitPositionLoc
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: hero
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p
+    PanCameraToTimedLocForPlayer
+        函数: GetOwningPlayer
+            函数: YDWEGetAnyTypeLocalVariable
+                常量: hero
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p
+        常量: 1.00
+    RemoveLocation
+        函数: YDWEGetAnyTypeLocalVariable
+            常量: p
+    EnableTrigger
+        变量: gg_trg_DHGoLight
+    EnableTrigger
+        变量: gg_trg_DHGoDark

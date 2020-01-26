@@ -1,0 +1,78 @@
+事件
+条件
+动作
+    CommentString
+        常量: 初始化单位
+    CommentString
+        常量: 开启模块
+    TriggerExecute
+        变量: gg_trg_MMSoldier
+    EnableTrigger
+        变量: gg_trg_MMLightWin
+    EnableTrigger
+        变量: gg_trg_MMDarkWin
+    CommentString
+        常量: 给钱计时器
+    YDWETimerStartMultiple
+        函数: CreateTimer
+        常量: 1.00
+        预设: PeriodicOptionPeriodic
+        动作
+        动作
+            ForForceMultiple
+                变量: Players
+                动作
+                    AdjustPlayerStateBJ
+                        常量: 1
+                        函数: GetEnumPlayer
+                        预设: PlayerStateGold
+    CommentString
+        常量: 科技升级计时器
+    YDWETimerStartMultiple
+        函数: CreateTimer
+        常量: 180.00
+        预设: PeriodicOptionPeriodic
+        动作
+        动作
+            AddPlayerTechResearched
+                预设: Player05
+                常量: Resm
+                常量: 1
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: OperatorString
+                        函数: YDWEGetPlayerColorString
+                            预设: Player05
+                            函数: GetPlayerName
+                                预设: Player05
+                        常量: 科技升级完毕!
+                    函数: OperatorString
+                        常量: '当前等级:'
+                        函数: I2S
+                            函数: GetPlayerTechCountSimple
+                                常量: Resm
+                                预设: Player05
+            AddPlayerTechResearched
+                预设: Player11
+                常量: Rume
+                常量: 1
+            DisplayTextToForce
+                函数: GetPlayersAll
+                函数: OperatorString
+                    函数: OperatorString
+                        函数: YDWEGetPlayerColorString
+                            预设: Player11
+                            函数: GetPlayerName
+                                预设: Player11
+                        常量: 科技升级完毕!
+                    函数: OperatorString
+                        常量: '当前等级:'
+                        函数: I2S
+                            函数: GetPlayerTechCountSimple
+                                常量: Rume
+                                预设: Player11
+    CommentString
+        常量: 完成
+    TriggerExecute
+        变量: gg_trg_ModeFinished
